@@ -6,19 +6,17 @@
 
 ## 기본 정보
 
-- 이름: 홍길동
-- 영문 이름: Gildong Hong
+- 이름: 백성현
+- 영문 이름: Baek SeongHyoun
 - 한 줄 정체성: 구조를 설명할 줄 아는 유니티 클라이언트 개발자
-- 이메일: you@example.com
-- GitHub: https://github.com/your-id
-- 기타 링크: 블로그 https://your-blog.example.com
+- 이메일: tudgus0118@gmail.com
+- GitHub: https://github.com/BaekShyoun
 
 ## 자기소개
 
 > 2~3문장. 어떤 개발자인지, 무엇을 잘하고 싶은지. (Claude가 고쳐 쓰지 않고 그대로 싣습니다)
 
-설계 의도를 문서로 설명하는 습관을 가진 유니티 개발자입니다.
-기능을 "만드는 것"보다 "왜 이렇게 만들었는지 설명할 수 있는 것"을 목표로 공부하고 있습니다.
+게임의 동작 원리를 이해하고, 문제를 추적해 구현하는 개발자
 
 ## 기술 스택 메모 (선택)
 

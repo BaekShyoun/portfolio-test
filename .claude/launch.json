@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "4600"],
       "port": 4600
+    },
+    {
+      "name": "portfolio-node",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:\\Users\\User\\AppData\\Local\\Temp\\claude\\9e4f20e5fcaba864\\98b0e867-9c65-44a2-9ea1-f75efa802448\\scratchpad\\serve.js", "D:\\Unity\\Projects\\portfolio-test", "4600"],
+      "port": 4600
     }
   ]
 }
