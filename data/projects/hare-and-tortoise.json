@@ -17,7 +17,7 @@
     },
     {
       "label": "기간",
-      "value": "2026.10.21 ~ 2026.11.04 (커밋 기준)"
+      "value": "2026.10.21 ~ 2026.11.04"
     },
     {
       "label": "인원",
@@ -201,13 +201,6 @@
         "title": "고민과 선택",
         "sectionPath": [
           "5. 고민과 선택"
-        ]
-      },
-      {
-        "key": "results",
-        "title": "결과 및 배운 점",
-        "sectionPath": [
-          "6. 결과 및 배운 점"
         ]
       }
     ],
@@ -546,7 +539,7 @@
         "key": "ai-roles",
         "chapter": "ai-workflow",
         "layout": "full",
-        "tab": "개요",
+        "tab": "",
         "title": {
           "text": "4.1 직접 결정한 부분과 AI에 맡긴 부분",
           "verbatim": true
@@ -612,7 +605,7 @@
         "key": "editor-ai",
         "chapter": "ai-workflow",
         "layout": "full",
-        "tab": "개요",
+        "tab": "",
         "title": {
           "text": "4.3 AI가 Unity 에디터를 직접 다룬 첫 프로젝트",
           "verbatim": true
@@ -663,12 +656,12 @@
           {
             "label": "원인",
             "text": "AI가 앞서 원형 코스에서 피격 전 위치로 바로 재배치하도록 안내한 코드",
-            "verbatim": true
+            "verbatim": false
           },
           {
             "label": "해결",
             "text": "복구 위치의 기준을 피격 전 위치에서 착지한 래그돌의 골반 위치로 변경하고, 원형 코스에서는 피격 전 위치 주변을 다시 탐색하지 않도록 수정했다.",
-            "verbatim": true
+            "verbatim": false
           },
           {
             "label": "결과",
@@ -783,7 +776,7 @@
           {
             "label": "문제",
             "text": "경유점이 코스 가운데에 있으면 토끼는 출발 직후 코스 가운데로 이동한다.",
-            "verbatim": true
+            "verbatim": false
           },
           {
             "label": "해결",
@@ -798,7 +791,7 @@
           {
             "label": "배운 점",
             "text": "어디서 출발하는지, 어디로 가는지, 어디를 지나야 완주인지를 각각 명시해야 한다는 점을 이 과정에서 확인했다.",
-            "verbatim": true
+            "verbatim": false
           }
         ],
         "visuals": []
@@ -837,97 +830,6 @@
             "kind": "table",
             "n": 1,
             "fp": "구간|의도한 분위기"
-          }
-        ]
-      },
-      {
-        "key": "playtest",
-        "chapter": "results",
-        "layout": "overview",
-        "tab": "결과",
-        "title": {
-          "text": "6.1 구현 및 플레이 확인",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "튜토리얼로 규칙을 익히고 본 경주로 넘어가는 흐름까지 완성했다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "6. 결과 및 배운 점",
-          "6.1 구현 및 플레이 확인"
-        ],
-        "points": [
-          {
-            "label": "",
-            "text": "개별 기능의 동작과 함께, 씬 전환과 경주 진행 전체가 중단 없이 이어지는지 확인했다.",
-            "verbatim": true
-          }
-        ],
-        "visuals": [
-          {
-            "kind": "code",
-            "n": 1,
-            "fp": "타이틀 → 튜토리얼 A·B·C → 본 경주 → 결과 확인 → 재도전"
-          }
-        ]
-      },
-      {
-        "key": "lessons",
-        "chapter": "results",
-        "layout": "overview",
-        "tab": "결과",
-        "title": {
-          "text": "6.2 AI 협업에서 배운 점",
-          "verbatim": true
-        },
-        "lead": null,
-        "sectionPath": [
-          "6. 결과 및 배운 점",
-          "6.2 AI 협업에서 배운 점"
-        ],
-        "points": [
-          {
-            "label": "배운 점",
-            "text": "요청 시에는 동작과 완료 기준까지 명시해야 했다.",
-            "verbatim": true
-          },
-          {
-            "label": "배운 점",
-            "text": "코드가 실행되는 것과 의도대로 동작하는 것은 별개였다.",
-            "verbatim": true
-          },
-          {
-            "label": "배운 점",
-            "text": "작업을 분할하여 수정 대상을 명확히 유지할 수 있었다.",
-            "verbatim": true
-          }
-        ],
-        "visuals": []
-      },
-      {
-        "key": "next-steps",
-        "chapter": "results",
-        "layout": "full",
-        "tab": "결과",
-        "title": {
-          "text": "6.3 다음에 고치고 싶은 점",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "다음 리팩터링에서는 코드를 수정하기 쉽도록 역할을 재분배하는 것을 우선 과제로 한다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "6. 결과 및 배운 점",
-          "6.3 다음에 고치고 싶은 점"
-        ],
-        "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "지금의 문제|이렇게 고치고 싶음"
           }
         ]
       }
