@@ -16,7 +16,7 @@
     { "label": "인원", "value": "1인" },
     { "label": "환경", "value": "Unity 6000.3.15f1 · C# · Cinemachine · UniTask · NavMesh" }
   ],
-  "tags": ["Unity 6.3", "C#", "NavMesh", "Cinemachine", "UniTask", "래그돌", "PlayerPrefs"],
+  "tags": ["Unity 6.3", "C#", "NavMesh", "Cinemachine", "UniTask", "PlayerPrefs"],
   "links": {
     "github": "https://github.com/KooHoo-Dev/3rd_3D_1-3D-Project-BaekShyoun",
     "video": "https://youtu.be/9TG4n2-oFPk",
