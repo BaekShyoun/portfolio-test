@@ -17,7 +17,7 @@
     {
       "name": "Unity",
       "evidence": [
-        { "text": "`NavMesh.SamplePosition`으로 착지한 래그돌 골반 근처의 복귀 위치 탐색", "project": "hare-and-tortoise" },
+        { "text": "NavMesh와 안쪽·바깥쪽 경유점으로 원형 코스의 이동 경로를 구성", "project": "hare-and-tortoise" },
         { "text": "`AudioSource`를 BGM·SFX용으로 나눠 소리 크기를 따로 조절", "project": "going-to-market" },
         { "text": "`DontDestroyOnLoad`로 미니게임 점수를 씬 전환 뒤 메인 게임 포인트에 반영", "project": "Observed" }
       ]
