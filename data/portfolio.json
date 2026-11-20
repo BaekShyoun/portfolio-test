@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-18",
+  "generatedAt": "2026-11-20",
   "profile": {
     "name": "백성현",
     "nameEn": "Baek SeongHyoun",
-    "headline": "구조를 설명할 줄 아는 유니티 클라이언트 개발자",
-    "intro": "게임의 동작 원리를 이해하고, 문제를 추적해 구현하는 개발자",
+    "headline": "기획 의도를 AI와 함께 구현하고, 직접 검증하는 유니티 개발자",
+    "intro": "게임의 규칙과 구조는 직접 설계하고, 필요에 따라 일부 작업은 과제 단위로 나눠 AI에 맡깁니다.\nAI가 Unity 에디터까지 다루게 하더라도 결과는 플레이로 검증하고, 제안이 기획 의도와 다를 때는\n대안을 비교해 직접 고릅니다. 기획을 이해하는 개발자, 구현을 아는 기획자로서 두 사이를 잇고 싶습니다.",
     "email": "tudgus0118@gmail.com",
     "github": "https://github.com/BaekShyoun",
     "links": []
@@ -17,26 +17,27 @@
     {
       "name": "Unity",
       "evidence": [
-        { "text": "`DontDestroyOnLoad`로 미니게임 점수를 씬 전환 뒤 메인 게임 포인트에 반영", "project": "Observed" },
+        { "text": "`NavMesh.SamplePosition`으로 착지한 래그돌 골반 근처의 복귀 위치 탐색", "project": "hare-and-tortoise" },
         { "text": "`AudioSource`를 BGM·SFX용으로 나눠 소리 크기를 따로 조절", "project": "going-to-market" },
-        { "text": "`NavMesh.SamplePosition`으로 착지한 래그돌 골반 근처의 복귀 위치 탐색", "project": "hare-and-tortoise" }
+        { "text": "`DontDestroyOnLoad`로 미니게임 점수를 씬 전환 뒤 메인 게임 포인트에 반영", "project": "Observed" }
       ]
     },
     {
       "name": "C#",
       "evidence": [
-        { "text": "`FlowTime` 한 메서드로 시간·질병·부패·맹수·게이지의 턴 갱신을 처리", "project": "Observed" },
+        { "text": "enum `StageType`과 switch문 `CheckStage()`로 수면·공격·준비 규칙을 한 번에 결정", "project": "hare-and-tortoise" },
         { "text": "enum 키 `Dictionary`와 `TryGetValue()`로 사운드 클립 조회", "project": "going-to-market" },
-        { "text": "enum `StageType`과 switch문 `CheckStage()`로 수면·공격·준비 규칙을 한 번에 결정", "project": "hare-and-tortoise" }
+        { "text": "`FlowTime` 한 메서드로 시간·질병·부패·맹수·게이지의 턴 갱신을 처리", "project": "Observed" }
       ]
     },
     {
-      "name": "TSV 데이터",
+      "name": "AI 협업 개발",
       "evidence": [
-        { "text": "장르·키워드 240개, 아이템 176개 TSV 작성 — `PrefabKey`로 프리팹 연결", "project": "going-to-market" },
-        { "text": "`StoryController`로 TSV 대사를 한 줄씩 진행하고 화자 표시", "project": "hare-and-tortoise" }
+        { "text": "클래스 구조는 직접 설계하고, 래그돌·넉백 물리 구현과 반복 작업은 AI에 맡김", "project": "hare-and-tortoise" },
+        { "text": "AI로 만든 `RoomBuilder`를 실행해 확인하고, 벽·바닥 틈은 씬에서 직접 수정", "project": "going-to-market" },
+        { "text": "AI 캐릭터 이미지의 왼발·오른발 구분 오류를 직접 바로잡음", "project": "Observed" }
       ]
     }
   ],
-  "projects": ["Observed", "going-to-market", "hare-and-tortoise"]
+  "projects": ["hare-and-tortoise", "going-to-market", "Observed"]
 }
