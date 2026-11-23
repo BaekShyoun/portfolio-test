@@ -93,7 +93,7 @@
 
     // ① 머리: 이름 · 영문 이름 · 한 줄 정체성 · 연락처
     out.push(`<section id="cover" class="hero"><p class="hero-mark no-print" aria-hidden="true">${esc(prof.nameEn || nameT)}</p><div class="wrap">
-      <div class="hero-top"><p class="eyebrow">${T('en.portfolio')}</p>${pf.generatedAt ? `<p class="upd">${T('page.updated', { date: pf.generatedAt })}</p>` : ''}</div>
+      <div class="hero-top"><p class="eyebrow">${T('en.portfolio')}</p></div>
       <h1>${esc(nameT)}${prof.nameEn ? `<span class="en" lang="en">${esc(prof.nameEn)}</span>` : ''}</h1>
       ${prof.headline ? `<p class="headline">${inline(prof.headline)}</p>` : ''}
       <div class="btns no-print">${[prof.email && link({ href: `mailto:${prof.email}`, label: esc(prof.email), kind: 'mail', cls: 'btn' }),
