@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "portfolio-node",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/User/AppData/Local/Temp/claude/6fe6ef9aec353acd/66884a06-1c07-459e-9170-ce10e2118a2c/scratchpad/serve.js", "D:/Unity/Projects/portfolio-test", "4600"],
+      "port": 4600
+    },
+    {
       "name": "portfolio",
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "4600"],
