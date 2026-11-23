@@ -175,7 +175,7 @@
       t.classList.add('md-table');
       t.querySelectorAll('img').forEach((i, n) => {                       // 행을 나누기 전에(원본과 같은 순서로) 크기를 적음
         const d = v.imgDims?.[n];
-        if (d) { const h = Math.min(d.h, 120); i.width = Math.round((h * d.w) / d.h); i.height = h; }   // CSS max-height 120px와 같은 크기
+        if (d) { const h = Math.min(d.h, 160); i.width = Math.round((h * d.w) / d.h); i.height = h; }   // CSS max-height 160px와 같은 크기
         i.loading = 'lazy'; i.decoding = 'async';
       });
       if (chunk) { const rows = [...t.querySelectorAll('tbody tr')]; rows.forEach((r, i) => { if (i < chunk[0] || i >= chunk[1]) r.remove(); }); }
