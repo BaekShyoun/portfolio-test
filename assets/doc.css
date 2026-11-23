@@ -169,8 +169,10 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
 .md :is(.pf-figure, img, .table-wrap:has(img)) { overflow-anchor: none; }
 
 .md .mmd { margin: 22px 0; }
-.mmd .mermaid { display: flex; justify-content: center; padding: 16px; border: 1px solid var(--diagram-bg); border-radius: calc(var(--r) * .7); overflow-x: auto; background: var(--diagram-bg); }
+.mmd .mermaid { display: flex; justify-content: center; padding: 16px; border: 1px solid var(--diagram-bg); border-radius: calc(var(--r) * .7); overflow-x: auto; background: var(--diagram-bg); color: #333; }   /* 밝은 판 위 글자의 기본색(Mermaid 기본 테마 글자색) */
 .mmd .mermaid svg { display: block; max-width: 100%; height: auto; }
+/* 다이어그램 글자(foreignObject 안 p·span 등)는 문서 본문 색(.md p = 어두운 테마의 밝은 글자)을 받지 않고 다이어그램 색을 그대로 씀 — 밝은 판 위에서 글자가 사라지던 문제 */
+.mmd .mermaid foreignObject :is(p, li, span, div, strong, em, b, i, a, code), .lb-stage.lb-svg foreignObject :is(p, li, span, div, strong, em, b, i, a, code) { color: inherit; }
 .mmd-bar { contain: inline-size; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 6px 12px; margin-top: 6px; font-size: 13px; }
 .mmd-src summary { color: var(--muted); cursor: pointer; font-weight: 600; }
 .mmd-src pre { margin: 8px 0 0; max-height: 320px; overflow: auto; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; }
@@ -198,7 +200,7 @@ dialog.toc-dialog::backdrop { background: rgba(0, 0, 0, .7); }
 dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; margin: auto; overflow: visible; }
 dialog.lightbox::backdrop { background: rgba(10, 11, 14, .82); }
 .lb-stage img { display: block; max-width: 94vw; max-height: 84vh; border-radius: calc(var(--r) * .5); margin: 0 auto; }
-.lb-stage.lb-svg { max-width: 94vw; max-height: 84vh; overflow: auto; background: var(--diagram-bg); border-radius: calc(var(--r) * .5); padding: 16px; touch-action: pan-x pan-y pinch-zoom; }
+.lb-stage.lb-svg { max-width: 94vw; max-height: 84vh; overflow: auto; background: var(--diagram-bg); border-radius: calc(var(--r) * .5); padding: 16px; touch-action: pan-x pan-y pinch-zoom; color: #333; }
 .lb-stage.lb-svg svg { display: block; height: auto; }
 .lb-cap { color: #fff; text-align: center; font-size: 14px; margin-top: 10px; }
 .lb-close { display: block; margin: 10px auto 0; }
