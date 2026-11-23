@@ -157,16 +157,18 @@
       {
         "key": "why",
         "chapter": "overview",
-        "layout": "overview",
+        "layout": "visual",
         "tab": "개요",
         "title": { "text": "1.2 왜 만들었나", "verbatim": true },
-        "lead": { "text": "동화 「토끼와 거북이」를 모티브로, 압도적으로 느린 거북이가 속도 대신 황당한 방해공작으로 토끼를 이기는 게임을 만들고자 했다. 동화 속 거북이가 수류탄과 지뢰를 쓰는 엉뚱함과, 토끼가 우스꽝스럽게 날아가는 모습으로 웃음을 주는 것이 목표였다.", "verbatim": true },
+        "lead": { "text": "동화 「토끼와 거북이」를 모티브로, 압도적으로 느린 거북이가 속도 대신 황당한 방해공작으로 토끼를 이기는 게임을 만들고자 했다.", "verbatim": true },
         "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
         "points": [
-          { "label": "", "text": "방해공작으로는 단순히 토끼가 앞으로 나아갈 수 없게끔 시간을 벌 뿐이다.", "verbatim": true },
-          { "label": "", "text": "따라서 사용 시점과 위치가 중요하며, 토끼가 날아갔다가 코스로 복귀하는 데 걸리는 시간도 승패에 영향을 주도록 설계했다.", "verbatim": true }
+          { "label": "", "text": "동화 속 거북이가 수류탄과 지뢰를 쓰는 엉뚱함과, 토끼가 우스꽝스럽게 날아가는 모습으로 웃음을 주는 것이 목표였다.", "verbatim": true },
+          { "label": "", "text": "방해공작으로는 단순히 토끼가 앞으로 나아갈 수 없게끔 시간을 벌 뿐이다. 따라서 사용 시점과 위치가 중요하며, 토끼가 날아갔다가 코스로 복귀하는 데 걸리는 시간도 승패에 영향을 주도록 설계했다.", "verbatim": true }
         ],
-        "visuals": []
+        "visuals": [
+          { "kind": "image", "src": "images/The_Hare_and_the_Tortoise_Original.jpg", "w": 773, "h": 422, "caption": { "text": "원작 동화 「토끼와 거북이」 — 잠든 토끼 곁을 지나가는 거북이", "verbatim": true } }
+        ]
       },
       {
         "key": "stage-rules",
