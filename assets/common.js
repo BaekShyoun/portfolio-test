@@ -114,7 +114,7 @@ const PF = (() => {
   //    같은 문서 안 이동(앵커·목차·건너뛰기·같은 슬라이드 장면)·mailto:·슬라이드 조작 버튼·라이트박스 = 같은 탭(target 없음)
   const ICON = '<svg class="pf-newtab-icon" aria-hidden="true" focusable="false" viewBox="0 0 12 12" width="12" height="12"><path d="M4.5 2.5h5v5M9.5 2.5 3 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const NEWTAB = `${ICON}<span class="pf-sr-only pf-newtab-sr">(새 탭)</span>`;
-  const NEW_TAB_KINDS = new Set(['external', 'page', 'file']);
+  const NEW_TAB_KINDS = new Set(['external', 'file']);              // 'page'(포트폴리오·슬라이드·상세 문서 사이)는 같은 탭 — 뒤로 가기로 돌아옴
   function link({ href, label, kind = 'external', cls = '', attrs = '' }) {
     const nt = NEW_TAB_KINDS.has(kind);
     return `<a${cls ? ` class="${cls}"` : ''} href="${esc(href)}"${nt ? ' target="_blank" rel="noopener"' : ''}${attrs ? ' ' + attrs : ''}>${label}${nt ? NEWTAB : ''}</a>`;

@@ -283,7 +283,7 @@
     const frag = k < 0 ? '' : h.slice(k);
     if (!path || path === p.doc) { a.setAttribute('href', frag || '#top'); return; }      // 자기 문서: 같은 문서 안 앵커
     const other = /^\.\.\/([^/]+)\/[^/]+\.md$/i.exec(path);
-    if (other) { a.setAttribute('href', `${PF.docUrl(other[1])}${frag}`); return markNewTab(a); }   // 다른 프로젝트의 문서 → 그 상세 문서
+    if (other) { a.setAttribute('href', `${PF.docUrl(other[1])}${frag}`); return; }   // 다른 프로젝트의 문서 → 그 상세 문서(같은 탭)
     a.setAttribute('href', srcPath(path) + frag);                      // 그 밖의 상대 파일: 원문 파일
     markNewTab(a);
   }
