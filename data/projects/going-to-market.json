@@ -533,6 +533,45 @@
         ]
       },
       {
+        "key": "concerns-push",
+        "chapter": "planning",
+        "layout": "visual",
+        "tab": "화면",
+        "title": {
+          "text": "2.3 팀 토론으로 규칙 구체화하기",
+          "verbatim": true
+        },
+        "lead": null,
+        "sectionPath": [
+          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지",
+          "2.3 팀 토론으로 규칙 구체화하기"
+        ],
+        "points": [
+          {
+            "label": "밀치기",
+            "text": "밀치기를 물건 고르기보다 더 즐기는 주객전도를 노렸다.",
+            "verbatim": true
+          },
+          {
+            "label": "결과",
+            "text": "함께 수강한 동료들의 플레이 테스트 피드백에서 밀치기가 특히 좋은 평가를 받았고, 실제 플레이에서도 서로 열심히 밀치며 방해를 즐기는 모습을 확인.",
+            "verbatim": true
+          }
+        ],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/Mart-Push.gif",
+            "w": 640,
+            "h": 360,
+            "caption": {
+              "text": "마트 — 서로 밀치며 방해하는 플레이어들",
+              "verbatim": true
+            }
+          }
+        ]
+      },
+      {
         "key": "plan-changes",
         "chapter": "planning",
         "layout": "full",
@@ -699,6 +738,45 @@
             "kind": "code",
             "n": 2,
             "fp": "private void InitDictionaries()"
+          }
+        ]
+      },
+      {
+        "key": "sound-split",
+        "chapter": "features",
+        "layout": "visual",
+        "tab": "화면",
+        "title": {
+          "text": "4.2 enum 기반 공용 사운드 관리",
+          "verbatim": true
+        },
+        "lead": null,
+        "sectionPath": [
+          "4. 담당 기능 구현",
+          "4.2 enum 기반 공용 사운드 관리"
+        ],
+        "points": [
+          {
+            "label": "BGM과 SFX 분리",
+            "text": "처음에는 AudioSource 하나로 BGM과 SFX를 함께 재생했으나, 이 방식으로는 BGM과 효과음의 음량을 따로 조절할 수 없었다.",
+            "verbatim": false
+          },
+          {
+            "label": "공동 작업 범위",
+            "text": "볼륨 조절 메서드와 관련 UI 연결, `PauseBGM()`은 팀원 작업이다.",
+            "verbatim": true
+          }
+        ],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/Tutorials.jpg",
+            "w": 1193,
+            "h": 671,
+            "caption": {
+              "text": "설정 창 — 따로 조절되는 BGM·SFX 볼륨",
+              "verbatim": true
+            }
           }
         ]
       },

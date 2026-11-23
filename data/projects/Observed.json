@@ -563,6 +563,40 @@
         ]
       },
       {
+        "key": "flowtime-sleep",
+        "chapter": "turn-flow",
+        "layout": "visual",
+        "tab": "화면",
+        "title": {
+          "text": "3.2 턴 경과를 한 메서드로 처리하기",
+          "verbatim": true
+        },
+        "lead": null,
+        "sectionPath": [
+          "3. 턴 진행",
+          "3.2 턴 경과를 한 메서드로 처리하기"
+        ],
+        "points": [
+          {
+            "label": "",
+            "text": "미니게임(`FlowTime(1)`), 수면(`FlowTime(2)`), 블랙아웃(`FlowTime(2)`)은 모두 넘길 턴 수만 인자로 전달하여 같은 메서드를 호출한다.",
+            "verbatim": true
+          }
+        ],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/Sleep.gif",
+            "w": 640,
+            "h": 352,
+            "caption": {
+              "text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로",
+              "verbatim": true
+            }
+          }
+        ]
+      },
+      {
         "key": "flowtime-seq",
         "chapter": "turn-flow",
         "layout": "full",
@@ -650,6 +684,40 @@
             "kind": "code",
             "n": 1,
             "fp": "public IEnumerator GetBlackOutCoroutine()"
+          }
+        ]
+      },
+      {
+        "key": "blackout-screen",
+        "chapter": "penalty",
+        "layout": "visual",
+        "tab": "화면",
+        "title": {
+          "text": "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티",
+          "verbatim": true
+        },
+        "lead": null,
+        "sectionPath": [
+          "4. 패널티 설계와 구현 방식의 선택",
+          "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"
+        ],
+        "points": [
+          {
+            "label": "",
+            "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소한다.",
+            "verbatim": true
+          }
+        ],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/02-blackout.png",
+            "w": 2560,
+            "h": 1369,
+            "caption": {
+              "text": "블랙아웃 — 쓰러지며 강제로 넘어가는 턴",
+              "verbatim": true
+            }
           }
         ]
       },
@@ -864,7 +932,7 @@
       {
         "key": "choice-interaction",
         "chapter": "penalty",
-        "layout": "full",
+        "layout": "visual",
         "tab": "선택",
         "title": {
           "text": "상호작용 오브젝트를 어떻게 만들까",
@@ -884,6 +952,16 @@
             "kind": "table",
             "n": 2,
             "fp": "방법|장점|단점"
+          },
+          {
+            "kind": "image",
+            "src": "images/Interactions.gif",
+            "w": 640,
+            "h": 352,
+            "caption": {
+              "text": "침대·게임기·맹수 우리 — 다가가서 누르면 각자 다른 행동",
+              "verbatim": true
+            }
           }
         ]
       },
