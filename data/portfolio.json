@@ -18,15 +18,15 @@
       "name": "Unity",
       "evidence": [
         {
-          "text": "NavMesh와 안쪽·바깥쪽 경유점으로 원형 코스의 이동 경로를 구성",
+          "text": "원형 경주 코스에 안쪽·바깥쪽 길을 따로 만들어, NavMesh로 토끼가 인코스를 달리도록 구현",
           "project": "hare-and-tortoise"
         },
         {
-          "text": "`AudioSource`를 BGM·SFX용으로 나눠 소리 크기를 따로 조절",
+          "text": "`AudioSource`를 배경음악(반복 재생)·효과음(한 번 재생)용으로 나눠 소리 크기를 독립적으로 조절",
           "project": "going-to-market"
         },
         {
-          "text": "`DontDestroyOnLoad`로 미니게임 점수를 씬 전환 뒤 메인 게임 포인트에 반영",
+          "text": "미니게임 점수가 화면(씬)이 바뀌어도 사라지지 않게 `DontDestroyOnLoad`로 보관해 메인 게임에 반영",
           "project": "Observed"
         }
       ]
@@ -35,15 +35,15 @@
       "name": "C#",
       "evidence": [
         {
-          "text": "enum `StageType`과 switch문 `CheckStage()`로 수면·공격·준비 규칙을 한 번에 결정",
+          "text": "스테이지 종류(enum)만 고르면 스테이지 규칙(수면·공격·준비)이 switch문 한 곳에서 정해지도록 관리",
           "project": "hare-and-tortoise"
         },
         {
-          "text": "enum 키 `Dictionary`와 `TryGetValue()`로 사운드 클립 조회",
+          "text": "enum 키 `Dictionary`로 사운드를 관리해, 팀원이 `ItemPickUp` 같은 상황 이름을 자동 완성으로 골라 부르도록 구성",
           "project": "going-to-market"
         },
         {
-          "text": "`FlowTime` 한 메서드로 시간·질병·부패·맹수·게이지의 턴 갱신을 처리",
+          "text": "턴이 넘어갈 때의 처리(시간·질병·부패·맹수·게이지)를 메서드 하나(`FlowTime`)에 모아, 턴마다 할 일을 한눈에 보고 수정할 수 있도록 구성",
           "project": "Observed"
         }
       ]
@@ -52,15 +52,15 @@
       "name": "AI 협업 개발",
       "evidence": [
         {
-          "text": "클래스 구조는 직접 설계하고, 래그돌·넉백 물리 구현과 반복 작업은 AI에 맡김",
+          "text": "전체 클래스 구조는 직접 설계하고, 래그돌·넉백 같은 물리 표현과 반복 작업은 AI에 나눠 맡김",
           "project": "hare-and-tortoise"
         },
         {
-          "text": "AI로 만든 `RoomBuilder`를 실행해 확인하고, 벽·바닥 틈은 씬에서 직접 수정",
+          "text": "바닥·벽 깔기는 AI가 만든 도구(`RoomBuilder`)에 맡기고, 공간 배치와 동선 설계에 시간을 씀",
           "project": "going-to-market"
         },
         {
-          "text": "AI가 만든 캐릭터 걷기 시트의 왼발·오른발 구분 오류를 포토샵으로 직접 바로잡음",
+          "text": "AI가 그린 캐릭터 걷기 동작에서 왼발·오른발이 뒤섞인 부분을 포토샵으로 직접 바로잡음",
           "project": "Observed"
         }
       ]
