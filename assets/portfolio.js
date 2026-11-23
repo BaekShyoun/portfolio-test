@@ -176,15 +176,16 @@
     if (!hl.length) return '';
     const capText = (c) => (typeof c === 'string' ? c : c?.text || '');      // 그림 설명은 글 조각 또는 글자
     const shots = hl.map((h, i) => ({ h, i })).filter(({ h }) => h.image?.src);
+    const first = shots.length ? shots[0].i : -1;                        // 넓은 화면: 큰 화면 한 장(처음 것) + 기능을 누르면 그 화면으로 바뀜
     const tiles = shots.map(({ h, i }) => {
       const d = h.image.w && h.image.h ? ` width="${h.image.w}" height="${h.image.h}"` : '';
-      return `<figure class="shot" data-fi="${i}"><div class="shot-m"><img src="${esc(PF.srcPath(p.id, h.image.src))}" alt="${esc(capText(h.image.caption) || h.title)}"${d}></div>
+      return `<figure class="shot${i === first ? ' cur' : ''}" data-fi="${i}"><div class="shot-m"><img src="${esc(PF.srcPath(p.id, h.image.src))}" alt="${esc(capText(h.image.caption) || h.title)}"${d}></div>
         <figcaption><span class="n">${pad2(i + 1)}</span><span>${inline(capText(h.image.caption) || h.title)}</span></figcaption></figure>`;
     }).join('');
-    const rows = hl.map((h, i) => `<li data-fi="${i}"><div class="fr-t"><p class="fk">${T('en.feature')} ${pad2(i + 1)}</p><h3>${inline(h.title)}</h3>${h.what ? `<p>${inline(h.what)}</p>` : ''}</div>
+    const rows = hl.map((h, i) => `<li data-fi="${i}"${h.image?.src ? ` data-shot tabindex="0" aria-label="${esc(PF.normTitle(h.title))} — 화면 보기"${i === first ? ' class="cur"' : ''}` : ''}><div class="fr-t"><p class="fk">${T('en.feature')} ${pad2(i + 1)}</p><h3>${inline(h.title)}</h3>${h.what ? `<p>${inline(h.what)}</p>` : ''}</div>
       <div class="fr-a">${link({ href: PF.projectUrl(p.id, PF.deckSceneFor(p, h.section)), label: T('page.see-in-deck'), kind: 'page', cls: 'pill',
         attrs: `aria-label="${esc(PF.normTitle(h.title))} — ${T('page.see-in-deck')} (새 탭)"` })}</div></li>`).join('');
-    const body = `<div class="fe${shots.length ? '' : ' noshot'}" style="--shots:${shots.length}">${shots.length ? `<div class="shots">${tiles}</div>` : ''}
+    const body = `<div class="fe${shots.length ? ' stage' : ' noshot'}" style="--shots:${shots.length}">${shots.length ? `<div class="shots">${tiles}</div>` : ''}
       <div class="fe-r"><ol class="flist">${rows}</ol>
         <div class="btns end no-print">${btn(PF.projectUrl(p.id), T('page.deck-all'), 'page', 'btn primary')}${btn(PF.docUrl(p.id), T('name.doc'), 'page')}</div></div></div>`;
     return sec(`p-${p.id}-core`, `${no} · ${t('page.features')}`, p.title, PF.teamLabel(p.team), body, 'tint core');
@@ -207,6 +208,19 @@
     root.addEventListener('mouseout', (e) => pair(e.target, false));
     root.addEventListener('focusin', (e) => pair(e.target, true));
     root.addEventListener('focusout', (e) => pair(e.target, false));
+    // 기능 소개: 화면이 있는 기능을 누르면(링크 제외) 왼쪽 큰 화면을 그 기능 것으로 바꿈 — 넓은 화면에서만 보임(좁은 화면·인쇄는 모두 나열)
+    const show = (li) => {
+      const box = li.closest('.fe');
+      box.querySelectorAll('.cur').forEach((x) => x.classList.remove('cur'));
+      box.querySelectorAll(`[data-fi="${li.dataset.fi}"]`).forEach((x) => x.classList.add('cur'));
+    };
+    root.addEventListener('click', (e) => {
+      const li = e.target.closest('li[data-shot]');
+      if (li && !e.target.closest('a, button')) show(li);
+    });
+    root.addEventListener('keydown', (e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('li[data-shot]')) { e.preventDefault(); show(e.target); }
+    });
     root.querySelector('[data-pdf]')?.addEventListener('click', async (e) => {
       const b = e.currentTarget, label = b.textContent;
       b.disabled = true; b.textContent = t('ui.preparing');

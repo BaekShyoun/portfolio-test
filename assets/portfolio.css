@@ -208,6 +208,20 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
   .g-l { justify-content: flex-end; }
   .ct { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 56px; }
 }
+
+/* 기능 소개 큰 화면(넓은 화면에서만): 화면들을 한 칸에 겹쳐 두고 고른 것(.cur)만 보임 — 칸 높이는 오른쪽 기능 목록에 맞춤. 좁은 화면·인쇄는 위의 나열 그대로 */
+@media screen and (min-width: 760px) {
+  .fe.stage { align-items: stretch; }
+  .fe.stage .shots { position: static; grid-template-columns: minmax(0, 1fr) !important; }
+  .fe.stage .shot { grid-area: 1 / 1; display: flex; flex-direction: column; transition: opacity .2s, box-shadow .15s, border-color .15s; }
+  .fe.stage .shot:not(.cur) { opacity: 0; visibility: hidden; }
+  .fe.stage .shot-m { position: relative; flex: 1; min-height: 280px; }
+  .fe.stage .shot-m img { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); max-height: none; object-fit: contain; }
+  .fe.stage .shot figcaption { font-size: 14px; }
+  .flist li[data-shot] { cursor: pointer; }
+  .flist li.cur { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--accent); }
+  .flist li[data-shot]:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+}
 /* 좁은 화면: 머리 막대의 절 이동은 숨기고(내용은 위에서 아래로 그대로) 이름 · [PDF로 저장]만 */
 @media (max-width: 759px) {
   .top nav { display: none; }
