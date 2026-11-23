@@ -237,6 +237,13 @@ table.kv td.role { color: var(--accent-ink); font-weight: 800; }
 .dk-stack { grid-template-rows: auto auto; gap: 20px; }
 .pf-sizing .dk-stack { grid-template-rows: minmax(0, 1fr) auto; }
 .dk-text { align-content: center; }
+.dk-pair { grid-template-columns: minmax(0, var(--vw, 1fr)) minmax(0, 1.7fr); align-items: start; }   /* pair: 왼쪽 시각 자료 | 오른쪽 시각 자료 + 요점 */
+.pf-sizing .dk-pair { align-items: stretch; grid-template-rows: minmax(0, 1fr); }
+.dk-pair > .vis { align-items: flex-start; }
+.pair-r { display: flex; flex-direction: column; gap: 20px; min-width: 0; min-height: 0; }
+.pair-r > .vis { align-items: stretch; }
+.pf-sizing .pair-r > .vis { flex: 1 1 auto; }
+.pair-r > .cards { flex: none; }
 .vis { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-width: 0; min-height: 0; }
 .vis[data-arr="row"] { flex-direction: row; align-items: flex-start; }
 .vbox { margin: 0; display: flex; flex-direction: column; gap: 6px; flex: none; max-width: 100%; min-width: 0; }

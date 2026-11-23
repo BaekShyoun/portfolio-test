@@ -141,7 +141,7 @@
       {
         "key": "what",
         "chapter": "overview",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "개요",
         "title": { "text": "1.1 무엇을 만들었나", "verbatim": true },
         "lead": { "text": "동화 「토끼와 거북이」에서 영감을 얻은 경주 게임이다. 달리기만으로는 토끼를 결코 이길 수 없는 거북이가 각종 방해 수단을 활용하여 토끼를 방해한다.", "verbatim": true },

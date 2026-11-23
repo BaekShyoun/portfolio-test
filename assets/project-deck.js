@@ -207,6 +207,10 @@
       if (variant.stack || !points.length) return `<div class="dk dk-stack${tight}">${vis(vs)}${points.length ? flowHtml(points, 'row') : ''}</div>`;
       return `<div class="dk dk-side flip${tight}" style="--vw:${variant.vw}fr">${vis(vs)}${flowHtml(points, 'col')}</div>`;
     }
+    // pair: 첫 시각 자료는 왼쪽 칸, 나머지 시각 자료와 요점은 오른쪽 칸에 위아래로(세로로 긴 다이어그램 + 표)
+    if (sl.layout === 'pair' && vs.length >= 2) {
+      return `<div class="dk dk-pair${tight}" style="--vw:${variant.vw || 1}fr">${vis([vs[0]])}<div class="pair-r">${vis(vs.slice(1))}${ncards(points, { num: true })}</div></div>`;
+    }
     // 요점이 없으면(나눈 장면 등) 옆 칸이 비지 않게 시각 자료를 가로 전체로
     if (sl.layout === 'full' || variant.stack || !points.length) return `<div class="dk dk-stack${tight}">${vis(vs)}${ncards(points, { row: true, num: sl.layout !== 'full' })}</div>`;
     return `<div class="dk dk-side${tight}" style="--vw:${variant.vw}fr">${vis(vs)}${ncards(points, { num: true })}</div>`;
@@ -256,6 +260,7 @@
   function fitSlide(sl, vis, sid, part, codeChunk, meta, tsplit = null, depth = 0) {
     const vs = vis.map((v) => vboxHtml(v, v.ref.kind === 'code' ? codeChunk(v) : v.ref.kind === 'table' && tsplit && tsplit.v === v ? tsplit.rows : null));
     const V = sl.layout === 'full' || sl.layout === 'screens' ? [{}, { tight: true }]
+      : sl.layout === 'pair' && vis.length >= 2 ? [{ vw: 0.55 }, { vw: 0.7 }, { vw: 0.9 }, { vw: 1.2 }, { vw: 0.7, tight: true }]
       : [{ vw: 1.4 }, { vw: 1.7 }, { vw: 1.15 }, { vw: 1.4, tight: true }, { stack: true }, { stack: true, tight: true }];
     const build = (v) => {
       const s = PF.scene({ id: sid, tpl: 'D', eyebrow: meta.chapter, rlabel: meta.rlabel, title: txt(sl.title) || meta.chapter, sub: part, lead: part && part !== `1/${part.split('/')[1]}` ? '' : txt(sl.lead), foot: meta.foot, sec: meta.chapter, group: meta.chapter, stitle: txt(sl.title) });
