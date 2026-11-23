@@ -179,8 +179,7 @@
         "lead": { "text": "튜토리얼은 조작법을 안내하는 동시에, 거북이가 방해공작을 사용하게 되기까지의 스토리를 보여 주도록 구성했다.", "verbatim": true },
         "sectionPath": ["2. 기획을 플레이 규칙으로 구체화하기", "2.1 네 가지 경주로 보여주는 규칙의 변화"],
         "points": [
-          { "label": "", "text": "Tutorial A는 져도 이야기가 이어져야 하는 스테이지이다.", "verbatim": true },
-          { "label": "구현", "text": "따라서 `RaceManager`에서 Tutorial A에 한해 토끼가 승리해도 튜토리얼을 완료한 것으로 처리하고 다음 이야기로 진행하도록 했다.", "verbatim": true }
+          { "label": "구현", "text": "Tutorial A는 져도 이야기가 이어져야 하는 스테이지이다. 따라서 `RaceManager`에서 Tutorial A에 한해 토끼가 승리해도 튜토리얼을 완료한 것으로 처리하고 다음 이야기로 진행하도록 했다.", "verbatim": true }
         ],
         "visuals": [
           { "kind": "table", "n": 1, "fp": "구간|경주 규칙|전달하려는 경험" }

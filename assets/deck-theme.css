@@ -240,7 +240,8 @@ table.kv td.role { color: var(--accent-ink); font-weight: 800; }
 .dk-pair { grid-template-columns: minmax(0, var(--vw, 1fr)) minmax(0, 1.7fr); align-items: start; }   /* pair: 왼쪽 시각 자료 | 오른쪽 시각 자료 + 요점 */
 .pf-sizing .dk-pair { align-items: stretch; grid-template-rows: minmax(0, 1fr); }
 .dk-pair > .vis { align-items: flex-start; }
-.pair-r { display: flex; flex-direction: column; gap: 20px; min-width: 0; min-height: 0; }
+.pair-r { display: flex; flex-direction: column; gap: 20px; min-width: 0; min-height: 0; align-self: center; }   /* 오른쪽 묶음(표 + 요점)은 왼쪽 시각 자료 높이의 가운데로 */
+.pf-sizing .pair-r { align-self: stretch; }
 .pair-r > .vis { align-items: stretch; }
 .pf-sizing .pair-r > .vis { flex: 1 1 auto; }
 .pair-r > .cards { flex: none; }
