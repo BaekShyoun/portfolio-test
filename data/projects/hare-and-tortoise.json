@@ -59,7 +59,12 @@
       "how": "`RaceManager`가 씬의 스테이지 종류(`StageType`) 하나를 보고 `CheckStage()` 한 곳에서 수면·공격·준비 단계 스위치 세 개를 한꺼번에 정한다.",
       "why": "AI가 처음 제안한 기능별 스위치는 튜토리얼마다 조합이 이미 정해져 있는데도 씬마다 손으로 맞추다 하나만 틀려도 규칙이 어긋나므로, 종류 하나만 고르게 해 조합이 틀릴 일이 없게 했다.",
       "section": "5.2 튜토리얼 규칙을 스테이지 유형으로 관리",
-      "image": null
+      "image": {
+        "src": "images/StageType.png",
+        "w": 1086,
+        "h": 1448,
+        "caption": "StageType과 CheckStage() — 종류 하나로 정해지는 세 규칙"
+      }
     },
     {
       "title": "흑화 — 반전 연출",
@@ -387,7 +392,7 @@
       {
         "key": "stage-type",
         "chapter": "tradeoffs",
-        "layout": "code",
+        "layout": "visual",
         "tab": "구현",
         "title": { "text": "5.2 튜토리얼 규칙을 스테이지 유형으로 관리", "verbatim": true },
         "lead": { "text": "현재 `RaceManager`는 스테이지 유형에 따라 수면·공격·준비 단계의 사용 여부를 결정한다.", "verbatim": false },
@@ -397,7 +402,7 @@
           { "label": "", "text": "그러나 각 튜토리얼은 사용할 규칙의 조합이 이미 정해져 있었다.", "verbatim": true }
         ],
         "visuals": [
-          { "kind": "code", "n": 1, "lines": [3, 20], "fp": "private void CheckStage()" }
+          { "kind": "image", "src": "images/StageType.png", "w": 1086, "h": 1448, "caption": { "text": "StageType과 CheckStage() — 종류 하나로 정해지는 세 규칙", "verbatim": true } }
         ]
       },
       {
