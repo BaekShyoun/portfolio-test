@@ -141,30 +141,17 @@
       {
         "key": "what",
         "chapter": "overview",
-        "layout": "overview",
+        "layout": "visual",
         "tab": "개요",
         "title": { "text": "1.1 무엇을 만들었나", "verbatim": true },
         "lead": { "text": "동화 「토끼와 거북이」에서 영감을 얻은 경주 게임이다. 달리기만으로는 토끼를 결코 이길 수 없는 거북이가 각종 방해 수단을 활용하여 토끼를 방해한다.", "verbatim": true },
         "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
-        "points": [],
-        "visuals": [
-          { "kind": "table", "n": 1, "fp": "구분|내용" }
-        ]
-      },
-      {
-        "key": "core-loop",
-        "chapter": "overview",
-        "layout": "visual",
-        "tab": "흐름",
-        "title": { "text": "1.1 무엇을 만들었나", "verbatim": true },
-        "lead": null,
-        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
         "points": [
-          { "label": "", "text": "경주 전에는 지뢰를 설치하고, 경주 중에는 수류탄을 투척한다.", "verbatim": true },
-          { "label": "", "text": "그렇게 폭발에 우스꽝스럽게 날아간 토끼가 정신을 차리고 코스로 복귀하는 동안 거북이가 따라잡는 것이 핵심이다.", "verbatim": true }
+          { "label": "", "text": "경주 전에는 지뢰를 설치하고, 경주 중에는 수류탄을 투척한다. 그렇게 폭발에 우스꽝스럽게 날아간 토끼가 정신을 차리고 코스로 복귀하는 동안 거북이가 따라잡는 것이 핵심이다.", "verbatim": true }
         ],
         "visuals": [
-          { "kind": "mermaid", "n": 1, "fp": "flowchart TD" }
+          { "kind": "mermaid", "n": 1, "fp": "flowchart TD" },
+          { "kind": "table", "n": 1, "fp": "구분|내용" }
         ]
       },
       {
