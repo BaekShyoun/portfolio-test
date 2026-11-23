@@ -34,10 +34,10 @@
       "why": "방해공작은 토끼가 나아갈 수 없게 시간을 벌 뿐이라 사용 시점과 위치가 중요하므로, 같은 폭발 지연이라도 판단이 필요한 시점이 다르도록 두 도구를 나눴다.",
       "section": "2.2 준비와 실행을 나눈 방해공작",
       "image": {
-        "src": "images/prep_landmine.jpg",
-        "w": 1920,
-        "h": 1080,
-        "caption": "준비 단계 — 위에서 본 코스에 지뢰 배치, 우측 상단 보유 장비와 준비 시간"
+        "src": "images/prep_landmine.gif",
+        "w": 640,
+        "h": 360,
+        "caption": "준비 단계 — 카메라를 옮겨 가며 코스에 지뢰 배치, 우측 상단 보유 장비와 준비 시간"
       }
     },
     {
@@ -47,10 +47,10 @@
       "why": "폭발 중심과 토끼의 수평 위치가 거의 겹치면 방향을 결정할 수 없으므로, 토끼의 뒤쪽을 보조 방향으로 사용한다.",
       "section": "3.3 폭발 위치에서 토끼를 날리는 방향",
       "image": {
-        "src": "images/ragdoll.jpg",
-        "w": 1920,
-        "h": 1080,
-        "caption": "폭발에 휘말려 래그돌로 날아가는 토끼 (Stage 1 원형 코스)"
+        "src": "images/ragdoll_fly.gif",
+        "w": 640,
+        "h": 360,
+        "caption": "수류탄 폭발에 휘말려 래그돌로 날아가는 토끼"
       }
     },
     {
@@ -73,10 +73,10 @@
       "why": "거북이의 변화를 대사로만 전달하지 않고, 동화 같던 분위기가 갑자기 뒤집히는 괴리감과 웃음을 그림뿐 아니라 소리로도 느껴지게 하려 했다.",
       "section": "2.3 흑화 — 반전 연출",
       "image": {
-        "src": "images/title_before.jpg",
-        "w": 1920,
-        "h": 1080,
-        "caption": "흑화 전 타이틀 — Tutorial C 이후 1.1의 흑화 후 타이틀로 바뀜"
+        "src": "images/title_flip.gif",
+        "w": 800,
+        "h": 450,
+        "caption": "흑화 전 ↔ 흑화 후 타이틀 — Tutorial C 이후 바뀜"
       }
     }
   ],
@@ -101,10 +101,10 @@
     }
   ],
   "screenshots": [
-    { "src": "images/prep_landmine.jpg", "w": 1920, "h": 1080, "caption": "준비 단계 — 위에서 본 코스에 지뢰 배치, 우측 상단 보유 장비와 준비 시간" },
+    { "src": "images/prep_landmine.gif", "w": 640, "h": 360, "caption": "준비 단계 — 카메라를 옮겨 가며 코스에 지뢰 배치, 우측 상단 보유 장비와 준비 시간" },
     { "src": "images/grenade_aim.jpg", "w": 1920, "h": 1080, "caption": "경주 중 수류탄 조준 — 포물선과 착지 지점 표시" },
-    { "src": "images/ragdoll.jpg", "w": 1920, "h": 1080, "caption": "폭발에 휘말려 래그돌로 날아가는 토끼 (Stage 1 원형 코스)" },
-    { "src": "images/title_before.jpg", "w": 1920, "h": 1080, "caption": "흑화 전 타이틀 — Tutorial C 이후 1.1의 흑화 후 타이틀로 바뀜" },
+    { "src": "images/ragdoll_fly.gif", "w": 640, "h": 360, "caption": "수류탄 폭발에 휘말려 래그돌로 날아가는 토끼" },
+    { "src": "images/title_flip.gif", "w": 800, "h": 450, "caption": "흑화 전 ↔ 흑화 후 타이틀 — Tutorial C 이후 바뀜" },
     { "src": "images/story.jpg", "w": 1920, "h": 1080, "caption": "스토리 — 동물에서 의인화 캐릭터로 바뀐 거북이와 토끼, 화자 이름과 대사창" },
     { "src": "images/race_inout.png", "w": 550, "h": 440, "caption": "원형 코스(위에서 본 씬 뷰) — 안쪽 시안색이 Inline 경유점, 바깥쪽 자홍색이 Outline 경유점. 화살표는 반시계 방향으로 달리는 방향" }
   ],
@@ -211,7 +211,7 @@
           { "label": "수류탄", "text": "현재 거리와 토끼의 위치를 보고 조준·투척", "verbatim": true }
         ],
         "visuals": [
-          { "kind": "image", "src": "images/prep_landmine.jpg", "w": 1920, "h": 1080, "caption": { "text": "준비 단계 — 위에서 본 코스에 지뢰 배치, 우측 상단 보유 장비와 준비 시간", "verbatim": true } },
+          { "kind": "image", "src": "images/prep_landmine.gif", "w": 640, "h": 360, "caption": { "text": "준비 단계 — 카메라를 옮겨 가며 코스에 지뢰 배치, 우측 상단 보유 장비와 준비 시간", "verbatim": true } },
           { "kind": "image", "src": "images/grenade_aim.jpg", "w": 1920, "h": 1080, "caption": { "text": "경주 중 수류탄 조준 — 포물선과 착지 지점 표시", "verbatim": true } }
         ]
       },
@@ -229,7 +229,7 @@
           { "label": "", "text": "흑화 여부는 저장되므로 게임을 다시 실행해도 바뀐 타이틀이 유지된다.", "verbatim": false }
         ],
         "visuals": [
-          { "kind": "image", "src": "images/title_before.jpg", "w": 1920, "h": 1080, "caption": { "text": "흑화 전 타이틀 — Tutorial C 이후 1.1의 흑화 후 타이틀로 바뀜", "verbatim": true } },
+          { "kind": "image", "src": "images/title_flip.gif", "w": 800, "h": 450, "caption": { "text": "흑화 전 ↔ 흑화 후 타이틀 — Tutorial C 이후 바뀜", "verbatim": true } },
           { "kind": "image", "src": "images/story.jpg", "w": 1920, "h": 1080, "caption": { "text": "스토리 — 동물에서 의인화 캐릭터로 바뀐 거북이와 토끼, 화자 이름과 대사창", "verbatim": true } }
         ]
       },
@@ -294,7 +294,7 @@
         ],
         "visuals": [
           { "kind": "code", "n": 1, "fp": "Vector3 direction = transform.position - explosionPosition;" },
-          { "kind": "image", "src": "images/ragdoll.jpg", "w": 1920, "h": 1080, "caption": { "text": "폭발에 휘말려 래그돌로 날아가는 토끼 (Stage 1 원형 코스)", "verbatim": true } }
+          { "kind": "image", "src": "images/ragdoll_fly.gif", "w": 640, "h": 360, "caption": { "text": "수류탄 폭발에 휘말려 래그돌로 날아가는 토끼", "verbatim": true } }
         ]
       },
       {
