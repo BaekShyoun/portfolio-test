@@ -384,7 +384,7 @@
       body(s).innerHTML = `<div class="toprow"><span class="pf-eyebrow">${esc(eyebrow)}</span><span class="rl">${esc(PF.teamLabel(p.team))}</span></div><div class="pi-main">${left}${right}</div>`;
       return s;
     };
-    for (const tight of [false, true]) for (const linksLeft of variant === 'nocover' ? [false] : [false, true]) { const s = make(tight, linksLeft); if (fitsM(s)) return s; }
+    for (const tight of [false, true]) for (const linksLeft of variant === 'nocover' ? [false] : [true, false]) { const s = make(tight, linksLeft); if (fitsM(s)) return s; }
     return shrinkOrClip(make(true, true), window.PFScene.refUrl(id), stats);
   }
 
