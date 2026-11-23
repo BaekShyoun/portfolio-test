@@ -33,7 +33,7 @@ AI가 Unity 에디터까지 다루게 하더라도 결과는 플레이로 검증
 - C#
   - hare-and-tortoise: 스테이지 종류(enum)만 고르면 스테이지 규칙(수면·공격·준비)이 switch문 한 곳에서 정해지도록 관리
   - going-to-market: enum 키 `Dictionary`로 사운드를 관리해, 팀원이 `ItemPickUp` 같은 상황 이름을 자동 완성으로 골라 부르도록 구성
-  - Observed: 턴이 넘어갈 때의 처리(시간·질병·부패·맹수·게이지)를 메서드 하나(`FlowTime`)에 모아, 턴마다 할 일을 한눈에 보고 수정할 수 있도록 구성
+  - Observed: 턴 경과 처리(시간·질병·부패·맹수·게이지)를 `FlowTime` 하나에 모아, 한눈에 보고 수정할 수 있게 구성
 - AI 협업 개발
   - hare-and-tortoise: 전체 클래스 구조는 직접 설계하고, 래그돌·넉백 같은 물리 표현과 반복 작업은 AI에 나눠 맡김
   - going-to-market: 바닥·벽 깔기는 AI가 만든 도구(`RoomBuilder`)에 맡기고, 공간 배치와 동선 설계에 시간을 씀
