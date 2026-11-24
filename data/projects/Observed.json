@@ -321,7 +321,7 @@
       {
         "key": "class-diagram",
         "chapter": "structure",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "구조",
         "title": {"text": "2.1 클래스 관계", "verbatim": true},
         "lead": null,
@@ -333,7 +333,11 @@
             "verbatim": true
           }
         ],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "classDiagram"}]
+        "visuals": [
+          {"kind": "mermaid", "n": 1, "fp": "classDiagram"},
+          {"kind": "code", "n": 1, "fp": "public abstract class ObjectInteraction : MonoBehaviour", "lines": [1, 17]}
+        ],
+        "edited": true
       },
       {
         "key": "class-roles",
@@ -1028,6 +1032,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "1eee72be7baaaff7"
+    "applied": "b39862f34783f9a0"
   }
 }

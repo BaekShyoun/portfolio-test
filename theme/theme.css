@@ -73,3 +73,7 @@
 #d-concept .pair-r { align-self: stretch !important; justify-content: flex-start; }
 #d-concept .ncard > .num { display: none !important; }
 #d-concept .ncard { grid-template-columns: minmax(0, 1fr) !important; }
+
+/* Observed 슬라이드 「2.1 클래스 관계」(#d-class-diagram): 왼쪽 다이어그램, 오른쪽 위 ObjectInteraction 코드, 오른쪽 맨 아래 카드 */
+#d-class-diagram .pair-r { align-self: stretch !important; justify-content: space-between; }
+#d-class-diagram .vbox[data-kind="code"] > .cap { display: none !important; }
