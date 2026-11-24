@@ -119,7 +119,10 @@
       "lead": {"text": "개발을 시작하기 전에 한 장짜리 컨셉 기획서를 먼저 썼다.", "verbatim": true},
       "sectionPath": ["1. 개요", "1.3 처음 컨셉에서 출발한 것"],
       "points": [],
-      "visuals": [{"kind": "table", "n": 1, "fp": "항목|처음 컨셉"}]
+      "visuals": [
+        {"kind": "table", "n": 1, "fp": "항목|처음 컨셉"},
+        {"kind": "image", "src": "images/Observed_Concept_Plan.png", "w": 1025, "h": 534, "caption": {"text": "Observed 초기 기획서", "verbatim": true}}
+      ]
     },
     {
       "key": "concept",
