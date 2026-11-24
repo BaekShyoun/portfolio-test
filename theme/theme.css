@@ -109,3 +109,8 @@
 #d-rotting-items .cards { gap: 110px !important; }
 #d-rotting-items .ncard { position: relative; }
 #d-rotting-items .ncard:first-child::after { content: "↓"; position: absolute; left: 50%; bottom: -78px; transform: translateX(-50%); font-size: 30px; font-weight: 700; line-height: 1; color: var(--accent-ink); }
+
+/* Observed 슬라이드 「4.4 수면권」(#d-sleep-ticket): 오른쪽 카드 2개(기능 ↓ 경험)를 위아래로 벌리고 사이에 아래 화살표 — 22장과 같은 짜임 */
+#d-sleep-ticket .cards { gap: 110px !important; }
+#d-sleep-ticket .ncard { position: relative; }
+#d-sleep-ticket .ncard:first-child::after { content: "↓"; position: absolute; left: 50%; bottom: -78px; transform: translateX(-50%); font-size: 30px; font-weight: 700; line-height: 1; color: var(--accent-ink); }

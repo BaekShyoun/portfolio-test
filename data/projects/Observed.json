@@ -508,20 +508,26 @@
       {
         "key": "sleep-ticket",
         "chapter": "penalty",
-        "layout": "overview",
+        "layout": "visual",
         "tab": "선택",
         "title": {"text": "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기", "verbatim": true},
-        "lead": null,
+        "lead": {"text": "수면권은 교환(200pt)으로만 얻을 수 있으므로, 플레이어에게 포인트 자원을 수면권에도 쓸지 말지 선택권을 부여하고자 했다.", "verbatim": true},
         "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기"],
         "points": [
           {"label": "기능", "text": "수면권을 사용하면 더 질 좋은 수면(에너지 +40, 일반 수면은 +20)을 취할 수 있다.", "verbatim": true},
+          {"label": "경험", "text": "포인트를 어디에 쓸지가 생존 전략이 된다.", "verbatim": true}
+        ],
+        "visuals": [
           {
-            "label": "이유",
-            "text": "수면권은 교환(200pt)으로만 얻을 수 있으므로, 플레이어에게 포인트 자원을 수면권에도 쓸지 말지 선택권을 부여하고자 했다.",
-            "verbatim": true
+            "kind": "image",
+            "src": "images/Sleep.gif",
+            "w": 640,
+            "h": 352,
+            "caption": {"text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로", "verbatim": true},
+            "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]
           }
         ],
-        "visuals": []
+        "edited": true
       },
       {
         "key": "plan-difficulty",
@@ -1010,6 +1016,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "7100abdcc38ceed9"
+    "applied": "b6458999edcb4f3f"
   }
 }
