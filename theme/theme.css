@@ -48,3 +48,8 @@
 #d-plan-difficulty .vbox { gap: 3px !important; }
 #d-plan-difficulty table.md-table th, #d-plan-difficulty table.md-table td { padding-top: 5px !important; padding-bottom: 5px !important; }
 #d-plan-difficulty .vbox > .cap { order: -1; text-align: left !important; }
+
+/* Observed 슬라이드 「턴 진행을 어디서 처리할까」(#d-choice-turn): FlowTime 코드(§3.2 일부)를 표 위에 두고 위아래로 쌓음 */
+#d-choice-turn .vis { flex-direction: column !important; align-items: stretch !important; justify-content: flex-start !important; gap: 16px !important; }
+#d-choice-turn .vbox { width: auto !important; }
+#d-choice-turn .vbox .fit-in { zoom: 1 !important; width: auto !important; }

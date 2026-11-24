@@ -11,9 +11,24 @@
       "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
       "points": [],
       "visuals": [
-        {"kind": "table", "n": 1, "fp": "항목|상세 기획|실제 구현|바꾼 이유", "caption": {"text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게", "verbatim": true}},
-        {"kind": "table", "n": 2, "fp": "항목|상세 기획|실제 구현|바꾼 이유", "caption": {"text": "② 현실감 — 4.2·4.3과 같은 원칙", "verbatim": true}},
-        {"kind": "table", "n": 3, "fp": "항목|상세 기획|실제 구현|바꾼 이유", "caption": {"text": "③ 선택지 — 싼 것에는 대가가 따르게", "verbatim": true}}
+        {
+          "kind": "table",
+          "n": 1,
+          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
+          "caption": {"text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게", "verbatim": true}
+        },
+        {
+          "kind": "table",
+          "n": 2,
+          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
+          "caption": {"text": "② 현실감 — 4.2·4.3과 같은 원칙", "verbatim": true}
+        },
+        {
+          "kind": "table",
+          "n": 3,
+          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
+          "caption": {"text": "③ 선택지 — 싼 것에는 대가가 따르게", "verbatim": true}
+        }
       ],
       "from": {
         "key": "plan-difficulty",
@@ -21,6 +36,25 @@
         "sig": ["4.5 기획과 구현의 비교|table|1|항목|상세 기획|실제 구현|바꾼 이유"]
       },
       "group": "merge-plan-difficulty"
+    },
+    {
+      "key": "choice-turn",
+      "chapter": "penalty",
+      "layout": "full",
+      "tab": "선택",
+      "title": {"text": "턴 진행을 어디서 처리할까", "verbatim": true},
+      "lead": {"text": "처음부터 A로 설계했다(이유 → 3.2).", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
+      "points": [],
+      "visuals": [
+        {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)", "lines": [8, 19], "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]},
+        {"kind": "table", "n": 1, "fp": "방법|장점|단점"}
+      ],
+      "from": {
+        "key": "choice-turn",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
+        "sig": ["4.6 구현 방법의 선택|table|1|방법|장점|단점"]
+      }
     }
   ],
   "hide": [
