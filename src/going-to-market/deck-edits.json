@@ -19,6 +19,30 @@
         "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
         "sig": ["3.1 작업 관리 규칙|mermaid|1|flowchart TD"]
       }
+    },
+    {
+      "key": "selection",
+      "chapter": "planning",
+      "layout": "visual",
+      "tab": "흐름",
+      "title": {"text": "2.1 기획안 10개 중에서 고르기", "verbatim": true},
+      "lead": {"text": "팀 과제의 주제는 방 코드를 입력해 4명이 함께하는 멀티플레이 게임이었다.", "verbatim": true},
+      "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 기획안 10개 중에서 고르기"],
+      "points": [
+        {"label": "", "text": "다른 팀원들이 낸 기획안 5개는 모두 기존 게임 하나를 따라 만드는 모작이었다.", "verbatim": true},
+        {"label": "", "text": "그래서 나라도 창작 기획을 내야겠다고 생각했고, 브레인스토밍으로 떠오르는 아이디어를 던지다 보니 창작 기획 5개를 내게 되었다.", "verbatim": true},
+        {
+          "label": "",
+          "text": "득표는 다른 후보보다 많지 않았지만, 담당 강사는 \"지금까지 본 적 없는 유형의 기획\"이라는 이유로 시장에 가면을 골랐다.",
+          "verbatim": true
+        }
+      ],
+      "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}, {"kind": "table", "n": 1, "fp": "후보|종류|득표"}],
+      "from": {
+        "key": "selection",
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 기획안 10개 중에서 고르기"],
+        "sig": ["2.1 기획안 10개 중에서 고르기|mermaid|1|flowchart TD", "2.1 기획안 10개 중에서 고르기|table|1|후보|종류|득표"]
+      }
     }
   ],
   "hide": []
