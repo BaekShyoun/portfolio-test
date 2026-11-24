@@ -282,7 +282,7 @@
       {
         "key": "concept",
         "chapter": "intro",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "개요",
         "title": {"text": "1.3 처음 컨셉에서 출발한 것", "verbatim": true},
         "lead": null,
@@ -295,6 +295,14 @@
             "w": 1167,
             "h": 920,
             "caption": {"text": "처음 화면 배치 스케치 — 왼쪽 위 맹수 우리와 상태 확인 단말기, 오른쪽 침대, 아래쪽 오락기와 교환 자판기, 오른쪽 아래 상태창", "verbatim": true}
+          },
+          {
+            "kind": "image",
+            "src": "images/MainGame.jpg",
+            "w": 2278,
+            "h": 1303,
+            "caption": {"text": "메인 게임 — 맹수 우리·관찰 단말기·침대·게임기·교환 자판기가 있는 방", "verbatim": true},
+            "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"]
           }
         ],
         "edited": true
@@ -1020,6 +1028,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "2d9e1f20a2ba4fba"
+    "applied": "1eee72be7baaaff7"
   }
 }
