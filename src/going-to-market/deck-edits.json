@@ -23,7 +23,7 @@
     {
       "key": "selection",
       "chapter": "planning",
-      "layout": "visual",
+      "layout": "pair",
       "tab": "흐름",
       "title": {"text": "2.1 기획안 10개 중에서 고르기", "verbatim": true},
       "lead": {"text": "팀 과제의 주제는 방 코드를 입력해 4명이 함께하는 멀티플레이 게임이었다.", "verbatim": true},
