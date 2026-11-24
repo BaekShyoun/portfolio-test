@@ -378,8 +378,8 @@
           {"label": "", "text": "탈출 욕구가 100에 도달하면 맹수가 탈출한다.", "verbatim": true},
           {
             "label": "",
-            "text": "이렇게 턴을 넘길수록 맹수의 탈출 욕구와 게이지 부담이 함께 커지므로, 행동 하나하나가 남은 여유를 깎는다는 긴장감을 준다(목표한 경험 → 1.2).",
-            "verbatim": true
+            "text": "턴을 넘길수록 맹수의 탈출 욕구와 게이지 부담이 함께 커지므로, 행동 하나하나가 남은 여유를 깎는다는 긴장감을 준다(목표한 경험 → 1.2).",
+            "verbatim": false
           }
         ],
         "visuals": [
@@ -390,12 +390,13 @@
             "h": 1364,
             "caption": {"text": "상태창 — 날짜·시간, 포만감·수분·에너지 게이지, 질병 중첩 수", "verbatim": true}
           }
-        ]
+        ],
+        "edited": true
       },
       {
         "key": "flowtime",
         "chapter": "turn-flow",
-        "layout": "code",
+        "layout": "pair",
         "tab": "구현",
         "title": {"text": "3.2 턴 경과를 한 메서드로 처리하기", "verbatim": true},
         "lead": {"text": "턴이 넘어갈 때마다 `FlowTime`이 시간·질병·교환 아이템·부패·맹수·게이지를 한 번에 갱신한다.", "verbatim": true},
@@ -408,24 +409,8 @@
           },
           {"label": "이유", "text": "따라서 턴마다 수행해야 하는 처리(부패, 맹수, 교환기 재고 등)가 추가되더라도 이 메서드 한 곳만 수정하면 된다.", "verbatim": true}
         ],
-        "visuals": [{"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)"}]
-      },
-      {
-        "key": "flowtime-sleep",
-        "chapter": "turn-flow",
-        "layout": "visual",
-        "tab": "화면",
-        "title": {"text": "3.2 턴 경과를 한 메서드로 처리하기", "verbatim": true},
-        "lead": null,
-        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
-        "points": [
-          {
-            "label": "",
-            "text": "미니게임(`FlowTime(1)`), 수면(`FlowTime(2)`), 블랙아웃(`FlowTime(2)`)은 모두 넘길 턴 수만 인자로 전달하여 같은 메서드를 호출한다.",
-            "verbatim": true
-          }
-        ],
         "visuals": [
+          {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)"},
           {
             "kind": "image",
             "src": "images/Sleep.gif",
@@ -433,7 +418,8 @@
             "h": 352,
             "caption": {"text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로", "verbatim": true}
           }
-        ]
+        ],
+        "edited": true
       },
       {
         "key": "flowtime-seq",
@@ -1032,6 +1018,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "b39862f34783f9a0"
+    "applied": "e6981e2176828bf4"
   }
 }

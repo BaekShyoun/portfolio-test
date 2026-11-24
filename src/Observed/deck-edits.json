@@ -174,8 +174,80 @@
           "verbatim": true
         }
       ],
-      "visuals": [{"kind": "mermaid", "n": 1, "fp": "classDiagram"}, {"kind": "code", "n": 1, "fp": "public abstract class ObjectInteraction : MonoBehaviour", "lines": [1, 17]}],
+      "visuals": [
+        {"kind": "mermaid", "n": 1, "fp": "classDiagram"},
+        {"kind": "code", "n": 1, "fp": "public abstract class ObjectInteraction : MonoBehaviour", "lines": [1, 17]}
+      ],
       "from": {"key": "class-diagram", "sectionPath": ["2. 시스템 구조", "2.1 클래스 관계"], "sig": ["2.1 클래스 관계|mermaid|1|classDiagram"]}
+    },
+    {
+      "key": "flowtime",
+      "chapter": "turn-flow",
+      "layout": "pair",
+      "tab": "구현",
+      "title": {"text": "3.2 턴 경과를 한 메서드로 처리하기", "verbatim": true},
+      "lead": {"text": "턴이 넘어갈 때마다 `FlowTime`이 시간·질병·교환 아이템·부패·맹수·게이지를 한 번에 갱신한다.", "verbatim": true},
+      "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+      "points": [
+        {
+          "label": "구현",
+          "text": "미니게임(`FlowTime(1)`), 수면(`FlowTime(2)`), 블랙아웃(`FlowTime(2)`)은 모두 넘길 턴 수만 인자로 전달하여 같은 메서드를 호출한다.",
+          "verbatim": true
+        },
+        {"label": "이유", "text": "따라서 턴마다 수행해야 하는 처리(부패, 맹수, 교환기 재고 등)가 추가되더라도 이 메서드 한 곳만 수정하면 된다.", "verbatim": true}
+      ],
+      "visuals": [
+        {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)"},
+        {
+          "kind": "image",
+          "src": "images/Sleep.gif",
+          "w": 640,
+          "h": 352,
+          "caption": {"text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "flowtime",
+        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|code|1|public void FlowTime(int skipTime)"]
+      },
+      "group": "merge-flowtime"
+    },
+    {
+      "key": "turn-gage",
+      "chapter": "turn-flow",
+      "layout": "visual",
+      "tab": "흐름",
+      "title": {"text": "3.1 행동마다 넘어가는 턴과 게이지 변화", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
+      "points": [
+        {
+          "label": "",
+          "text": "턴이 넘어갈 때마다 맹수의 탈출 욕구는 턴당 +20씩 증가하며, 포만감·수분이 0이면 각각 턴당 에너지가 10씩 추가로 감소한다.",
+          "verbatim": true
+        },
+        {"label": "", "text": "탈출 욕구가 100에 도달하면 맹수가 탈출한다.", "verbatim": true},
+        {
+          "label": "",
+          "text": "턴을 넘길수록 맹수의 탈출 욕구와 게이지 부담이 함께 커지므로, 행동 하나하나가 남은 여유를 깎는다는 긴장감을 준다(목표한 경험 → 1.2).",
+          "verbatim": false
+        }
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/Gage.jpg",
+          "w": 2559,
+          "h": 1364,
+          "caption": {"text": "상태창 — 날짜·시간, 포만감·수분·에너지 게이지, 질병 중첩 수", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "turn-gage",
+        "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
+        "sig": ["3.1 행동마다 넘어가는 턴과 게이지 변화|image|images/Gage.jpg|1"]
+      }
     }
   ],
   "hide": [
@@ -196,6 +268,15 @@
         "sig": ["4.5 기획과 구현의 비교|table|3|항목|상세 기획|실제 구현|바꾼 이유"]
       },
       "group": "merge-plan-difficulty"
+    },
+    {
+      "key": "flowtime-sleep",
+      "from": {
+        "key": "flowtime-sleep",
+        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|image|images/Sleep.gif|1"]
+      },
+      "group": "merge-flowtime"
     }
   ]
 }

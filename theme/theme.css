@@ -77,3 +77,11 @@
 /* Observed 슬라이드 「2.1 클래스 관계」(#d-class-diagram): 왼쪽 다이어그램, 오른쪽 위 ObjectInteraction 코드, 오른쪽 맨 아래 카드 */
 #d-class-diagram .pair-r { align-self: stretch !important; justify-content: space-between; }
 #d-class-diagram .vbox[data-kind="code"] > .cap { display: none !important; }
+#d-class-diagram .ncard > .num { display: none !important; }
+#d-class-diagram .ncard { grid-template-columns: minmax(0, 1fr) !important; }
+
+/* Observed 슬라이드 「3.2 턴 경과를 한 메서드로 처리하기」 코드 장면(#d-flowtime): 왼쪽 FlowTime 코드는 크게, 오른쪽 위 수면 GIF는 작게, 그 아래 카드 2개 */
+#d-flowtime .dk-pair { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) !important; }
+#d-flowtime .pair-r > .vis { flex: none !important; }
+#d-flowtime .vbox[data-kind="image"] { width: 340px !important; }
+#d-flowtime .vbox[data-kind="image"] .vmedia { width: 340px !important; height: 187px !important; }
