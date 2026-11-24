@@ -96,3 +96,11 @@
 #d-turn-guard .vbox[data-kind="code"] > .cap::after { font-size: 13px; color: var(--muted); }
 #d-turn-guard .vis > .vbox[data-kind="code"]:nth-child(2) > .cap::after { content: "게이지를 0 ~ 1 사이로 고정"; }
 #d-turn-guard .vis > .vbox[data-kind="code"]:nth-child(3) > .cap::after { content: "isBlackOut 플래그로 블랙아웃 중복 실행 막기"; }
+
+/* Observed 슬라이드 「4.2 상한 고기」(#d-rotten-meat): 오른쪽 표의 세로 중앙을 왼쪽 코드(캡션 제외) 중앙에 맞추고,
+   아래 카드 2개(기능 → 경험)는 폭을 줄여 가운데에 두고 사이에 화살표 */
+#d-rotten-meat .vis[data-arr="row"] { align-items: center !important; }
+#d-rotten-meat .vis[data-arr="row"] > .vbox[data-kind="table"] { margin-bottom: 24px; }   /* 코드 아래 캡션(18px)+간격(6px) */
+#d-rotten-meat .cards { display: flex !important; justify-content: center; gap: 120px !important; }
+#d-rotten-meat .ncard { width: 400px; flex: none; position: relative; }
+#d-rotten-meat .ncard:first-child::after { content: "→"; position: absolute; right: -78px; top: 50%; transform: translateY(-50%); font-size: 30px; font-weight: 700; line-height: 1; color: var(--accent-ink); }

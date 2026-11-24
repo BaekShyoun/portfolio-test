@@ -473,13 +473,14 @@
         "lead": {"text": "현실에서 상한 고기를 먹는다고 해서 반드시 탈이 나는 것은 아니다. 이 점을 반영하여 불확실한 패널티를 부여하고자 했다.", "verbatim": true},
         "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.2 상한 고기 — 불확실한 패널티"],
         "points": [
-          {"label": "", "text": "상한 고기·썩은 물을 섭취하면 30% 확률로 질병에 걸린다.", "verbatim": true},
-          {"label": "", "text": "플레이어는 위험을 감수하고 섭취할지, 버릴지를 고민하게 된다.", "verbatim": true}
+          {"label": "기능", "text": "상한 고기·썩은 물을 섭취하면 30% 확률로 질병에 걸린다.", "verbatim": true},
+          {"label": "경험", "text": "플레이어는 위험을 감수하고 섭취할지, 버릴지를 고민하게 된다.", "verbatim": true}
         ],
         "visuals": [
           {"kind": "code", "n": 1, "fp": "public void GotDiseaseByRotten(int percentage)"},
           {"kind": "table", "n": 1, "fp": "질병 규칙|값"}
-        ]
+        ],
+        "edited": true
       },
       {
         "key": "rotting-items",
@@ -1005,6 +1006,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "8c7c93c5ae008c4d"
+    "applied": "c6e4a3d9df660586"
   }
 }
