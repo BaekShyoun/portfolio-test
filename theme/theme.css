@@ -114,3 +114,15 @@
 #d-sleep-ticket .cards { gap: 110px !important; }
 #d-sleep-ticket .ncard { position: relative; }
 #d-sleep-ticket .ncard:first-child::after { content: "↓"; position: absolute; left: 50%; bottom: -78px; transform: translateX(-50%); font-size: 30px; font-weight: 700; line-height: 1; color: var(--accent-ink); }
+
+/* Observed 슬라이드 「상호작용 오브젝트를 어떻게 만들까」(#d-choice-interaction): 오른쪽 GIF의 세로 중앙을 왼쪽 표 중앙에 맞추고, 표 칸 글자를 세로 가운데로 */
+#d-choice-interaction .vis[data-arr="row"] { align-items: center !important; }
+#d-choice-interaction .vis[data-arr="row"] > .vbox[data-kind="table"] { margin-bottom: 24px; }   /* GIF 아래 캡션(18px)+간격(6px) */
+#d-choice-interaction table.md-table td, #d-choice-interaction table.md-table th { vertical-align: middle !important; }
+
+/* 모든 프로젝트 「결과와 회고」(#retro, 렌더러가 만드는 장면): 왼쪽 '달성' 카드와 오른쪽 표의 세로 중앙을 맞춤
+   (토끼와 거북이·시장에 가면은 표가 내려와 달성 카드 중앙에 맞음) */
+#retro .rt { align-items: center !important; }
+/* Observed만: 표는 원래 자리에 두고 '달성' 카드를 올려서 표 중앙에 맞춤 — 가운데 맞춤으로 표가 내려간 만큼(22.5px) 함께 올림.
+   Observed에만 있는 장면(#d-flowtime)이 있을 때만 적용 */
+html:has(#d-flowtime) #retro .rt { transform: translateY(-22.5px); }
