@@ -268,6 +268,26 @@
         "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
         "sig": ["3.2 턴 경과를 한 메서드로 처리하기|table|1|방어|위치|무엇을 막나"]
       }
+    },
+    {
+      "key": "blackout",
+      "chapter": "penalty",
+      "layout": "code",
+      "tab": "선택",
+      "title": {"text": "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티", "verbatim": true},
+      "lead": {"text": "반면 블랙아웃은 게이지 부족으로 쓰러져 강제로 턴이 넘어가는 상황이며, 플레이어가 게이지를 스스로 제어할 수 없도록 설계했다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
+      "points": [
+        {"label": "이유", "text": "이는 플레이어 자신의 관리 실패에 따른 패널티이다.", "verbatim": true},
+        {"label": "결과 1", "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소한다.", "verbatim": true},
+        {"label": "결과 2", "text": "쓰러져 있는 2턴 동안에 맹수의 탈출 욕구 역시 쌓이므로, 맹수의 위협도 함께 다가온다.", "verbatim": true}
+      ],
+      "visuals": [{"kind": "code", "n": 1, "fp": "public IEnumerator GetBlackOutCoroutine()"}],
+      "from": {
+        "key": "blackout",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
+        "sig": ["4.1 블랙아웃 — 관리 실패에 대한 강제 패널티|code|1|public IEnumerator GetBlackOutCoroutine()"]
+      }
     }
   ],
   "hide": [
@@ -297,6 +317,14 @@
         "sig": ["3.2 턴 경과를 한 메서드로 처리하기|image|images/Sleep.gif|1"]
       },
       "group": "merge-flowtime"
+    },
+    {
+      "key": "blackout-screen",
+      "from": {
+        "key": "blackout-screen",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
+        "sig": ["4.1 블랙아웃 — 관리 실패에 대한 강제 패널티|image|images/02-blackout.png|1"]
+      }
     }
   ]
 }

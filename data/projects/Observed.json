@@ -458,29 +458,11 @@
         "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
         "points": [
           {"label": "이유", "text": "이는 플레이어 자신의 관리 실패에 따른 패널티이다.", "verbatim": true},
-          {"label": "결과", "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소한다.", "verbatim": true},
-          {"label": "", "text": "쓰러져 있는 2턴 동안에도 맹수의 탈출 욕구는 쌓이므로, 관리를 놓치면 맹수의 위협도 함께 다가온다.", "verbatim": true}
+          {"label": "결과 1", "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소한다.", "verbatim": true},
+          {"label": "결과 2", "text": "쓰러져 있는 2턴 동안에 맹수의 탈출 욕구 역시 쌓이므로, 맹수의 위협도 함께 다가온다.", "verbatim": true}
         ],
-        "visuals": [{"kind": "code", "n": 1, "fp": "public IEnumerator GetBlackOutCoroutine()"}]
-      },
-      {
-        "key": "blackout-screen",
-        "chapter": "penalty",
-        "layout": "visual",
-        "tab": "화면",
-        "title": {"text": "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티", "verbatim": true},
-        "lead": null,
-        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
-        "points": [{"label": "", "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소한다.", "verbatim": true}],
-        "visuals": [
-          {
-            "kind": "image",
-            "src": "images/02-blackout.png",
-            "w": 2560,
-            "h": 1369,
-            "caption": {"text": "블랙아웃 — 쓰러지며 강제로 넘어가는 턴", "verbatim": true}
-          }
-        ]
+        "visuals": [{"kind": "code", "n": 1, "fp": "public IEnumerator GetBlackOutCoroutine()"}],
+        "edited": true
       },
       {
         "key": "rotten-meat",
@@ -1023,6 +1005,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "f40a41ffad1d7b30"
+    "applied": "8c7c93c5ae008c4d"
   }
 }

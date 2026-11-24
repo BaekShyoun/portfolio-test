@@ -91,3 +91,8 @@
 #d-turn-guard .vbox { width: auto !important; }
 #d-turn-guard .vbox[data-kind="table"] { grid-column: 1 / -1; }
 #d-turn-guard .vbox .fit-in { zoom: 1 !important; width: auto !important; }
+/* 코드 아래 줄 수 표시 대신, 그 코드가 보여 주려는 방어를 적음(표 "방어"·"무엇을 막나" 칸의 말) — 렌더러가 코드 캡션을 쓰지 않아 여기서 바꿈 */
+#d-turn-guard .vbox[data-kind="code"] > .cap { font-size: 0 !important; }
+#d-turn-guard .vbox[data-kind="code"] > .cap::after { font-size: 13px; color: var(--muted); }
+#d-turn-guard .vis > .vbox[data-kind="code"]:nth-child(2) > .cap::after { content: "게이지를 0 ~ 1 사이로 고정"; }
+#d-turn-guard .vis > .vbox[data-kind="code"]:nth-child(3) > .cap::after { content: "isBlackOut 플래그로 블랙아웃 중복 실행 막기"; }
