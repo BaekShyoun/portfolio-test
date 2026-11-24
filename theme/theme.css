@@ -47,3 +47,4 @@
 #d-plan-difficulty .vbox .fit-in { zoom: 1 !important; width: auto !important; }
 #d-plan-difficulty .vbox { gap: 3px !important; }
 #d-plan-difficulty table.md-table th, #d-plan-difficulty table.md-table td { padding-top: 5px !important; padding-bottom: 5px !important; }
+#d-plan-difficulty .vbox > .cap { order: -1; text-align: left !important; }
