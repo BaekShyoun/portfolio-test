@@ -40,7 +40,7 @@
   "links": {
     "github": "https://github.com/BaekShyoun/3rd-2D-Project-BaekShyoun",
     "video": "https://youtu.be/vlyz0apxZ-s",
-    "extra": []
+    "extra": [{ "label": "숏폼", "url": "https://youtube.com/shorts/94A9w1Qrlh0" }]
   },
   "intent": {
     "text": "자원을 관리하며 오래 살아남는 것, 그리고 그 과정에서 긴장감을 주는 게임을 목표로 했습니다. 또한 기괴한 장소에서 발랄한 분위기의 미니게임을 플레이하게 하여, 그 대비로 기괴함을 연출하고자 했습니다.",

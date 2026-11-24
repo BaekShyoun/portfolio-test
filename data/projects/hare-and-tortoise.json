@@ -20,7 +20,7 @@
   "links": {
     "github": "https://github.com/KooHoo-Dev/3rd_3D_1-3D-Project-BaekShyoun",
     "video": "https://youtu.be/9TG4n2-oFPk",
-    "extra": []
+    "extra": [{ "label": "숏폼", "url": "https://youtube.com/shorts/oyh4-LH40bI" }]
   },
   "intent": {
     "text": "동화 「토끼와 거북이」를 모티브로, 압도적으로 느린 거북이가 속도 대신 황당한 방해공작으로 토끼를 이기는 게임을 만들고자 했습니다. 동화 속 거북이가 수류탄과 지뢰를 쓰는 엉뚱함과, 토끼가 우스꽝스럽게 날아가는 모습으로 웃음을 주는 것이 목표였습니다.",

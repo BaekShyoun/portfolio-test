@@ -40,7 +40,7 @@
   "links": {
     "github": "https://github.com/KooHoo-Dev/3rd-TeamProject-SH",
     "video": "https://youtu.be/9w9CUTdm4PU",
-    "extra": []
+    "extra": [{ "label": "숏폼", "url": "https://youtube.com/shorts/srYqEjIuvPg" }]
   },
   "intent": {
     "text": "말 이어가기 놀이 「시장에 가면」에 라이어 게임을 결합해, 한 명에게만 다른 키워드를 주고 각자 키워드와 관련된 물건을 직접 집어 온 뒤 왜 집어 왔는지 설명 혹은 해명하게 하는 게임을 만들고자 했습니다.",
