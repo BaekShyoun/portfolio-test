@@ -121,7 +121,7 @@
       "points": [],
       "visuals": [
         {"kind": "table", "n": 1, "fp": "항목|처음 컨셉"},
-        {"kind": "image", "src": "images/Observed_Concept_Plan.png", "w": 1025, "h": 534, "caption": {"text": "Observed 초기 기획서", "verbatim": true}}
+        {"kind": "image", "src": "images/Observed_Concept_Plan.png", "w": 1025, "h": 346, "caption": {"text": "Observed 초기 기획서", "verbatim": true}}
       ]
     },
     {
