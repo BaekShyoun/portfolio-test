@@ -556,10 +556,29 @@ def apply_edits(data, edits, doc, rep):
         rep.add('권장', '빌드 결과에 고친 장면 표시(edited)가 남아 있습니다. /portfolio-build가 고친 장면을 빌드 결과로 옮겨 적은 것 같습니다(되돌리기가 원래 장면으로 돌아가지 않을 수 있음)')
         for s in base:
             s.pop('edited', None)
+    base_ch = [c for c in deck.get('chapters') or [] if not c.get('edited')]   # 빌드가 만든 장(고치기로 더한 장은 edited)
     if edits is None:
-        return base, base
-    chapters = [c.get('key') for c in deck.get('chapters') or []]
-    titles = {c.get('key'): c.get('title') or c.get('key') for c in deck.get('chapters') or []}
+        return base, base, base_ch
+    # 새 장(고치기 파일의 "chapters"): {"key", "title", "sectionPath"?, "after"?} — 빌드가 만들지 않은 장을 더함(장 표지·목차가 생김)
+    ch_list = copy.deepcopy(base_ch)
+    xs = edits.get('chapters') or []
+    if not isinstance(xs, list):
+        rep.add('필수', 'chapters는 장 배열이어야 합니다')
+        xs = []
+    for x in xs:
+        if not (isinstance(x, dict) and key_ok(x.get("key")) and isinstance(x.get('title'), str) and x['title'].strip()):
+            rep.add('필수', '새 장 %r은 {"key"(영문 소문자·숫자·-), "title"}이어야 합니다 → 반영하지 않았습니다' % (x,))
+            continue
+        if any(c.get('key') == x['key'] for c in ch_list):
+            rep.add('필수', '새 장 "%s"의 key가 이미 있는 장과 겹칩니다 → 반영하지 않았습니다' % x['key'])
+            continue
+        c = {'key': x['key'], 'title': x['title'].strip(), 'sectionPath': x.get('sectionPath') if is_path(x.get('sectionPath')) else [], 'edited': True}
+        at = next((i + 1 for i, y in enumerate(ch_list) if y.get('key') == x.get('after')), None)
+        if x.get('after') is not None and at is None:
+            rep.add('권장', '새 장 "%s"의 after "%s"가 없습니다 → 맨 끝에 둡니다' % (x['key'], x['after']))
+        ch_list.insert(at if at is not None else len(ch_list), c)
+    chapters = [c.get('key') for c in ch_list]
+    titles = {c.get('key'): c.get('title') or c.get('key') for c in ch_list}
     S = copy.deepcopy(base)
     ptitle = data.get('title') or ''
 
@@ -699,7 +718,7 @@ def apply_edits(data, edits, doc, rep):
     n0, n1 = scene_count(chapters, base, data), scene_count(chapters, S, data)
     if n1 > 30 and n1 > n0:
         rep.add('참고', '장면이 약 %d장이 됩니다(권장 15~30장, 고치기 전 약 %d장). 코드가 길면 더 늘 수 있습니다' % (n1, n0))
-    return S, base
+    return S, base, ch_list
 
 
 # ── 파일 ──
@@ -777,8 +796,10 @@ def _run_apply(pid, write, rep):
     elif edits and (edits.get('pin') or edits.get('hide')):
         rep.add('필수', '프로젝트 문서 src/%s/%s를 찾지 못해 고친 장면을 검사할 수 없습니다 → 반영하지 않았습니다(문서 이름을 바꿨다면 먼저 /portfolio-build)' % (pid, data.get('doc') or '?'))
         return
-    slides, base = apply_edits(data, edits, doc, rep)
+    slides, base, chs = apply_edits(data, edits, doc, rep)
     new_deck = dict(deck)
+    if chs or deck.get('chapters') is not None:
+        new_deck['chapters'] = chs
     if slides == base:
         new_deck['slides'] = base
         new_deck.pop('base', None)
