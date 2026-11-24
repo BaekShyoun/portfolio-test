@@ -181,48 +181,12 @@
   },
   "deck": {
     "chapters": [
-      {
-        "key": "overview",
-        "title": "개요",
-        "sectionPath": [
-          "1. 개요"
-        ]
-      },
-      {
-        "key": "planning",
-        "title": "기획 — 내 컨셉이 팀의 게임이 되기까지",
-        "sectionPath": [
-          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지"
-        ]
-      },
-      {
-        "key": "schedule",
-        "title": "일정과 진행 방식 — 팀장으로서",
-        "sectionPath": [
-          "3. 일정과 진행 방식 — 팀장으로서"
-        ]
-      },
-      {
-        "key": "features",
-        "title": "담당 기능 구현",
-        "sectionPath": [
-          "4. 담당 기능 구현"
-        ]
-      },
-      {
-        "key": "collab",
-        "title": "협업 이슈",
-        "sectionPath": [
-          "5. 협업 이슈"
-        ]
-      },
-      {
-        "key": "ai",
-        "title": "AI 결과물을 확인하고 고친 과정",
-        "sectionPath": [
-          "6. AI 결과물을 확인하고 고친 과정"
-        ]
-      }
+      {"key": "overview", "title": "개요", "sectionPath": ["1. 개요"]},
+      {"key": "planning", "title": "기획 — 내 컨셉이 팀의 게임이 되기까지", "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지"]},
+      {"key": "schedule", "title": "일정과 진행 방식 — 팀장으로서", "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서"]},
+      {"key": "features", "title": "담당 기능 구현", "sectionPath": ["4. 담당 기능 구현"]},
+      {"key": "collab", "title": "협업 이슈", "sectionPath": ["5. 협업 이슈"]},
+      {"key": "ai", "title": "AI 결과물을 확인하고 고친 과정", "sectionPath": ["6. AI 결과물을 확인하고 고친 과정"]}
     ],
     "slides": [
       {
@@ -230,60 +194,27 @@
         "chapter": "overview",
         "layout": "overview",
         "tab": "개요",
-        "title": {
-          "text": "1.1 무엇을 만들었나",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "시장에 가면은 마트에서 아이템을 선택하는 단계와 회의실에서 발언·지목·투표하는 단계가 연결되는 멀티플레이 게임이다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "1. 개요",
-          "1.1 무엇을 만들었나"
-        ],
+        "title": {"text": "1.1 무엇을 만들었나", "verbatim": true},
+        "lead": {"text": "시장에 가면은 마트에서 아이템을 선택하는 단계와 회의실에서 발언·지목·투표하는 단계가 연결되는 멀티플레이 게임이다.", "verbatim": true},
+        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
         "points": [
-          {
-            "label": "게임 목표",
-            "text": "마트에서 고른 물건과 발언을 단서로 키워드가 다른 한 명(라이어)을 찾아내기",
-            "verbatim": true
-          },
-          {
-            "label": "일반 플레이어와 라이어의 차이",
-            "text": "자신이 라이어인지 아무도 알 수 없음",
-            "verbatim": true
-          },
-          {
-            "label": "라운드 반복 규칙",
-            "text": "기본 설정은 3라운드 × 라운드당 3사이클",
-            "verbatim": true
-          }
+          {"label": "게임 목표", "text": "마트에서 고른 물건과 발언을 단서로 키워드가 다른 한 명(라이어)을 찾아내기", "verbatim": true},
+          {"label": "일반 플레이어와 라이어의 차이", "text": "자신이 라이어인지 아무도 알 수 없음", "verbatim": true},
+          {"label": "라운드 반복 규칙", "text": "기본 설정은 3라운드 × 라운드당 3사이클", "verbatim": true}
         ],
-        "visuals": [
-          {
-            "kind": "mermaid",
-            "n": 1,
-            "fp": "flowchart TD"
-          }
-        ]
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
       },
       {
         "key": "round-start",
         "chapter": "overview",
         "layout": "screens",
         "tab": "흐름",
-        "title": {
-          "text": "1.1 무엇을 만들었나",
-          "verbatim": true
-        },
+        "title": {"text": "1.1 무엇을 만들었나", "verbatim": true},
         "lead": {
           "text": "한 라운드는 장르·키워드 배정 → 마트에서 물건 고르기 → 회의실로 돌아와 발언 → 의심 가는 사람 지목 → 변론 → 투표와 결과 공개 순서로 진행된다.",
           "verbatim": true
         },
-        "sectionPath": [
-          "1. 개요",
-          "1.1 무엇을 만들었나"
-        ],
+        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
         "points": [],
         "visuals": [
           {
@@ -291,20 +222,14 @@
             "src": "images/Genre-Keyword.jpg",
             "w": 1185,
             "h": 667,
-            "caption": {
-              "text": "라운드 시작 — 회의실에서 장르·키워드 확인",
-              "verbatim": true
-            }
+            "caption": {"text": "라운드 시작 — 회의실에서 장르·키워드 확인", "verbatim": true}
           },
           {
             "kind": "image",
             "src": "images/Mart-Push.jpg",
             "w": 1189,
             "h": 665,
-            "caption": {
-              "text": "마트 — 아이템 집기·밀치기, 개인 퀘스트와 장르·키워드 표시",
-              "verbatim": true
-            }
+            "caption": {"text": "마트 — 아이템 집기·밀치기, 개인 퀘스트와 장르·키워드 표시", "verbatim": true}
           }
         ]
       },
@@ -313,18 +238,9 @@
         "chapter": "overview",
         "layout": "screens",
         "tab": "흐름",
-        "title": {
-          "text": "회의 사이클의 단계",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "회의는 카테고리 단위의 사이클로 반복하며, 사이클마다 발언 → 지목 → 변론 → 투표 → 라이어 키워드 맞추기를 진행.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "1. 개요",
-          "1.1 무엇을 만들었나"
-        ],
+        "title": {"text": "회의 사이클의 단계", "verbatim": true},
+        "lead": {"text": "회의는 카테고리 단위의 사이클로 반복하며, 사이클마다 발언 → 지목 → 변론 → 투표 → 라이어 키워드 맞추기를 진행.", "verbatim": true},
+        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
         "points": [],
         "visuals": [
           {
@@ -332,30 +248,21 @@
             "src": "images/PointAt.jpg",
             "w": 1187,
             "h": 678,
-            "caption": {
-              "text": "지목 — 라이어로 의심되는 사람을 지목하거나 Skip",
-              "verbatim": true
-            }
+            "caption": {"text": "지목 — 라이어로 의심되는 사람을 지목하거나 Skip", "verbatim": true}
           },
           {
             "kind": "image",
             "src": "images/Vote.jpg",
             "w": 1191,
             "h": 675,
-            "caption": {
-              "text": "투표 — 변론 대상에 대해 맞다·모르겠다·아니다 선택",
-              "verbatim": true
-            }
+            "caption": {"text": "투표 — 변론 대상에 대해 맞다·모르겠다·아니다 선택", "verbatim": true}
           },
           {
             "kind": "image",
             "src": "images/WasLiar.jpg",
             "w": 1189,
             "h": 668,
-            "caption": {
-              "text": "결과 — 투표 대상이 라이어로 밝혀진 장면",
-              "verbatim": true
-            }
+            "caption": {"text": "결과 — 투표 대상이 라이어로 밝혀진 장면", "verbatim": true}
           }
         ]
       },
@@ -364,83 +271,38 @@
         "chapter": "overview",
         "layout": "overview",
         "tab": "개요",
-        "title": {
-          "text": "1.2 왜 만들었나",
-          "verbatim": true
-        },
+        "title": {"text": "1.2 왜 만들었나", "verbatim": true},
         "lead": {
           "text": "이 게임은 서로 다른 키워드를 받았다는 사실조차 모른 채 마트에서 물건을 선택하게 하여, 라이어를 포함한 모든 플레이어가 불확실성을 갖도록 기획했다.",
           "verbatim": true
         },
-        "sectionPath": [
-          "1. 개요",
-          "1.2 왜 만들었나"
-        ],
+        "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
         "points": [
-          {
-            "label": "",
-            "text": "다른 플레이어의 선택을 해석하는 과정에서 자신의 판단도 의심하게 된다.",
-            "verbatim": true
-          },
-          {
-            "label": "",
-            "text": "고글은 스키장과 수영장 어느 쪽에도 어울리므로, 물건만으로는 D가 라이어인지 단정할 수 없다.",
-            "verbatim": true
-          },
-          {
-            "label": "",
-            "text": "이 변명과 해석의 과정이 기존 라이어 게임과 구별되는 이 게임의 핵심 재미이다.",
-            "verbatim": true
-          }
+          {"label": "", "text": "다른 플레이어의 선택을 해석하는 과정에서 자신의 판단도 의심하게 된다.", "verbatim": true},
+          {"label": "", "text": "고글은 스키장과 수영장 어느 쪽에도 어울리므로, 물건만으로는 D가 라이어인지 단정할 수 없다.", "verbatim": true},
+          {"label": "", "text": "이 변명과 해석의 과정이 기존 라이어 게임과 구별되는 이 게임의 핵심 재미이다.", "verbatim": true}
         ],
-        "visuals": [
-          {
-            "kind": "code",
-            "n": 1,
-            "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장"
-          }
-        ]
+        "visuals": [{"kind": "code", "n": 1, "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장"}]
       },
       {
         "key": "scope",
         "chapter": "overview",
         "layout": "full",
         "tab": "개요",
-        "title": {
-          "text": "1.3 팀 구성과 담당 범위",
-          "verbatim": true
-        },
+        "title": {"text": "1.3 팀 구성과 담당 범위", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "1. 개요",
-          "1.3 팀 구성과 담당 범위"
-        ],
+        "sectionPath": ["1. 개요", "1.3 팀 구성과 담당 범위"],
         "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 2,
-            "fp": "구분|담당 내용|팀원 작업과의 경계"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 2, "fp": "구분|담당 내용|팀원 작업과의 경계"}]
       },
       {
         "key": "selection",
         "chapter": "planning",
         "layout": "visual",
         "tab": "흐름",
-        "title": {
-          "text": "2.1 기획안 10개 중에서 고르기",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "팀 과제의 주제는 방 코드를 입력해 4명이 함께하는 멀티플레이 게임이었다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지",
-          "2.1 기획안 10개 중에서 고르기"
-        ],
+        "title": {"text": "2.1 기획안 10개 중에서 고르기", "verbatim": true},
+        "lead": {"text": "팀 과제의 주제는 방 코드를 입력해 4명이 함께하는 멀티플레이 게임이었다.", "verbatim": true},
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 기획안 10개 중에서 고르기"],
         "points": [
           {
             "label": "",
@@ -448,36 +310,16 @@
             "verbatim": true
           }
         ],
-        "visuals": [
-          {
-            "kind": "mermaid",
-            "n": 1,
-            "fp": "flowchart TD"
-          },
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "후보|종류|득표"
-          }
-        ]
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}, {"kind": "table", "n": 1, "fp": "후보|종류|득표"}]
       },
       {
         "key": "core-loop",
         "chapter": "planning",
         "layout": "visual",
         "tab": "흐름",
-        "title": {
-          "text": "2.2 컨셉 기획서 — 처음 내가 짠 것",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "후보로 낸 한 장짜리 컨셉 기획서가 처음 내가 짠 기획의 전부였다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지",
-          "2.2 컨셉 기획서 — 처음 내가 짠 것"
-        ],
+        "title": {"text": "2.2 컨셉 기획서 — 처음 내가 짠 것", "verbatim": true},
+        "lead": {"text": "후보로 낸 한 장짜리 컨셉 기획서가 처음 내가 짠 기획의 전부였다.", "verbatim": true},
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.2 컨셉 기획서 — 처음 내가 짠 것"],
         "points": [
           {
             "label": "핵심 재미",
@@ -490,68 +332,32 @@
             "verbatim": true
           }
         ],
-        "visuals": [
-          {
-            "kind": "mermaid",
-            "n": 1,
-            "fp": "flowchart TD"
-          }
-        ]
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
       },
       {
         "key": "concerns",
         "chapter": "planning",
         "layout": "full",
         "tab": "선택",
-        "title": {
-          "text": "2.3 팀 토론으로 규칙 구체화하기",
-          "verbatim": true
-        },
+        "title": {"text": "2.3 팀 토론으로 규칙 구체화하기", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지",
-          "2.3 팀 토론으로 규칙 구체화하기"
-        ],
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.3 팀 토론으로 규칙 구체화하기"],
         "points": [
-          {
-            "label": "밀치기",
-            "text": "마트에서 생길 수밖에 없는 빈 시간을 지루하지 않게 보내게 한다.",
-            "verbatim": true
-          },
-          {
-            "label": "개인 퀘스트",
-            "text": "점수와 의심이라는 장단점을 함께 주는 선택이다.",
-            "verbatim": true
-          }
+          {"label": "밀치기", "text": "마트에서 생길 수밖에 없는 빈 시간을 지루하지 않게 보내게 한다.", "verbatim": true},
+          {"label": "개인 퀘스트", "text": "점수와 의심이라는 장단점을 함께 주는 선택이다.", "verbatim": true}
         ],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "항목|컨셉 기획서|토론 후|누가 · 왜"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 1, "fp": "항목|컨셉 기획서|토론 후|누가 · 왜"}]
       },
       {
         "key": "concerns-push",
         "chapter": "planning",
         "layout": "visual",
         "tab": "화면",
-        "title": {
-          "text": "2.3 팀 토론으로 규칙 구체화하기",
-          "verbatim": true
-        },
+        "title": {"text": "2.3 팀 토론으로 규칙 구체화하기", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지",
-          "2.3 팀 토론으로 규칙 구체화하기"
-        ],
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.3 팀 토론으로 규칙 구체화하기"],
         "points": [
-          {
-            "label": "밀치기",
-            "text": "밀치기를 물건 고르기보다 더 즐기는 주객전도를 노렸다.",
-            "verbatim": true
-          },
+          {"label": "밀치기", "text": "밀치기를 물건 고르기보다 더 즐기는 주객전도를 노렸다.", "verbatim": true},
           {
             "label": "결과",
             "text": "함께 수강한 동료들의 플레이 테스트 피드백에서 밀치기가 특히 좋은 평가를 받았고, 실제 플레이에서도 서로 열심히 밀치며 방해를 즐기는 모습을 확인.",
@@ -564,10 +370,7 @@
             "src": "images/Mart-Push.gif",
             "w": 640,
             "h": 360,
-            "caption": {
-              "text": "마트 — 서로 밀치며 방해하는 플레이어들",
-              "verbatim": true
-            }
+            "caption": {"text": "마트 — 서로 밀치며 방해하는 플레이어들", "verbatim": true}
           }
         ]
       },
@@ -576,115 +379,49 @@
         "chapter": "planning",
         "layout": "full",
         "tab": "선택",
-        "title": {
-          "text": "2.4 토론에서 정한 규칙과 실제 구현의 차이",
-          "verbatim": true
-        },
+        "title": {"text": "2.4 토론에서 정한 규칙과 실제 구현의 차이", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "2. 기획 — 내 컨셉이 팀의 게임이 되기까지",
-          "2.4 토론에서 정한 규칙과 실제 구현의 차이"
-        ],
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.4 토론에서 정한 규칙과 실제 구현의 차이"],
         "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "항목|토론에서 정한 규칙|실제 구현|바꾼 이유"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 1, "fp": "항목|토론에서 정한 규칙|실제 구현|바꾼 이유"}]
       },
       {
         "key": "task-rules",
         "chapter": "schedule",
         "layout": "visual",
         "tab": "흐름",
-        "title": {
-          "text": "3.1 작업 관리 규칙",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "보드의 단계, 기능 영역(에픽) 나누기, 작업 이름 앞의 머리말([서버]·[UGUI]·[맵] 등) 규칙은 팀장인 내가 정했다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "3. 일정과 진행 방식 — 팀장으로서",
-          "3.1 작업 관리 규칙"
-        ],
+        "title": {"text": "3.1 작업 관리 규칙", "verbatim": true},
+        "lead": {"text": "보드의 단계, 기능 영역(에픽) 나누기, 작업 이름 앞의 머리말([서버]·[UGUI]·[맵] 등) 규칙은 팀장인 내가 정했다.", "verbatim": true},
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
         "points": [
-          {
-            "label": "검토",
-            "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료",
-            "verbatim": true
-          },
-          {
-            "label": "소통",
-            "text": "정기 회의 없이 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함",
-            "verbatim": true
-          }
+          {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료", "verbatim": true},
+          {"label": "소통", "text": "작은 단위의 작업도 즉각적인 소통이 필요했기에 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
         ],
-        "visuals": [
-          {
-            "kind": "mermaid",
-            "n": 1,
-            "fp": "flowchart TD"
-          }
-        ]
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}],
+        "edited": true
       },
       {
         "key": "plan-actual",
         "chapter": "schedule",
         "layout": "full",
         "tab": "결과",
-        "title": {
-          "text": "3.2 일정 흐름",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "통합 단계(09.01 ~ 09.06)에서는 목표일을 정한 작업 대부분이 늦어졌지만, 늦어진 폭은 대부분 하루였고 전체 마감은 지켰다(→ 3.4).",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "3. 일정과 진행 방식 — 팀장으로서",
-          "3.2 일정 흐름"
-        ],
+        "title": {"text": "3.2 일정 흐름", "verbatim": true},
+        "lead": {"text": "통합 단계(09.01 ~ 09.06)에서는 목표일을 정한 작업 대부분이 늦어졌지만, 늦어진 폭은 대부분 하루였고 전체 마감은 지켰다(→ 3.4).", "verbatim": true},
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.2 일정 흐름"],
         "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 2,
-            "fp": "기간|작업|계획 (목표일)|실제"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 2, "fp": "기간|작업|계획 (목표일)|실제"}]
       },
       {
         "key": "scope-growth",
         "chapter": "schedule",
         "layout": "visual",
         "tab": "결과",
-        "title": {
-          "text": "3.3 계획보다 늘어난 일",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "새로 생긴 작업 114개 중 가장 큰 몫은 UI/UX 작업 33개였으며, 이 영역은 처음 계획에 하나도 없었다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "3. 일정과 진행 방식 — 팀장으로서",
-          "3.3 계획보다 늘어난 일"
-        ],
+        "title": {"text": "3.3 계획보다 늘어난 일", "verbatim": true},
+        "lead": {"text": "새로 생긴 작업 114개 중 가장 큰 몫은 UI/UX 작업 33개였으며, 이 영역은 처음 계획에 하나도 없었다.", "verbatim": true},
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.3 계획보다 늘어난 일"],
         "points": [
-          {
-            "label": "",
-            "text": "그래서 팀원에게는 \"필요한 UI는 기능만 동작하게 일단 넣어 두면, 디자인은 내가 하겠다\"고 정했다.",
-            "verbatim": true
-          },
-          {
-            "label": "",
-            "text": "팀원이 \"이런 UI를 넣었다\"고 알려 오면 그때마다 그 UI를 다듬는 내 작업이 새로 생긴 것이다.",
-            "verbatim": true
-          }
+          {"label": "", "text": "그래서 팀원에게는 \"필요한 UI는 기능만 동작하게 일단 넣어 두면, 디자인은 내가 하겠다\"고 정했다.", "verbatim": true},
+          {"label": "", "text": "팀원이 \"이런 UI를 넣었다\"고 알려 오면 그때마다 그 UI를 다듬는 내 작업이 새로 생긴 것이다.", "verbatim": true}
         ],
         "visuals": [
           {
@@ -692,10 +429,7 @@
             "src": "images/schedule_plan_vs_new.png",
             "w": 2174,
             "h": 1156,
-            "caption": {
-              "text": "처음 계획한 일 32개와 진행하며 새로 생긴 일 114개, 기능 영역별로 늘어난 작업",
-              "verbatim": true
-            }
+            "caption": {"text": "처음 계획한 일 32개와 진행하며 새로 생긴 일 114개, 기능 영역별로 늘어난 작업", "verbatim": true}
           }
         ]
       },
@@ -704,18 +438,9 @@
         "chapter": "features",
         "layout": "code",
         "tab": "구현",
-        "title": {
-          "text": "4.2 enum 기반 공용 사운드 관리",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "호출하는 쪽은 오디오 클립을 직접 참조하지 않고, 상황에 맞는 enum 값만 전달하면 된다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "4. 담당 기능 구현",
-          "4.2 enum 기반 공용 사운드 관리"
-        ],
+        "title": {"text": "4.2 enum 기반 공용 사운드 관리", "verbatim": true},
+        "lead": {"text": "호출하는 쪽은 오디오 클립을 직접 참조하지 않고, 상황에 맞는 enum 값만 전달하면 된다.", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
         "points": [
           {
             "label": "",
@@ -729,16 +454,8 @@
           }
         ],
         "visuals": [
-          {
-            "kind": "code",
-            "n": 1,
-            "fp": "// 호출 예시 — 팀원 코드에서 사용하는 형태"
-          },
-          {
-            "kind": "code",
-            "n": 2,
-            "fp": "private void InitDictionaries()"
-          }
+          {"kind": "code", "n": 1, "fp": "// 호출 예시 — 팀원 코드에서 사용하는 형태"},
+          {"kind": "code", "n": 2, "fp": "private void InitDictionaries()"}
         ]
       },
       {
@@ -746,26 +463,16 @@
         "chapter": "features",
         "layout": "visual",
         "tab": "화면",
-        "title": {
-          "text": "4.2 enum 기반 공용 사운드 관리",
-          "verbatim": true
-        },
+        "title": {"text": "4.2 enum 기반 공용 사운드 관리", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "4. 담당 기능 구현",
-          "4.2 enum 기반 공용 사운드 관리"
-        ],
+        "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
         "points": [
           {
             "label": "BGM과 SFX 분리",
             "text": "처음에는 AudioSource 하나로 BGM과 SFX를 함께 재생했으나, 이 방식으로는 BGM과 효과음의 음량을 따로 조절할 수 없었다.",
             "verbatim": false
           },
-          {
-            "label": "공동 작업 범위",
-            "text": "볼륨 조절 메서드와 관련 UI 연결, `PauseBGM()`은 팀원 작업이다.",
-            "verbatim": true
-          }
+          {"label": "공동 작업 범위", "text": "볼륨 조절 메서드와 관련 UI 연결, `PauseBGM()`은 팀원 작업이다.", "verbatim": true}
         ],
         "visuals": [
           {
@@ -773,10 +480,7 @@
             "src": "images/Tutorials.jpg",
             "w": 1193,
             "h": 671,
-            "caption": {
-              "text": "설정 창 — 따로 조절되는 BGM·SFX 볼륨",
-              "verbatim": true
-            }
+            "caption": {"text": "설정 창 — 따로 조절되는 BGM·SFX 볼륨", "verbatim": true}
           }
         ]
       },
@@ -785,50 +489,26 @@
         "chapter": "features",
         "layout": "code",
         "tab": "구현",
-        "title": {
-          "text": "4.3 발언자 위치에 따른 기본 조명 제어",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "발언자의 Transform을 받으면 주변 조명을 어둡게 하고, 해당 플레이어 위로 스포트라이트를 이동시킨다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "4. 담당 기능 구현",
-          "4.3 발언자 위치에 따른 기본 조명 제어"
-        ],
+        "title": {"text": "4.3 발언자 위치에 따른 기본 조명 제어", "verbatim": true},
+        "lead": {"text": "발언자의 Transform을 받으면 주변 조명을 어둡게 하고, 해당 플레이어 위로 스포트라이트를 이동시킨다.", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.3 발언자 위치에 따른 기본 조명 제어"],
         "points": [
-          {
-            "label": "목표한 경험과의 연결",
-            "text": "지금 누가 발언하고 있는지를 텍스트뿐 아니라 시각적·공간적으로도 알 수 있게 하려 했다.",
-            "verbatim": true
-          },
+          {"label": "목표한 경험과의 연결", "text": "지금 누가 발언하고 있는지를 텍스트뿐 아니라 시각적·공간적으로도 알 수 있게 하려 했다.", "verbatim": true},
           {
             "label": "본인 담당",
             "text": "초기 조명 설정(InitLights())과 기본 스포트라이트 제어(TurnOnSpotLight()·TurnOffSpotLight()).",
             "verbatim": true
           },
-          {
-            "label": "팀원 확장",
-            "text": "DOTween 밝기 변화, 테이블 포커스, 라이어 색상 연출, 복수 승자 조명.",
-            "verbatim": true
-          }
+          {"label": "팀원 확장", "text": "DOTween 밝기 변화, 테이블 포커스, 라이어 색상 연출, 복수 승자 조명.", "verbatim": true}
         ],
         "visuals": [
-          {
-            "kind": "code",
-            "n": 1,
-            "fp": "public void TurnOnSpotLight(Transform currentSpeaker)"
-          },
+          {"kind": "code", "n": 1, "fp": "public void TurnOnSpotLight(Transform currentSpeaker)"},
           {
             "kind": "image",
             "src": "images/Speak.gif",
             "w": 640,
             "h": 360,
-            "caption": {
-              "text": "발언 단계 — 발언자가 바뀌면 스포트라이트가 그 자리로 옮겨 감",
-              "verbatim": true
-            }
+            "caption": {"text": "발언 단계 — 발언자가 바뀌면 스포트라이트가 그 자리로 옮겨 감", "verbatim": true}
           }
         ]
       },
@@ -837,45 +517,21 @@
         "chapter": "features",
         "layout": "visual",
         "tab": "흐름",
-        "title": {
-          "text": "4.4 TSV 데이터 작성과 아이템 연결",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "아이템과 키워드 정보는 Assets/StreamingAssets/Table 아래 TSV 파일로 관리한다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "4. 담당 기능 구현",
-          "4.4 TSV 데이터 작성과 아이템 연결"
-        ],
+        "title": {"text": "4.4 TSV 데이터 작성과 아이템 연결", "verbatim": true},
+        "lead": {"text": "아이템과 키워드 정보는 Assets/StreamingAssets/Table 아래 TSV 파일로 관리한다.", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.4 TSV 데이터 작성과 아이템 연결"],
         "points": [
-          {
-            "label": "",
-            "text": "표에 기록한 경로가 Resources 내부의 실제 프리팹 경로와 일치해야 한다.",
-            "verbatim": false
-          },
-          {
-            "label": "",
-            "text": "같은 카테고리의 행은 반드시 연속으로 기록했다.",
-            "verbatim": false
-          }
+          {"label": "", "text": "표에 기록한 경로가 Resources 내부의 실제 프리팹 경로와 일치해야 한다.", "verbatim": false},
+          {"label": "", "text": "같은 카테고리의 행은 반드시 연속으로 기록했다.", "verbatim": false}
         ],
         "visuals": [
-          {
-            "kind": "mermaid",
-            "n": 1,
-            "fp": "flowchart TD"
-          },
+          {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
           {
             "kind": "image",
             "src": "images/TSV2.jpg",
             "w": 730,
             "h": 882,
-            "caption": {
-              "text": "category_items.tsv — 카테고리별 아이템과 PrefabKey (일부)",
-              "verbatim": true
-            }
+            "caption": {"text": "category_items.tsv — 카테고리별 아이템과 PrefabKey (일부)", "verbatim": true}
           }
         ]
       },
@@ -884,18 +540,9 @@
         "chapter": "features",
         "layout": "screens",
         "tab": "결과",
-        "title": {
-          "text": "4.5 UI·맵 디자인과 매대 배치",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "매대를 동선의 중앙에 두고, 카테고리 구역마다 매대를 세 줄로 배치해 같은 카테고리의 아이템이 한 공간에 모이게 함",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "4. 담당 기능 구현",
-          "4.5 UI·맵 디자인과 매대 배치"
-        ],
+        "title": {"text": "4.5 UI·맵 디자인과 매대 배치", "verbatim": true},
+        "lead": {"text": "매대를 동선의 중앙에 두고, 카테고리 구역마다 매대를 세 줄로 배치해 같은 카테고리의 아이템이 한 공간에 모이게 함", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.5 UI·맵 디자인과 매대 배치"],
         "points": [],
         "visuals": [
           {
@@ -903,30 +550,21 @@
             "src": "images/MartView.jpg",
             "w": 2468,
             "h": 1075,
-            "caption": {
-              "text": "마트 전경(씬 뷰) — 동선 중앙에 세 줄로 배치한 매대",
-              "verbatim": true
-            }
+            "caption": {"text": "마트 전경(씬 뷰) — 동선 중앙에 세 줄로 배치한 매대", "verbatim": true}
           },
           {
             "kind": "image",
             "src": "images/MartItems.jpg",
             "w": 1187,
             "h": 666,
-            "caption": {
-              "text": "마트 매대와 아이템 — 캐릭터 크기를 기준으로 맞춘 아이템 스케일",
-              "verbatim": true
-            }
+            "caption": {"text": "마트 매대와 아이템 — 캐릭터 크기를 기준으로 맞춘 아이템 스케일", "verbatim": true}
           },
           {
             "kind": "image",
             "src": "images/Lobby.jpg",
             "w": 1673,
             "h": 940,
-            "caption": {
-              "text": "로비 — 회의실과 같은 공간을 사용, 게임 준비·튜토리얼 버튼",
-              "verbatim": true
-            }
+            "caption": {"text": "로비 — 회의실과 같은 공간을 사용, 게임 준비·튜토리얼 버튼", "verbatim": true}
           }
         ]
       },
@@ -935,101 +573,470 @@
         "chapter": "collab",
         "layout": "problem",
         "tab": "문제 해결",
-        "title": {
-          "text": "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계",
-          "verbatim": true
-        },
+        "title": {"text": "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "5. 협업 이슈",
-          "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계"
-        ],
+        "sectionPath": ["5. 협업 이슈", "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계"],
         "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "구분|내용"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 1, "fp": "구분|내용"}]
       },
       {
         "key": "ui-split",
         "chapter": "collab",
         "layout": "problem",
         "tab": "문제 해결",
-        "title": {
-          "text": "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현",
-          "verbatim": true
-        },
+        "title": {"text": "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "5. 협업 이슈",
-          "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현"
-        ],
+        "sectionPath": ["5. 협업 이슈", "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현"],
         "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "구분|내용"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 1, "fp": "구분|내용"}]
       },
       {
         "key": "item-scale",
         "chapter": "collab",
         "layout": "problem",
         "tab": "문제 해결",
-        "title": {
-          "text": "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일",
-          "verbatim": true
-        },
+        "title": {"text": "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일", "verbatim": true},
         "lead": null,
-        "sectionPath": [
-          "5. 협업 이슈",
-          "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일"
-        ],
+        "sectionPath": ["5. 협업 이슈", "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일"],
         "points": [],
-        "visuals": [
-          {
-            "kind": "table",
-            "n": 1,
-            "fp": "구분|내용"
-          }
-        ]
+        "visuals": [{"kind": "table", "n": 1, "fp": "구분|내용"}]
       },
       {
         "key": "ai-review",
         "chapter": "ai",
         "layout": "full",
         "tab": "",
-        "title": {
-          "text": "6. AI 결과물을 확인하고 고친 과정",
-          "verbatim": true
-        },
-        "lead": {
-          "text": "두 경우 모두 결과를 직접 확인하고, 의도와 다른 부분은 다시 요청하거나 직접 고쳤다.",
-          "verbatim": true
-        },
-        "sectionPath": [
-          "6. AI 결과물을 확인하고 고친 과정"
+        "title": {"text": "6. AI 결과물을 확인하고 고친 과정", "verbatim": true},
+        "lead": {"text": "두 경우 모두 결과를 직접 확인하고, 의도와 다른 부분은 다시 요청하거나 직접 고쳤다.", "verbatim": true},
+        "sectionPath": ["6. AI 결과물을 확인하고 고친 과정"],
+        "points": [{"label": "", "text": "이미지는 글로 설명을 반복하는 것보다, 직접 그린 스케치로 원하는 결과를 보여 주는 편이 효과적이었다.", "verbatim": true}],
+        "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
+      }
+    ],
+    "base": [
+      {
+        "key": "what",
+        "chapter": "overview",
+        "layout": "overview",
+        "tab": "개요",
+        "title": {"text": "1.1 무엇을 만들었나", "verbatim": true},
+        "lead": {"text": "시장에 가면은 마트에서 아이템을 선택하는 단계와 회의실에서 발언·지목·투표하는 단계가 연결되는 멀티플레이 게임이다.", "verbatim": true},
+        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
+        "points": [
+          {"label": "게임 목표", "text": "마트에서 고른 물건과 발언을 단서로 키워드가 다른 한 명(라이어)을 찾아내기", "verbatim": true},
+          {"label": "일반 플레이어와 라이어의 차이", "text": "자신이 라이어인지 아무도 알 수 없음", "verbatim": true},
+          {"label": "라운드 반복 규칙", "text": "기본 설정은 3라운드 × 라운드당 3사이클", "verbatim": true}
         ],
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+      },
+      {
+        "key": "round-start",
+        "chapter": "overview",
+        "layout": "screens",
+        "tab": "흐름",
+        "title": {"text": "1.1 무엇을 만들었나", "verbatim": true},
+        "lead": {
+          "text": "한 라운드는 장르·키워드 배정 → 마트에서 물건 고르기 → 회의실로 돌아와 발언 → 의심 가는 사람 지목 → 변론 → 투표와 결과 공개 순서로 진행된다.",
+          "verbatim": true
+        },
+        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
+        "points": [],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/Genre-Keyword.jpg",
+            "w": 1185,
+            "h": 667,
+            "caption": {"text": "라운드 시작 — 회의실에서 장르·키워드 확인", "verbatim": true}
+          },
+          {
+            "kind": "image",
+            "src": "images/Mart-Push.jpg",
+            "w": 1189,
+            "h": 665,
+            "caption": {"text": "마트 — 아이템 집기·밀치기, 개인 퀘스트와 장르·키워드 표시", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "meeting-cycle",
+        "chapter": "overview",
+        "layout": "screens",
+        "tab": "흐름",
+        "title": {"text": "회의 사이클의 단계", "verbatim": true},
+        "lead": {"text": "회의는 카테고리 단위의 사이클로 반복하며, 사이클마다 발언 → 지목 → 변론 → 투표 → 라이어 키워드 맞추기를 진행.", "verbatim": true},
+        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
+        "points": [],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/PointAt.jpg",
+            "w": 1187,
+            "h": 678,
+            "caption": {"text": "지목 — 라이어로 의심되는 사람을 지목하거나 Skip", "verbatim": true}
+          },
+          {
+            "kind": "image",
+            "src": "images/Vote.jpg",
+            "w": 1191,
+            "h": 675,
+            "caption": {"text": "투표 — 변론 대상에 대해 맞다·모르겠다·아니다 선택", "verbatim": true}
+          },
+          {
+            "kind": "image",
+            "src": "images/WasLiar.jpg",
+            "w": 1189,
+            "h": 668,
+            "caption": {"text": "결과 — 투표 대상이 라이어로 밝혀진 장면", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "why",
+        "chapter": "overview",
+        "layout": "overview",
+        "tab": "개요",
+        "title": {"text": "1.2 왜 만들었나", "verbatim": true},
+        "lead": {
+          "text": "이 게임은 서로 다른 키워드를 받았다는 사실조차 모른 채 마트에서 물건을 선택하게 하여, 라이어를 포함한 모든 플레이어가 불확실성을 갖도록 기획했다.",
+          "verbatim": true
+        },
+        "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
+        "points": [
+          {"label": "", "text": "다른 플레이어의 선택을 해석하는 과정에서 자신의 판단도 의심하게 된다.", "verbatim": true},
+          {"label": "", "text": "고글은 스키장과 수영장 어느 쪽에도 어울리므로, 물건만으로는 D가 라이어인지 단정할 수 없다.", "verbatim": true},
+          {"label": "", "text": "이 변명과 해석의 과정이 기존 라이어 게임과 구별되는 이 게임의 핵심 재미이다.", "verbatim": true}
+        ],
+        "visuals": [{"kind": "code", "n": 1, "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장"}]
+      },
+      {
+        "key": "scope",
+        "chapter": "overview",
+        "layout": "full",
+        "tab": "개요",
+        "title": {"text": "1.3 팀 구성과 담당 범위", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["1. 개요", "1.3 팀 구성과 담당 범위"],
+        "points": [],
+        "visuals": [{"kind": "table", "n": 2, "fp": "구분|담당 내용|팀원 작업과의 경계"}]
+      },
+      {
+        "key": "selection",
+        "chapter": "planning",
+        "layout": "visual",
+        "tab": "흐름",
+        "title": {"text": "2.1 기획안 10개 중에서 고르기", "verbatim": true},
+        "lead": {"text": "팀 과제의 주제는 방 코드를 입력해 4명이 함께하는 멀티플레이 게임이었다.", "verbatim": true},
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 기획안 10개 중에서 고르기"],
         "points": [
           {
             "label": "",
-            "text": "이미지는 글로 설명을 반복하는 것보다, 직접 그린 스케치로 원하는 결과를 보여 주는 편이 효과적이었다.",
+            "text": "득표는 다른 후보보다 많지 않았지만, 담당 강사는 \"지금까지 본 적 없는 유형의 기획\"이라는 이유로 시장에 가면을 골랐다.",
+            "verbatim": true
+          }
+        ],
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}, {"kind": "table", "n": 1, "fp": "후보|종류|득표"}]
+      },
+      {
+        "key": "core-loop",
+        "chapter": "planning",
+        "layout": "visual",
+        "tab": "흐름",
+        "title": {"text": "2.2 컨셉 기획서 — 처음 내가 짠 것", "verbatim": true},
+        "lead": {"text": "후보로 낸 한 장짜리 컨셉 기획서가 처음 내가 짠 기획의 전부였다.", "verbatim": true},
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.2 컨셉 기획서 — 처음 내가 짠 것"],
+        "points": [
+          {
+            "label": "핵심 재미",
+            "text": "모두가 자신의 키워드가 정상인지 모르는 상황에서 다른 사람의 선택을 해석하고, 동시에 자신의 선택도 의심하게 되는 정보 비대칭",
+            "verbatim": true
+          },
+          {
+            "label": "우려되는 점",
+            "text": "① 반복 플레이를 위해 아이템 구성이 충분히 다양해야 함 ② 진행이 채팅과 투표에 크게 의존해 단조로울 수 있음",
+            "verbatim": true
+          }
+        ],
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+      },
+      {
+        "key": "concerns",
+        "chapter": "planning",
+        "layout": "full",
+        "tab": "선택",
+        "title": {"text": "2.3 팀 토론으로 규칙 구체화하기", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.3 팀 토론으로 규칙 구체화하기"],
+        "points": [
+          {"label": "밀치기", "text": "마트에서 생길 수밖에 없는 빈 시간을 지루하지 않게 보내게 한다.", "verbatim": true},
+          {"label": "개인 퀘스트", "text": "점수와 의심이라는 장단점을 함께 주는 선택이다.", "verbatim": true}
+        ],
+        "visuals": [{"kind": "table", "n": 1, "fp": "항목|컨셉 기획서|토론 후|누가 · 왜"}]
+      },
+      {
+        "key": "concerns-push",
+        "chapter": "planning",
+        "layout": "visual",
+        "tab": "화면",
+        "title": {"text": "2.3 팀 토론으로 규칙 구체화하기", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.3 팀 토론으로 규칙 구체화하기"],
+        "points": [
+          {"label": "밀치기", "text": "밀치기를 물건 고르기보다 더 즐기는 주객전도를 노렸다.", "verbatim": true},
+          {
+            "label": "결과",
+            "text": "함께 수강한 동료들의 플레이 테스트 피드백에서 밀치기가 특히 좋은 평가를 받았고, 실제 플레이에서도 서로 열심히 밀치며 방해를 즐기는 모습을 확인.",
             "verbatim": true
           }
         ],
         "visuals": [
           {
-            "kind": "table",
-            "n": 1,
-            "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"
+            "kind": "image",
+            "src": "images/Mart-Push.gif",
+            "w": 640,
+            "h": 360,
+            "caption": {"text": "마트 — 서로 밀치며 방해하는 플레이어들", "verbatim": true}
           }
         ]
+      },
+      {
+        "key": "plan-changes",
+        "chapter": "planning",
+        "layout": "full",
+        "tab": "선택",
+        "title": {"text": "2.4 토론에서 정한 규칙과 실제 구현의 차이", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.4 토론에서 정한 규칙과 실제 구현의 차이"],
+        "points": [],
+        "visuals": [{"kind": "table", "n": 1, "fp": "항목|토론에서 정한 규칙|실제 구현|바꾼 이유"}]
+      },
+      {
+        "key": "task-rules",
+        "chapter": "schedule",
+        "layout": "visual",
+        "tab": "흐름",
+        "title": {"text": "3.1 작업 관리 규칙", "verbatim": true},
+        "lead": {"text": "보드의 단계, 기능 영역(에픽) 나누기, 작업 이름 앞의 머리말([서버]·[UGUI]·[맵] 등) 규칙은 팀장인 내가 정했다.", "verbatim": true},
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
+        "points": [
+          {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료", "verbatim": true},
+          {"label": "소통", "text": "정기 회의 없이 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
+        ],
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+      },
+      {
+        "key": "plan-actual",
+        "chapter": "schedule",
+        "layout": "full",
+        "tab": "결과",
+        "title": {"text": "3.2 일정 흐름", "verbatim": true},
+        "lead": {"text": "통합 단계(09.01 ~ 09.06)에서는 목표일을 정한 작업 대부분이 늦어졌지만, 늦어진 폭은 대부분 하루였고 전체 마감은 지켰다(→ 3.4).", "verbatim": true},
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.2 일정 흐름"],
+        "points": [],
+        "visuals": [{"kind": "table", "n": 2, "fp": "기간|작업|계획 (목표일)|실제"}]
+      },
+      {
+        "key": "scope-growth",
+        "chapter": "schedule",
+        "layout": "visual",
+        "tab": "결과",
+        "title": {"text": "3.3 계획보다 늘어난 일", "verbatim": true},
+        "lead": {"text": "새로 생긴 작업 114개 중 가장 큰 몫은 UI/UX 작업 33개였으며, 이 영역은 처음 계획에 하나도 없었다.", "verbatim": true},
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.3 계획보다 늘어난 일"],
+        "points": [
+          {"label": "", "text": "그래서 팀원에게는 \"필요한 UI는 기능만 동작하게 일단 넣어 두면, 디자인은 내가 하겠다\"고 정했다.", "verbatim": true},
+          {"label": "", "text": "팀원이 \"이런 UI를 넣었다\"고 알려 오면 그때마다 그 UI를 다듬는 내 작업이 새로 생긴 것이다.", "verbatim": true}
+        ],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/schedule_plan_vs_new.png",
+            "w": 2174,
+            "h": 1156,
+            "caption": {"text": "처음 계획한 일 32개와 진행하며 새로 생긴 일 114개, 기능 영역별로 늘어난 작업", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "sound-map",
+        "chapter": "features",
+        "layout": "code",
+        "tab": "구현",
+        "title": {"text": "4.2 enum 기반 공용 사운드 관리", "verbatim": true},
+        "lead": {"text": "호출하는 쪽은 오디오 클립을 직접 참조하지 않고, 상황에 맞는 enum 값만 전달하면 된다.", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
+        "points": [
+          {
+            "label": "",
+            "text": "InitDictionaries()는 Inspector에 등록한 배열을 enum 키의 Dictionary로 변환하고, 재생 요청 시에는 TryGetValue()로 클립을 조회한다.",
+            "verbatim": true
+          },
+          {
+            "label": "",
+            "text": "따라서 호출하는 코드에는 ItemPickUp, VoteButtonClick과 같이 상황 이름만 남으며, 어떤 클립을 연결할지는 사운드 매니저 한 곳에서만 변경하면 된다.",
+            "verbatim": true
+          }
+        ],
+        "visuals": [
+          {"kind": "code", "n": 1, "fp": "// 호출 예시 — 팀원 코드에서 사용하는 형태"},
+          {"kind": "code", "n": 2, "fp": "private void InitDictionaries()"}
+        ]
+      },
+      {
+        "key": "sound-split",
+        "chapter": "features",
+        "layout": "visual",
+        "tab": "화면",
+        "title": {"text": "4.2 enum 기반 공용 사운드 관리", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
+        "points": [
+          {
+            "label": "BGM과 SFX 분리",
+            "text": "처음에는 AudioSource 하나로 BGM과 SFX를 함께 재생했으나, 이 방식으로는 BGM과 효과음의 음량을 따로 조절할 수 없었다.",
+            "verbatim": false
+          },
+          {"label": "공동 작업 범위", "text": "볼륨 조절 메서드와 관련 UI 연결, `PauseBGM()`은 팀원 작업이다.", "verbatim": true}
+        ],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/Tutorials.jpg",
+            "w": 1193,
+            "h": 671,
+            "caption": {"text": "설정 창 — 따로 조절되는 BGM·SFX 볼륨", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "spotlight",
+        "chapter": "features",
+        "layout": "code",
+        "tab": "구현",
+        "title": {"text": "4.3 발언자 위치에 따른 기본 조명 제어", "verbatim": true},
+        "lead": {"text": "발언자의 Transform을 받으면 주변 조명을 어둡게 하고, 해당 플레이어 위로 스포트라이트를 이동시킨다.", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.3 발언자 위치에 따른 기본 조명 제어"],
+        "points": [
+          {"label": "목표한 경험과의 연결", "text": "지금 누가 발언하고 있는지를 텍스트뿐 아니라 시각적·공간적으로도 알 수 있게 하려 했다.", "verbatim": true},
+          {
+            "label": "본인 담당",
+            "text": "초기 조명 설정(InitLights())과 기본 스포트라이트 제어(TurnOnSpotLight()·TurnOffSpotLight()).",
+            "verbatim": true
+          },
+          {"label": "팀원 확장", "text": "DOTween 밝기 변화, 테이블 포커스, 라이어 색상 연출, 복수 승자 조명.", "verbatim": true}
+        ],
+        "visuals": [
+          {"kind": "code", "n": 1, "fp": "public void TurnOnSpotLight(Transform currentSpeaker)"},
+          {
+            "kind": "image",
+            "src": "images/Speak.gif",
+            "w": 640,
+            "h": 360,
+            "caption": {"text": "발언 단계 — 발언자가 바뀌면 스포트라이트가 그 자리로 옮겨 감", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "tsv-data",
+        "chapter": "features",
+        "layout": "visual",
+        "tab": "흐름",
+        "title": {"text": "4.4 TSV 데이터 작성과 아이템 연결", "verbatim": true},
+        "lead": {"text": "아이템과 키워드 정보는 Assets/StreamingAssets/Table 아래 TSV 파일로 관리한다.", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.4 TSV 데이터 작성과 아이템 연결"],
+        "points": [
+          {"label": "", "text": "표에 기록한 경로가 Resources 내부의 실제 프리팹 경로와 일치해야 한다.", "verbatim": false},
+          {"label": "", "text": "같은 카테고리의 행은 반드시 연속으로 기록했다.", "verbatim": false}
+        ],
+        "visuals": [
+          {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
+          {
+            "kind": "image",
+            "src": "images/TSV2.jpg",
+            "w": 730,
+            "h": 882,
+            "caption": {"text": "category_items.tsv — 카테고리별 아이템과 PrefabKey (일부)", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "map-ui",
+        "chapter": "features",
+        "layout": "screens",
+        "tab": "결과",
+        "title": {"text": "4.5 UI·맵 디자인과 매대 배치", "verbatim": true},
+        "lead": {"text": "매대를 동선의 중앙에 두고, 카테고리 구역마다 매대를 세 줄로 배치해 같은 카테고리의 아이템이 한 공간에 모이게 함", "verbatim": true},
+        "sectionPath": ["4. 담당 기능 구현", "4.5 UI·맵 디자인과 매대 배치"],
+        "points": [],
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/MartView.jpg",
+            "w": 2468,
+            "h": 1075,
+            "caption": {"text": "마트 전경(씬 뷰) — 동선 중앙에 세 줄로 배치한 매대", "verbatim": true}
+          },
+          {
+            "kind": "image",
+            "src": "images/MartItems.jpg",
+            "w": 1187,
+            "h": 666,
+            "caption": {"text": "마트 매대와 아이템 — 캐릭터 크기를 기준으로 맞춘 아이템 스케일", "verbatim": true}
+          },
+          {
+            "kind": "image",
+            "src": "images/Lobby.jpg",
+            "w": 1673,
+            "h": 940,
+            "caption": {"text": "로비 — 회의실과 같은 공간을 사용, 게임 준비·튜토리얼 버튼", "verbatim": true}
+          }
+        ]
+      },
+      {
+        "key": "shelf-items",
+        "chapter": "collab",
+        "layout": "problem",
+        "tab": "문제 해결",
+        "title": {"text": "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["5. 협업 이슈", "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계"],
+        "points": [],
+        "visuals": [{"kind": "table", "n": 1, "fp": "구분|내용"}]
+      },
+      {
+        "key": "ui-split",
+        "chapter": "collab",
+        "layout": "problem",
+        "tab": "문제 해결",
+        "title": {"text": "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["5. 협업 이슈", "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현"],
+        "points": [],
+        "visuals": [{"kind": "table", "n": 1, "fp": "구분|내용"}]
+      },
+      {
+        "key": "item-scale",
+        "chapter": "collab",
+        "layout": "problem",
+        "tab": "문제 해결",
+        "title": {"text": "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일", "verbatim": true},
+        "lead": null,
+        "sectionPath": ["5. 협업 이슈", "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일"],
+        "points": [],
+        "visuals": [{"kind": "table", "n": 1, "fp": "구분|내용"}]
+      },
+      {
+        "key": "ai-review",
+        "chapter": "ai",
+        "layout": "full",
+        "tab": "",
+        "title": {"text": "6. AI 결과물을 확인하고 고친 과정", "verbatim": true},
+        "lead": {"text": "두 경우 모두 결과를 직접 확인하고, 의도와 다른 부분은 다시 요청하거나 직접 고쳤다.", "verbatim": true},
+        "sectionPath": ["6. AI 결과물을 확인하고 고친 과정"],
+        "points": [{"label": "", "text": "이미지는 글로 설명을 반복하는 것보다, 직접 그린 스케치로 원하는 결과를 보여 주는 편이 효과적이었다.", "verbatim": true}],
+        "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
-    ]
+    ],
+    "applied": "ab4575a2d46f5c14"
   }
 }

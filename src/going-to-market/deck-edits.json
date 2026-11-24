@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "pin": [
+    {
+      "key": "task-rules",
+      "chapter": "schedule",
+      "layout": "visual",
+      "tab": "흐름",
+      "title": {"text": "3.1 작업 관리 규칙", "verbatim": true},
+      "lead": {"text": "보드의 단계, 기능 영역(에픽) 나누기, 작업 이름 앞의 머리말([서버]·[UGUI]·[맵] 등) 규칙은 팀장인 내가 정했다.", "verbatim": true},
+      "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
+      "points": [
+        {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료", "verbatim": true},
+        {"label": "소통", "text": "작은 단위의 작업도 즉각적인 소통이 필요했기에 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
+      ],
+      "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}],
+      "from": {
+        "key": "task-rules",
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
+        "sig": ["3.1 작업 관리 규칙|mermaid|1|flowchart TD"]
+      }
+    }
+  ],
+  "hide": []
+}
