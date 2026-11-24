@@ -441,7 +441,12 @@
         "lead": null,
         "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
         "points": [],
-        "visuals": [{"kind": "table", "n": 1, "fp": "방어|위치|무엇을 막나"}]
+        "visuals": [
+          {"kind": "table", "n": 1, "fp": "방어|위치|무엇을 막나"},
+          {"kind": "code", "n": 2, "fp": "public float GageUpdate(Image bar, float fillAmount)", "lines": [1, 8]},
+          {"kind": "code", "n": 3, "fp": "public void GetBlackOut()", "lines": [1, 8]}
+        ],
+        "edited": true
       },
       {
         "key": "blackout",
@@ -1018,6 +1023,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "e6981e2176828bf4"
+    "applied": "f40a41ffad1d7b30"
   }
 }

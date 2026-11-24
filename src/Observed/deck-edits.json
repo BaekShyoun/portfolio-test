@@ -248,6 +248,26 @@
         "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
         "sig": ["3.1 행동마다 넘어가는 턴과 게이지 변화|image|images/Gage.jpg|1"]
       }
+    },
+    {
+      "key": "turn-guard",
+      "chapter": "turn-flow",
+      "layout": "full",
+      "tab": "구현",
+      "title": {"text": "예외 상황 방어", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+      "points": [],
+      "visuals": [
+        {"kind": "table", "n": 1, "fp": "방어|위치|무엇을 막나"},
+        {"kind": "code", "n": 2, "fp": "public float GageUpdate(Image bar, float fillAmount)", "lines": [1, 8]},
+        {"kind": "code", "n": 3, "fp": "public void GetBlackOut()", "lines": [1, 8]}
+      ],
+      "from": {
+        "key": "turn-guard",
+        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|table|1|방어|위치|무엇을 막나"]
+      }
     }
   ],
   "hide": [

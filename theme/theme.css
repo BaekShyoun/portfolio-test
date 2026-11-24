@@ -85,3 +85,9 @@
 #d-flowtime .pair-r > .vis { flex: none !important; }
 #d-flowtime .vbox[data-kind="image"] { width: 340px !important; }
 #d-flowtime .vbox[data-kind="image"] .vmedia { width: 340px !important; height: 187px !important; }
+
+/* Observed 슬라이드 「예외 상황 방어」(#d-turn-guard): 표를 위에 가로 전체로, 그 아래 근거 코드 두 조각(GageUpdate · GetBlackOut)을 나란히 */
+#d-turn-guard .vis { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px !important; align-items: start !important; }
+#d-turn-guard .vbox { width: auto !important; }
+#d-turn-guard .vbox[data-kind="table"] { grid-column: 1 / -1; }
+#d-turn-guard .vbox .fit-in { zoom: 1 !important; width: auto !important; }
