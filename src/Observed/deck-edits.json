@@ -313,6 +313,33 @@
           "4.2 상한 고기 — 불확실한 패널티|table|1|질병 규칙|값"
         ]
       }
+    },
+    {
+      "key": "rotting-items",
+      "chapter": "penalty",
+      "layout": "visual",
+      "tab": "선택",
+      "title": {"text": "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지", "verbatim": true},
+      "lead": {"text": "시간이 지나면 아이템이 썩도록 하여 쌓아 두기만 하는 플레이를 막고자 했다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지"],
+      "points": [
+        {"label": "기능", "text": "신선한 고기·수상한 고기는 4턴, 신선한 물은 6턴이 지나면 썩는다.", "verbatim": true},
+        {"label": "경험", "text": "현실감을 더하고 아이템을 더욱 신중히 구매하고 관리하게 된다.", "verbatim": true}
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/Inventories.jpg",
+          "w": 2559,
+          "h": 1409,
+          "caption": {"text": "인벤토리(부패한 고기·썩은 물 칸)와 교환 자판기", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "rotting-items",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지"],
+        "sig": ["4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지|image|images/Inventories.jpg|1"]
+      }
     }
   ],
   "hide": [
