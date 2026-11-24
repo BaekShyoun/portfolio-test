@@ -54,3 +54,6 @@
 #d-choice-turn .vbox { width: auto !important; }
 #d-choice-turn .vbox .fit-in { zoom: 1 !important; width: auto !important; }
 #d-choice-turn .vbox[data-kind="code"] > .cap { display: none !important; }
+
+/* Observed 슬라이드 「1.2 왜 만들었나」(#d-why): 두 그림의 세로 중앙을 맞추고, FEATURE 01·02 글을 같은 높이에서 시작 */
+#d-why .fe-card > .vis { flex: 1 1 auto !important; justify-content: center !important; }

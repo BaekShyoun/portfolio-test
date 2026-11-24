@@ -47,13 +47,62 @@
       "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
       "points": [],
       "visuals": [
-        {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)", "lines": [1, 15], "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]},
+        {
+          "kind": "code",
+          "n": 1,
+          "fp": "public void FlowTime(int skipTime)",
+          "lines": [1, 15],
+          "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]
+        },
         {"kind": "table", "n": 1, "fp": "방법|장점|단점"}
       ],
       "from": {
         "key": "choice-turn",
         "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
         "sig": ["4.6 구현 방법의 선택|table|1|방법|장점|단점"]
+      }
+    },
+    {
+      "key": "why",
+      "chapter": "intro",
+      "layout": "screens",
+      "tab": "개요",
+      "title": {"text": "1.2 왜 만들었나", "verbatim": true},
+      "lead": {"text": "자원을 관리하며 오래 살아남는 것, 그리고 그 과정에서 긴장감을 주는 게임을 목표로 했다.", "verbatim": true},
+      "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
+      "points": [
+        {
+          "label": "",
+          "text": "맹수 관리에 실패하면 언제 죽을지 모른다는 점, 그리고 시간이 흐르고 질병이 쌓일수록 살아남기 힘들다는 점에서 긴장감을 주고자 했다.",
+          "verbatim": true
+        },
+        {"label": "", "text": "넷플릭스 드라마 '오징어 게임'처럼 생존만을 위하여 발랄한 분위기의 미니게임을 플레이하게 함으로써, 그 대비로 기괴함을 연출하고자 했다.", "verbatim": true},
+        {
+          "label": "레퍼런스: 심즈(The Sims)",
+          "text": "심즈에서 캐릭터를 일부러 괴롭히며 노는 플레이어들을 보고, 반대로 플레이어 자신이 갇혀 고통받는 상황을 만들자는 생각에서 출발했다.",
+          "verbatim": true
+        }
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/MiniGameA.jpg",
+          "w": 2174,
+          "h": 1200,
+          "caption": {"text": "미니게임 A — 경마", "verbatim": true}
+        },
+        {
+          "kind": "image",
+          "src": "images/MiniGameB.jpg",
+          "w": 2340,
+          "h": 1118,
+          "caption": {"text": "미니게임 B — 순서 맞추기", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "why",
+        "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
+        "sig": ["1.2 왜 만들었나|image|images/MiniGameA.jpg|1", "1.2 왜 만들었나|image|images/MiniGameB.jpg|1"]
       }
     }
   ],
