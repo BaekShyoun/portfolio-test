@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "pin": [
+    {
+      "key": "plan-difficulty",
+      "chapter": "penalty",
+      "layout": "full",
+      "tab": "선택",
+      "title": {"text": "4.5 기획과 구현의 비교", "verbatim": true},
+      "lead": {"text": "컨셉 기획(1.3) 다음에 쓴 상세 기획서의 수치로 직접 플레이해 본 뒤, 아래와 같이 수정했다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+      "points": [
+        {"label": "배운 점", "text": "기획서의 수치가 적절한지는 실제로 플레이해 보아야만 알 수 있는 부분이 있다는 점을 배웠다.", "verbatim": true}
+      ],
+      "visuals": [
+        {"kind": "table", "n": 1, "fp": "항목|상세 기획|실제 구현|바꾼 이유", "caption": {"text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게", "verbatim": true}},
+        {"kind": "table", "n": 2, "fp": "항목|상세 기획|실제 구현|바꾼 이유", "caption": {"text": "② 현실감 — 4.2·4.3과 같은 원칙", "verbatim": true}},
+        {"kind": "table", "n": 3, "fp": "항목|상세 기획|실제 구현|바꾼 이유", "caption": {"text": "③ 선택지 — 싼 것에는 대가가 따르게", "verbatim": true}}
+      ],
+      "from": {
+        "key": "plan-difficulty",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+        "sig": ["4.5 기획과 구현의 비교|table|1|항목|상세 기획|실제 구현|바꾼 이유"]
+      },
+      "group": "merge-plan-difficulty"
+    }
+  ],
+  "hide": [
+    {
+      "key": "plan-realism",
+      "from": {
+        "key": "plan-realism",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+        "sig": ["4.5 기획과 구현의 비교|table|2|항목|상세 기획|실제 구현|바꾼 이유"]
+      },
+      "group": "merge-plan-difficulty"
+    },
+    {
+      "key": "plan-choice",
+      "from": {
+        "key": "plan-choice",
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+        "sig": ["4.5 기획과 구현의 비교|table|3|항목|상세 기획|실제 구현|바꾼 이유"]
+      },
+      "group": "merge-plan-difficulty"
+    }
+  ]
+}
