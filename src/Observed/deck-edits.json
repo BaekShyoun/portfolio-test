@@ -47,7 +47,7 @@
       "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
       "points": [],
       "visuals": [
-        {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)", "lines": [6, 19], "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]},
+        {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)", "lines": [1, 15], "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]},
         {"kind": "table", "n": 1, "fp": "방법|장점|단점"}
       ],
       "from": {
