@@ -779,12 +779,8 @@
       "visuals": [
         {
           "kind": "code",
-          "n": 3,
-          "fp": "public void GetBlackOut()",
-          "sectionPath": [
-            "3. 턴 진행",
-            "3.2 턴 경과를 한 메서드로 처리하기"
-          ]
+          "n": 1,
+          "fp": "public void MakeOrder()"
         }
       ]
     }
