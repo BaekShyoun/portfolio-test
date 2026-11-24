@@ -126,3 +126,10 @@
 /* Observed만: 표는 원래 자리에 두고 '달성' 카드를 올려서 표 중앙에 맞춤 — 가운데 맞춤으로 표가 내려간 만큼(22.5px) 함께 올림.
    Observed에만 있는 장면(#d-flowtime)이 있을 때만 적용 */
 html:has(#d-flowtime) #retro .rt { transform: translateY(-22.5px); }
+
+/* Observed 슬라이드 「4.7 AI 결과물을 확인하고 고친 과정」(#d-ai-review): 표 폭을 줄여 가운데에 두고, 글자·칸 여백을 키워 세로로 늘림(빈 공간 줄이기) */
+#d-ai-review .vbox[data-kind="table"] { width: 940px !important; align-self: center; }
+#d-ai-review .vbox[data-kind="table"] .fit-in { zoom: 1 !important; width: auto !important; }
+#d-ai-review table.md-table { font-size: 16px; line-height: 1.6; }
+#d-ai-review table.md-table th { padding: 10px 14px; font-size: 14px; }
+#d-ai-review table.md-table td { padding: 14px 14px; vertical-align: middle; }
