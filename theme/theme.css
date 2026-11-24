@@ -53,3 +53,4 @@
 #d-choice-turn .vis { flex-direction: column !important; align-items: stretch !important; justify-content: flex-start !important; gap: 16px !important; }
 #d-choice-turn .vbox { width: auto !important; }
 #d-choice-turn .vbox .fit-in { zoom: 1 !important; width: auto !important; }
+#d-choice-turn .vbox[data-kind="code"] > .cap { display: none !important; }

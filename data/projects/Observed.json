@@ -558,7 +558,7 @@
             "kind": "code",
             "n": 1,
             "fp": "public void FlowTime(int skipTime)",
-            "lines": [8, 19],
+            "lines": [6, 19],
             "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]
           },
           {"kind": "table", "n": 1, "fp": "방법|장점|단점"}
@@ -1000,6 +1000,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "1401607a3f338252"
+    "applied": "6c0ae73a77028bb2"
   }
 }
