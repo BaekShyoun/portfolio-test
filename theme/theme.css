@@ -61,14 +61,3 @@
 /* Observed 슬라이드 「1.1 무엇을 만들었나」(#d-what): 오른쪽 표의 세로 중앙을 왼쪽 그림의 중앙에 맞춤 */
 #d-what .vis[data-arr="row"] { align-items: center !important; }
 #d-what .vis[data-arr="row"] > .vbox[data-kind="table"] { margin-bottom: 24px; }   /* 그림 아래 캡션(18px)+간격(6px)만큼 — 표 중앙을 캡션이 아닌 그림 중앙에 */
-
-/* Observed 슬라이드 「1.3 처음 컨셉에서 출발한 것」 표 장면(#d-concept-table): 표를 위에, 초기 기획서 그림을 아래에 두고,
-   남는 높이만큼만 그림 윗부분을 보여 줌(아래쪽은 잘림 — 전체는 상세 문서에). 그림은 원본 폭(1025px)보다 키우지 않음 */
-#d-concept-table .vis { flex-direction: column !important; align-items: stretch !important; justify-content: flex-start !important; gap: 14px !important; }
-#d-concept-table .vbox[data-kind="table"] { width: auto !important; flex: none !important; }
-#d-concept-table .vbox[data-kind="table"] .fit-in { zoom: 1 !important; width: auto !important; }
-#d-concept-table .vbox[data-kind="image"] { width: 100% !important; max-width: 1025px; align-self: center; flex: 1 1 0 !important; min-height: 0; }
-#d-concept-table .vbox[data-kind="image"] .vmedia { width: 100% !important; height: auto !important; flex: 1 1 0; min-height: 0; }
-#d-concept-table .vbox[data-kind="image"] .vmedia img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: top !important; }
-#d-concept-table .pf-fill { height: 100% !important; }
-#d-concept-table .pf-fill > .dk { height: 100% !important; grid-template-rows: minmax(0, 1fr) !important; }
