@@ -35,3 +35,15 @@
   --t-glow: 0;                  /* 번지는 빛 없는 평평한 남색 */
   --t-mark: 0;                  /* 배경에 깔린 큰 장식 글자 없음 */
 }
+
+/* ─────────────────────────────────────────────────────────────
+   장면 하나만 손본 배치 (손으로 넣음 · 2026-11-24)
+   Observed 슬라이드 「4.5 기획과 구현의 비교」(#d-plan-difficulty)의 표 세 개를 가로 대신 위아래로 쌓음.
+   렌더러는 여러 표를 가로로만 놓기 때문에, 이 장면에만 걸리는 규칙을 여기에 둠(다른 장면·페이지는 그대로).
+   /portfolio-theme로 테마를 새로 뽑으면 이 파일이 다시 써지므로 이 블록을 다시 붙여 넣어야 함.
+   ───────────────────────────────────────────────────────────── */
+#d-plan-difficulty .vis { flex-direction: column !important; align-items: stretch !important; justify-content: flex-start !important; gap: 12px !important; }
+#d-plan-difficulty .vbox { width: auto !important; }
+#d-plan-difficulty .vbox .fit-in { zoom: 1 !important; width: auto !important; }
+#d-plan-difficulty .vbox { gap: 3px !important; }
+#d-plan-difficulty table.md-table th, #d-plan-difficulty table.md-table td { padding-top: 5px !important; padding-bottom: 5px !important; }
