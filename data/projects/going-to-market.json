@@ -416,7 +416,8 @@
         "lead": {"text": "통합 단계(09.01 ~ 09.06)에서는 목표일을 정한 작업 대부분이 늦어졌지만, 늦어진 폭은 대부분 하루였고 전체 마감은 지켰다(→ 3.4).", "verbatim": true},
         "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.2 일정 흐름"],
         "points": [],
-        "visuals": [{"kind": "table", "n": 1, "fp": "기간|작업|계획 (목표일)|실제"}]
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "gantt"}],
+        "edited": true
       },
       {
         "key": "scope-growth",
@@ -730,12 +731,18 @@
       {
         "key": "selection",
         "chapter": "planning",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "흐름",
         "title": {"text": "2.1 기획안 10개 중에서 고르기", "verbatim": true},
         "lead": {"text": "팀 과제의 주제는 방 코드를 입력해 4명이 함께하는 멀티플레이 게임이었다.", "verbatim": true},
         "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 기획안 10개 중에서 고르기"],
         "points": [
+          {"label": "", "text": "다른 팀원들이 낸 기획안 5개는 모두 기존 게임 하나를 따라 만드는 모작이었다.", "verbatim": true},
+          {
+            "label": "",
+            "text": "그래서 나라도 창작 기획을 내야겠다고 생각했고, 브레인스토밍으로 떠오르는 아이디어를 던지다 보니 창작 기획 5개를 내게 되었다.",
+            "verbatim": true
+          },
           {
             "label": "",
             "text": "득표는 다른 후보보다 많지 않았지만, 담당 강사는 \"지금까지 본 적 없는 유형의 기획\"이라는 이유로 시장에 가면을 골랐다.",
@@ -827,7 +834,7 @@
         "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
         "points": [
           {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료", "verbatim": true},
-          {"label": "소통", "text": "정기 회의 없이 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
+          {"label": "소통", "text": "작은 단위의 작업도 즉각적인 소통이 필요했기에 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
         ],
         "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
       },
@@ -1044,6 +1051,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "f0b8481bfa7a99ff"
+    "applied": "c54fb6fc2f27fd15"
   }
 }
