@@ -147,8 +147,9 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
 .intent p + p { margin-top: 6px; font-size: 15px; line-height: 1.75; color: var(--body); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
 .tags li { padding: 4px 12px; border-radius: var(--pill); border: 1px solid var(--line-2); color: var(--ink); font-size: 12.5px; font-weight: 600; }
-.pi-r .btns { margin-top: 28px; }
-.pi-r .btns.ext { margin-top: 8px; }
+/* 프로젝트 소개 버튼 두 줄: 왼쪽 이름표(글자만) + 버튼. 이름표 칸 폭이 같아 두 줄 버튼이 같은 세로선에서 시작 */
+.pi-r .lrows { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 8px 16px; margin-top: 28px; }
+.pi-r .lrows .lk { font-size: 12px; font-weight: 700; color: var(--muted); white-space: nowrap; }
 
 /* ④-2 기능 소개: 화면 왼쪽 · 설명과 [슬라이드 열기] 오른쪽 */
 .fe { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }

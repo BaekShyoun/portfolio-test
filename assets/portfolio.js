@@ -172,7 +172,8 @@
         ${meta.length ? `<dl class="meta">${meta.join('')}</dl>` : ''}
         ${p.intent?.text ? `<div class="intent"><p class="k">${T('name.intent')}</p><p>${inline(p.intent.text)}</p></div>` : ''}
         ${(p.tags || []).length ? `<ul class="tags">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
-        <div class="btns no-print">${pageBtns.join('')}</div>${extBtns.length ? `<div class="btns ext no-print">${extBtns.join('')}</div>` : ''}${printUrls(urls)}</div></div>`;
+        <div class="lrows no-print"><span class="lk">${T('page.links-own')}</span><div class="btns">${pageBtns.join('')}</div>${extBtns.length
+          ? `<span class="lk">${T('page.links-ext')}</span><div class="btns">${extBtns.join('')}</div>` : ''}</div>${printUrls(urls)}</div></div>`;
     return sec(`p-${p.id}`, no, p.title, PF.teamLabel(p.team), body, 'proj');
   }
 

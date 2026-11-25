@@ -161,6 +161,21 @@
       const img = only && (only.tagName === 'IMG' ? only : (only.tagName === 'A' && only.children.length >= 1 && [...only.childNodes].every((n) => n.nodeType === 1 ? n.tagName === 'IMG' || n.classList.contains('pf-newtab-icon') || n.classList.contains('pf-newtab-sr') : !n.textContent.trim()) ? only.querySelector('img') : null));
       if (img) para.classList.add('pf-figure');
     });
+    // ⑥-1 그림 설명: 프로젝트 문서의 ![설명](경로) 글을 그림 바로 아래에(표 안 그림은 칸에 설명 글이 있으므로 뺌).
+    //   그림만 있는 문단(.pf-figure)은 그 문단 끝에, 목록·글 사이 그림은 그림과 설명을 한 상자(.pf-imgbox)로 묶어 설명 폭이 그림 폭을 따르게
+    doc.querySelectorAll('img').forEach((img) => {
+      const cap = (img.getAttribute('alt') || '').trim();
+      if (!cap || img.closest('table')) return;
+      const a = img.parentElement;
+      const host = a && a.tagName === 'A' && !a.textContent.trim() ? a : img;   // 링크로 감싼 그림은 링크째로
+      const c = document.createElement('span');
+      c.className = 'pf-cap'; c.setAttribute('aria-hidden', 'true'); c.textContent = cap;   // 읽기 프로그램은 그림의 alt로 이미 읽음
+      const fig = host.parentElement?.classList.contains('pf-figure') ? host.parentElement : null;
+      if (fig) { fig.appendChild(c); return; }
+      const box = document.createElement('span');
+      box.className = 'pf-imgbox';
+      host.replaceWith(box); box.append(host, c);
+    });
 
     // ⑦ Mermaid (theme default, securityLevel loose). 글꼴을 먼저 받아 글자 폭을 맞춤
     let n = 0;
