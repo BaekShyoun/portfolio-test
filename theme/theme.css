@@ -62,6 +62,16 @@
 #d-what .vis[data-arr="row"] { align-items: center !important; }
 #d-what .vis[data-arr="row"] > .vbox[data-kind="table"] { margin-bottom: 24px; }   /* 그림 아래 캡션(18px)+간격(6px)만큼 — 표 중앙을 캡션이 아닌 그림 중앙에 */
 
+/* 시장에 가면 슬라이드 「1.1 무엇을 만들었나」(#d-what, pair 틀): 오른쪽 칸의 게임 흐름 GIF를 칸 가운데에 두고 337→430px로 키움.
+   늘어난 높이만큼 GIF와 카드 사이(20→12px)·카드 사이(→8px)·카드 위아래 안쪽 여백(10→7px)을 줄여 맨 아래 줄과 겹치지 않게.
+   Observed의 #d-what과 장면 id가 같아 GameFlow.gif가 있는 오른쪽 칸에만 걸리게 :has로 좁힘 */
+#d-what .pair-r:has(img[src*="GameFlow.gif"]) { gap: 12px !important; }
+#d-what .pair-r:has(img[src*="GameFlow.gif"]) > .vis { justify-content: center !important; align-items: center !important; }
+#d-what .pair-r:has(img[src*="GameFlow.gif"]) .vbox[data-kind="image"] { width: 430px !important; }
+#d-what .pair-r:has(img[src*="GameFlow.gif"]) .vbox[data-kind="image"] .vmedia { width: 430px !important; height: 242px !important; }
+#d-what .pair-r:has(img[src*="GameFlow.gif"]) > .cards { gap: 8px !important; }
+#d-what .pair-r:has(img[src*="GameFlow.gif"]) > .cards > .ncard { padding-top: 7px !important; padding-bottom: 7px !important; }
+
 /* Observed 슬라이드 「1.3 처음 컨셉에서 출발한 것」 표 장면(#d-concept-table): 피드백 카드를 표 아래 가운데에 두고(양옆 같은 여백 96px),
    표와 카드 사이에 아래 화살표(↓)를 둠 — 맨 아래 "맹수" 줄에서 이어지는 결과처럼 보이게 */
 #d-concept-table .dk-stack { gap: 4px !important; }
