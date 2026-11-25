@@ -142,3 +142,6 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
 /* 토끼와 거북이 슬라이드 「3.3 폭발 위치에서 토끼를 날리는 방향」(#d-knockback): 오른쪽 GIF의 세로 중앙을 왼쪽 코드 중앙에 맞춤
    (둘 다 아래에 한 줄 캡션이 있어, 캡션을 뺀 코드·그림의 중앙끼리 맞음) */
 #d-knockback .vis[data-arr="row"] { align-items: center !important; }
+
+/* 토끼와 거북이 슬라이드 「3.1 전체 흐름」(#d-flow): 오른쪽 위 스테이지 선택 화면(과 설명)을 아래 카드 폭의 가운데에 둠 */
+#d-flow .pair-r > .vis { align-items: center !important; }
