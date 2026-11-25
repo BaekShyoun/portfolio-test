@@ -385,12 +385,6 @@
       const li = e.target.closest('li[data-shot]');
       if (li && !e.target.closest('a, button')) show(li);
     });
-    // 한 장씩 보기의 기능 소개: 카드에 마우스를 올리면 위 화면·설명·[슬라이드에서 보기]가 미리 그 기능으로(누르지 않아도)
-    root.addEventListener('mouseover', (e) => {
-      if (view !== 'paged') return;
-      const li = e.target.closest('.is-cur.core li[data-shot]');
-      if (li && !li.classList.contains('cur')) show(li);
-    });
     root.addEventListener('keydown', (e) => {
       if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('li[data-shot]')) { e.preventDefault(); show(e.target); }
     });
