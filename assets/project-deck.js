@@ -263,6 +263,21 @@
     });
     return out;
   }
+  // 옆 배치(.dk-side)에서 세로로 긴 그림·다이어그램이 높이에 막혀 칸보다 좁으면, 그림 칸을 그림 폭에 맞추고 남는 폭은 카드에 줌
+  //   (그림 양옆·그림과 카드 사이가 비어 보이지 않게). 그림 크기는 그대로 — 높이에 막혀 있으므로 칸이 좁아져도 작아지지 않음
+  function snugSide(s) {
+    const dk = s.querySelector('.dk-side'), vis = dk && dk.querySelector(':scope > .vis');
+    if (!vis || !['one', 'col'].includes(vis.dataset.arr)) return s;
+    const M = PF.measureRoot(); const wasIn = s.isConnected; if (!wasIn) M.appendChild(s);
+    const boxes = [...vis.children].filter((e) => e.classList.contains('vbox'));
+    const bw = Math.max(0, ...boxes.map((b) => b.offsetWidth));
+    if (boxes.length && bw && vis.clientWidth - bw > 48) {
+      dk.style.gridTemplateColumns = dk.classList.contains('flip') ? `minmax(0, 1fr) ${Math.ceil(bw)}px` : `${Math.ceil(bw)}px minmax(0, 1fr)`;
+      dk.dataset.snug = '1';
+    }
+    if (!wasIn) s.remove();
+    return s;
+  }
   //   codeChunk(v) = 그 코드의 이번 줄 범위 · tsplit = { v, rows: [a, b) } 행을 나누는 표 하나(다른 표는 그대로 둠)
   function fitSlide(sl, vis, sid, part, codeChunk, meta, tsplit = null, depth = 0) {
     const vs = vis.map((v) => vboxHtml(v, v.ref.kind === 'code' ? codeChunk(v) : v.ref.kind === 'table' && tsplit && tsplit.v === v ? tsplit.rows : null));
@@ -276,7 +291,7 @@
       if (sl.edited) s.dataset.pfEdited = '1';                       // 장면 고치기로 고친 장면(미리보기 개요에 ✎)
       PF.body(s).innerHTML = `<div class="pf-fill">${bodyHtml(sl, vs, v)}</div>`;
       if (meta.auto) s.querySelector('.pf-foot > span').insertAdjacentHTML('beforeend', '<span class="pf-autoband" data-pf-ui="note">예전 데이터로 자동 구성 — /portfolio-build를 다시 실행하면 슬라이드가 됩니다</span>');
-      return PF.fitVisuals(s);
+      return snugSide(PF.fitVisuals(s));
     };
     // 들어가는 변형 중 시각 자료가 가장 크게 보이는 것(같으면 앞의 것). 가로로 긴 다이어그램은 위아래 배치가, 세로로 긴 것은 옆 배치가 이김
     let best = null;

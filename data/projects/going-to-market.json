@@ -310,17 +310,24 @@
         "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
         "points": [
           {
+            "label": "한 줄 소개",
+            "text": "서로 다른 키워드를 받은 사실조차 모른 채 마트에서 연관 물품을 선택하고, 결과물을 비교해 라이어를 찾아내는 4인 추리 게임",
+            "verbatim": true
+          },
+          {
             "label": "핵심 재미",
             "text": "모두가 자신의 키워드가 정상인지 모르는 상황에서 다른 사람의 선택을 해석하고, 동시에 자신의 선택도 의심하게 되는 정보 비대칭",
             "verbatim": true
           },
+          {"label": "네트워크 요소", "text": "마트 내 플레이어 위치 동기화, 선택한 아이템 정보 공유, 채팅과 투표 결과 전달", "verbatim": true},
           {
             "label": "우려되는 점",
             "text": "① 반복 플레이를 위해 아이템 구성이 충분히 다양해야 함 ② 진행이 채팅과 투표에 크게 의존해 단조로울 수 있음",
             "verbatim": true
           }
         ],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}],
+        "edited": true
       },
       {
         "key": "concerns",
@@ -376,7 +383,7 @@
       {
         "key": "task-rules",
         "chapter": "schedule",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "흐름",
         "title": {"text": "3.1 작업 관리 규칙", "verbatim": true},
         "lead": {"text": "보드의 단계, 기능 영역(에픽) 나누기, 작업 이름 앞의 머리말([서버]·[UGUI]·[맵] 등) 규칙은 팀장인 제가 정했습니다.", "verbatim": true},
@@ -385,7 +392,16 @@
           {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료", "verbatim": true},
           {"label": "소통", "text": "작은 단위의 작업도 즉각적인 소통이 필요했기에 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
         ],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}],
+        "visuals": [
+          {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
+          {
+            "kind": "image",
+            "src": "images/schedule_stage_flow.png",
+            "w": 2174,
+            "h": 571,
+            "caption": {"text": "작업이 단계별로 움직인 모습 — 아래부터 완료·검토·작업 중·예정·대기를 쌓은 그래프 (보드에 올린 146개 작업 기준)", "verbatim": true}
+          }
+        ],
         "edited": true
       },
       {
@@ -1049,6 +1065,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "9c493bcf42a548ec"
+    "applied": "78450ec14e96d0c2"
   }
 }
