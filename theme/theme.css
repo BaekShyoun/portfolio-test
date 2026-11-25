@@ -72,6 +72,13 @@
 #d-what .pair-r:has(img[src*="GameFlow.gif"]) > .cards { gap: 8px !important; }
 #d-what .pair-r:has(img[src*="GameFlow.gif"]) > .cards > .ncard { padding-top: 7px !important; padding-bottom: 7px !important; }
 
+/* 시장에 가면 슬라이드 「1.2 왜 만들었나」(#d-why, pair 틀): 왼쪽 키워드 예시 그림 칸을 넓히고(1.35 : 1), 오른쪽(코드 상자 + 카드)은 좁게.
+   Observed에도 #d-why가 있어 KeywordExample 그림이 있는 장면에만 걸리게 :has로 좁힘 */
+#d-why .dk-pair:has(img[src*="KeywordExample"]) { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important; align-items: center !important; }
+#d-why .dk-pair:has(img[src*="KeywordExample"]) > .vis .vbox { width: 100% !important; }
+#d-why .dk-pair:has(img[src*="KeywordExample"]) > .vis .vmedia { width: 100% !important; height: auto !important; }
+#d-why .dk-pair:has(img[src*="KeywordExample"]) > .vis .vmedia img { width: 100% !important; height: auto !important; }
+
 /* Observed 슬라이드 「1.3 처음 컨셉에서 출발한 것」 표 장면(#d-concept-table): 피드백 카드를 표 아래 가운데에 두고(양옆 같은 여백 96px),
    표와 카드 사이에 아래 화살표(↓)를 둠 — 맨 아래 "맹수" 줄에서 이어지는 결과처럼 보이게 */
 #d-concept-table .dk-stack { gap: 4px !important; }
