@@ -174,3 +174,4 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
 #d-stage-compare table.md-table tbody tr:nth-child(2) td:first-child { box-shadow: inset 4px 0 0 var(--accent-ink); }
 #d-stage-compare .cards { margin: 0 160px; gap: 6px; }
 #d-stage-compare .cards::before { content: "↓"; display: block; text-align: center; font-size: 24px; font-weight: 700; line-height: 1; color: var(--accent-ink); }
+#d-stage-compare .ncard { text-align: center; }   /* 결과 카드의 제목·글을 가운데 정렬 */
