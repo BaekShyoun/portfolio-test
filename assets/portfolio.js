@@ -106,19 +106,30 @@
       scrollTo({ top: fromEnd ? html.scrollHeight : 0, behavior: 'instant' });
     }
   }
-  // 한 장씩 보기에서 지금 절이 화면보다 조금 길면 절 내용을 줄여(--pg-zoom, 0.8까지) 한 화면에 맞춤. 그래도 길면 그만큼만 스크롤.
-  //   기능 소개(.core)는 CSS가 화면 높이에 맞춘 판이라 빼고, 좁은 화면(760px 미만)은 줄이지 않음(글자가 너무 작아짐). 인쇄에는 닿지 않음(CSS가 화면에서만 씀)
+  // 한 장씩 보기의 크기 맞춤(슬라이드처럼 화면을 채움):
+  //   ① 화면 배율 --pf-s = 화면이 기준(1400×860)보다 큰 만큼(1 ~ 2.4). 큰 모니터일수록 내용·머리 막대·아래 띠가 함께 커짐. 기준 이하 화면은 1
+  //   ② 지금 절은 그 배율에서 시작해, 화면보다 길면(기능 소개는 목록이 칸을 넘치면) 넘친 만큼 줄임(--pg-zoom, 0.8까지). 그래도 길면 그만큼만 스크롤
+  //   좁은 화면(760px 미만)·이어서 보기는 키우지도 줄이지도 않음. 인쇄에는 닿지 않음(CSS가 화면에서만 씀)
+  const REF_W = 1400, REF_H = 860, S_MAX = 2.4, Z_MIN = 0.8;
   function fitPage() {
     const s = pages[cur];
     pages.forEach((p) => { if (p !== s) p.style.removeProperty('--pg-zoom'); });
+    const on = view === 'paged' && innerWidth >= 760;
+    const k = on ? Math.max(1, Math.min(innerWidth / REF_W, innerHeight / REF_H, S_MAX)) : 1;
+    html.style.setProperty('--pf-s', k.toFixed(3));
     if (!s) return;
     s.style.removeProperty('--pg-zoom');
-    if (view !== 'paged' || innerWidth < 760 || s.classList.contains('core')) return;
     const w = s.querySelector(':scope > .wrap');
-    const over = html.scrollHeight - innerHeight;
-    if (!w || over <= 1) return;
-    const h = w.getBoundingClientRect().height;
-    s.style.setProperty('--pg-zoom', Math.max(0.8, (h - over - 4) / h).toFixed(3));
+    if (!on || !w) return;
+    const list = s.classList.contains('core') ? s.querySelector('.flist') : null;
+    let z = k;
+    for (let n = 0; n < 5; n++) {                                     // 줄이면 줄바꿈이 달라져 높이가 정확히 비례하지 않음 → 몇 번 다시 잼
+      s.style.setProperty('--pg-zoom', z.toFixed(3));
+      const over = list ? (list.scrollHeight - list.clientHeight) * z : html.scrollHeight - innerHeight;
+      if (over <= 1 || z <= Z_MIN) break;
+      const h = w.getBoundingClientRect().height;
+      z = Math.max(Z_MIN, z * (h - over - 4) / h);
+    }
   }
   let fitT = 0;
   addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitPage, 120); });
@@ -136,7 +147,7 @@
     const b = root.querySelector('[data-view-toggle]');
     if (b) { b.textContent = t(v === 'paged' ? 'page.to-scroll' : 'page.to-paged'); b.title = t(v === 'paged' ? 'page.to-scroll-tip' : 'page.to-paged-tip'); }
     showPage(cur);
-    if (v === 'scroll') pages[cur]?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (v === 'scroll') { fitPage(); pages[cur]?.scrollIntoView({ behavior: 'instant', block: 'start' }); }   // 이어서 보기: 배율을 1로 되돌림
   }
 
   // 예전 포트폴리오 슬라이드의 주소(#s=<장면 id> · #<번호> · #s-<번호> · 옛 랜딩 #skills 등) → 이 페이지의 절 id. 지금 주소가 절 id 그대로여도 돌려줌(그리고 나서 그 절로 스크롤)
