@@ -294,6 +294,12 @@ table.md-table:has(td img) th, table.md-table:has(td img) td { text-align: cente
 .fstep.res { background: color-mix(in srgb, var(--ok) 16%, var(--card)); border-color: color-mix(in srgb, var(--ok) 50%, var(--card)); }
 .flow.col .fstep { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 12px; align-items: start; padding: 11px 14px; }
 .flow.col .fstep .labelchip { justify-content: center; }
+/* 2×2 흐름(그림 없는 4단계 문제 해결): 읽는 순서대로 번호 + 단계 칩, 카드를 크게 */
+.flow.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 16px; }
+.flow.grid .fstep { padding: 22px 24px; gap: 12px; min-height: 150px; }
+.flow.grid .fhead { display: flex; align-items: center; gap: 10px; }
+.flow.grid .num { width: 26px; height: 26px; border-radius: 50%; background: var(--glow); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; }
+.flow.grid .fstep p { font-size: 17px; }
 .scr-row { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 22px; }
 .pf-sizing .scr-row { align-items: stretch; }
 .pf-vband { margin: 0; padding: 12px 14px; border-left: 4px solid #F04438; background: #2A1212; color: #FDA29B; font-size: 13px; line-height: 1.45; border-radius: 8px; min-width: 260px; }
