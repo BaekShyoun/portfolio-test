@@ -133,3 +133,12 @@ html:has(#d-flowtime) #retro .rt { transform: translateY(-22.5px); }
 #d-ai-review table.md-table { font-size: 16px; line-height: 1.6; }
 #d-ai-review table.md-table th { padding: 10px 14px; font-size: 14px; }
 #d-ai-review table.md-table td { padding: 14px 14px; vertical-align: middle; }
+
+/* 토끼와 거북이 슬라이드 「1.1 무엇을 만들었나」(#d-what): 카드의 번호 1 대신 화살표 →
+   (#d-what은 세 프로젝트가 함께 쓰는 이름이라, 토끼와 거북이에만 있는 #d-knockback이 있을 때만 적용) */
+html:has(#d-knockback) #d-what .ncard > .num { background: none !important; font-size: 0 !important; }
+html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent-ink); }
+
+/* 토끼와 거북이 슬라이드 「3.3 폭발 위치에서 토끼를 날리는 방향」(#d-knockback): 오른쪽 GIF의 세로 중앙을 왼쪽 코드 중앙에 맞춤
+   (둘 다 아래에 한 줄 캡션이 있어, 캡션을 뺀 코드·그림의 중앙끼리 맞음) */
+#d-knockback .vis[data-arr="row"] { align-items: center !important; }
