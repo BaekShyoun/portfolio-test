@@ -100,6 +100,10 @@
         isUrl(prof.github) && btn(prof.github, 'GitHub', 'external'), ...profLinks.map((l) => btn(l.url, esc(l.label), 'external'))].filter(Boolean).join('')}</div>
       ${printUrls([prof.email && [t('page.print-email'), prof.email, `mailto:${prof.email}`, 'mail'], isUrl(prof.github) && ['GitHub', shortUrl(prof.github), prof.github, 'external'],
         ...profLinks.map((l) => [l.label, shortUrl(l.url), l.url, 'external']), [t('page.print-web'), PF.visibleUrl('')]].filter(Boolean))}
+      ${/* 표지 아래 목차: 프로젝트 대표 이미지 + 번호·이름, 누르면 그 프로젝트로(PDF에서도 눌러 이동). 새 절이 아니라 표지 안 — 예전 #번호 주소의 절 차례가 바뀌지 않게 */ ''}
+      ${projects.length ? `<nav class="toc" aria-label="프로젝트 바로 가기"><ol>${projects.map((p, j) => `<li><a href="#p-${esc(p.id)}">
+        ${p.cover ? `<span class="toc-m"><img src="${esc(PF.srcPath(p.id, p.cover))}" alt=""></span>` : ''}
+        <span class="toc-t"><span class="toc-n">${pad2(j + 1)}</span>${esc(p.title)}</span></a></li>`).join('')}</ol></nav>` : ''}
     </div></section>`);
 
     // ② 자기소개: profile.intro를 줄바꿈까지 그대로(고쳐 쓰지 않음)
