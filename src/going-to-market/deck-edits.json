@@ -39,7 +39,7 @@
     {
       "key": "why",
       "chapter": "overview",
-      "layout": "overview",
+      "layout": "visual",
       "tab": "개요",
       "title": {"text": "1.2 왜 만들었나", "verbatim": true},
       "lead": {
@@ -54,10 +54,11 @@
       ],
       "visuals": [
         {
-          "kind": "code",
-          "n": 1,
-          "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장",
-          "caption": {"text": "컨셉 기획 단계에서 정리한 키워드 예시", "verbatim": false}
+          "kind": "image",
+          "src": "images/KeywordExample.png",
+          "w": 1600,
+          "h": 900,
+          "caption": {"text": "키워드 예시 — A·B·C는 스키장, D만 수영장을 받고 각자 고른 물건(장갑·오뎅·털모자·(수영)고글)", "verbatim": true}
         }
       ],
       "from": {"key": "why", "sectionPath": ["1. 개요", "1.2 왜 만들었나"], "sig": ["1.2 왜 만들었나|code|1|일반 키워드: 스키장 / 라이어 키워드: 수영장"]}
