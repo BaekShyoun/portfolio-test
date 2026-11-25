@@ -378,17 +378,6 @@
         "edited": true
       },
       {
-        "key": "class-roles",
-        "chapter": "impl",
-        "layout": "full",
-        "tab": "구조",
-        "title": {"text": "3.1 클래스 관계와 역할 분담", "verbatim": true},
-        "lead": {"text": "코드의 가독성을 높이고 이후 리팩터링을 용이하게 하기 위해 기능 단위로 역할을 최대한 분리했습니다.", "verbatim": true},
-        "sectionPath": ["3. 구현", "3.1 클래스 관계와 역할 분담"],
-        "points": [],
-        "visuals": [{"kind": "table", "n": 1, "fp": "클래스|역할"}]
-      },
-      {
         "key": "flowtime",
         "chapter": "impl",
         "layout": "pair",
@@ -420,17 +409,6 @@
           }
         ],
         "edited": true
-      },
-      {
-        "key": "flowtime-seq",
-        "chapter": "impl",
-        "layout": "full",
-        "tab": "흐름",
-        "title": {"text": "3.2 턴 경과를 한 메서드로 처리하기", "verbatim": true},
-        "lead": {"text": "세 행동은 넘길 턴 수만 다를 뿐 모두 같은 `FlowTime`을 거치고, 턴마다 할 일은 `FlowTime` 안에서 한 번에 처리됩니다.", "verbatim": true},
-        "sectionPath": ["3. 구현", "3.2 턴 경과를 한 메서드로 처리하기"],
-        "points": [],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "sequenceDiagram"}]
       },
       {
         "key": "turn-guard",
@@ -1146,6 +1124,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "137b1d1064a4a884"
+    "applied": "0654216e75485403"
   }
 }

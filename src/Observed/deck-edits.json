@@ -547,6 +547,18 @@
         "sectionPath": ["2. 기획", "블랙아웃 — 관리 실패에 대한 강제 패널티"],
         "sig": ["블랙아웃 — 관리 실패에 대한 강제 패널티|image|images/02-blackout.png|1"]
       }
+    },
+    {
+      "key": "flowtime-seq",
+      "from": {
+        "key": "flowtime-seq",
+        "sectionPath": ["3. 구현", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|mermaid|1|sequenceDiagram"]
+      }
+    },
+    {
+      "key": "class-roles",
+      "from": {"key": "class-roles", "sectionPath": ["3. 구현", "3.1 클래스 관계와 역할 분담"], "sig": ["3.1 클래스 관계와 역할 분담|table|1|클래스|역할"]}
     }
   ],
   "chapters": [
