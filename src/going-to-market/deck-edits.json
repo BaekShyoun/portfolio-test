@@ -227,25 +227,6 @@
           "1.1 무엇을 만들었나|image|images/WasLiar.jpg|1"
         ]
       }
-    },
-    {
-      "key": "core-loop",
-      "chapter": "planning",
-      "layout": "pair",
-      "tab": "흐름",
-      "title": {"text": "2.1 컨셉 기획서 — 처음 내가 짠 것", "verbatim": true},
-      "lead": {"text": "처음에는 구체적인 시스템 설계 없이 간단한 컨셉 기획서 한 장이 제가 짠 기획의 전부였습니다.", "verbatim": true},
-      "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
-      "points": [],
-      "visuals": [
-        {"kind": "mermaid", "n": 1, "fp": "flowchart TD", "caption": {"text": "컨셉 기획서의 코어 루프", "verbatim": true}},
-        {"kind": "table", "n": 1, "fp": "항목|컨셉 기획서"}
-      ],
-      "from": {
-        "key": "core-loop",
-        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
-        "sig": ["2.1 컨셉 기획서 — 처음 내가 짠 것|mermaid|1|flowchart TD"]
-      }
     }
   ],
   "hide": [
