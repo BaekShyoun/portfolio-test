@@ -366,7 +366,10 @@
         "lead": {"text": "하루는 3시간 단위 8턴(00시 ~ 21시)입니다. 모든 게이지는 0 ~ 1(화면에서는 0 ~ 100)입니다.", "verbatim": true},
         "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
         "points": [],
-        "visuals": [{"kind": "table", "n": 1, "fp": "행동|넘어가는 턴|결과"}, {"kind": "table", "n": 2, "fp": "조건|턴마다 바뀌는 것"}],
+        "visuals": [
+          {"kind": "table", "n": 1, "fp": "행동|넘어가는 턴|결과", "caption": {"text": "행동마다 넘어가는 턴과 게이지 변화", "verbatim": true}},
+          {"kind": "table", "n": 2, "fp": "조건|턴마다 바뀌는 것", "caption": {"text": "턴마다 자동으로 바뀌는 것", "verbatim": false}}
+        ],
         "edited": true
       },
       {
@@ -1115,6 +1118,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "c4ad2ae4696a2845"
+    "applied": "a4ca9ff464a590cb"
   }
 }

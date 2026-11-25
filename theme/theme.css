@@ -143,3 +143,10 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
 
 /* 토끼와 거북이 슬라이드 「2.3 흑화 — 반전 연출」 BGM 장면(#d-bgm): 오른쪽 카드("음악은 AI가 생성했으나…")의 글을 카드 세로 가운데로 */
 #d-bgm .ncard:nth-child(2) { align-items: center !important; }
+
+/* Observed 슬라이드 「3.1 행동마다 넘어가는 턴과 게이지 변화」(#d-turn-api): 두 표의 제목을 표 아래 대신 위 왼쪽에 */
+#d-turn-api .vbox { gap: 6px !important; }
+#d-turn-api .vbox[data-kind="table"] > .cap { order: -1; text-align: left !important; font-size: 14px; font-weight: 700; color: var(--ink); }
+#d-turn-api .vis { flex-direction: column !important; align-items: stretch !important; justify-content: center !important; gap: 22px !important; }   /* 두 표를 위아래로(제목이 생기면 렌더러가 좌우로 놓음) */
+#d-turn-api .vbox { width: auto !important; }
+#d-turn-api .vbox .fit-in { zoom: 1 !important; width: auto !important; }
