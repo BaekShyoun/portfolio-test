@@ -1,4 +1,4 @@
-// 포트폴리오 페이지(index.html) — 아래로 읽는 한 페이지 + A4 인쇄(제출 PDF)
+// 포트폴리오 페이지(index.html) — 화면은 한 장씩 보기(기본, 절 하나씩 넘김) 또는 이어서 보기(아래로 읽는 한 페이지) + A4 인쇄(제출 PDF, 늘 모든 절)
 //   순서: 머리(이름·정체성·연락처) → 자기소개 → 기술 스택 → 프로젝트마다 소개 + 기능 소개 → 한눈에 보기 → 연락처
 //   기능 소개: 화면(그 기능 절의 이미지 highlights[].image만)은 왼쪽에 모으고, 기능 설명과 [슬라이드 열기]는 오른쪽 목록에 한 열로 맞춤
 //   모든 글은 data/portfolio.json·data/projects/*.json 값 그대로입니다. 절 이름·버튼 같은 UI 문구는 문구 표(PF.t, assets/strings.js + theme/strings.tsv)에서 옵니다.
@@ -18,6 +18,15 @@
   const POS = `pf-portfolio-y:${location.pathname}`;                 // 새로고침해도 읽던 곳으로(내용을 늦게 그려 브라우저가 스스로 되돌리지 못함)
   try { history.scrollRestoration = 'manual'; } catch { /* 그대로 */ }
   addEventListener('pagehide', () => { try { sessionStorage.setItem(POS, String(Math.round(scrollY))); } catch { /* 저장소 막힘 */ } });
+  // 보기 방식: 한 장씩(기본 — 절 하나씩 넘김) · 이어서 보기(아래로 읽는 한 페이지). 화면에서만 — 인쇄(제출 PDF)는 늘 모든 절
+  //   보는 사람 브라우저에 기억(localStorage). 주소에 ?view=scroll · ?view=paged를 붙이면 그 방식으로 열림
+  const VIEW = 'pf-portfolio-view';
+  let view = 'paged';
+  try { if (localStorage.getItem(VIEW) === 'scroll') view = 'scroll'; } catch { /* 저장소 막힘 */ }
+  const qv = new URLSearchParams(location.search).get('view');
+  if (qv === 'scroll' || qv === 'paged') view = qv;
+  html.dataset.view = view;
+  let pages = [], cur = 0;
   let resolveReady;
   const ready = new Promise((r) => { resolveReady = r; });
   window.PFPage = { whenReady: () => ready, report };
@@ -44,7 +53,8 @@
     render(pf, projects);
     bind();
     arrived = go(projects);                                            // 내용을 그린 뒤라 브라우저가 처음 주소의 절로 스스로 가지 못함
-    if (!arrived && performance.getEntriesByType?.('navigation')[0]?.type === 'reload') {
+    if (!arrived) showPage(0, false);
+    if (!arrived && view === 'scroll' && performance.getEntriesByType?.('navigation')[0]?.type === 'reload') {
       try { restoreY = +sessionStorage.getItem(POS) || null; } catch { /* 저장소 막힘 */ }
       if (restoreY) scrollTo({ top: restoreY, behavior: 'instant' });
     }
@@ -55,9 +65,55 @@
     const want = legacyTarget(projects);
     const el = want && document.getElementById(want);
     if (!el) return '';
-    if (location.hash !== `#${encodeURIComponent(want)}`) try { history.replaceState(null, '', `${location.pathname}${location.search}#${encodeURIComponent(want)}`); } catch { /* 그대로 */ }
-    el.scrollIntoView({ behavior: 'instant', block: 'start' });        // 부드러운 스크롤은 가려진 창에서 멈춤 → 바로 이동
+    setHash(want);
+    const k = pages.findIndex((p) => p.contains(el));
+    if (k >= 0) showPage(k, false);
+    if (view === 'scroll') el.scrollIntoView({ behavior: 'instant', block: 'start' });   // 부드러운 스크롤은 가려진 창에서 멈춤 → 바로 이동
     return want;
+  }
+  function setHash(id) {
+    if (location.hash !== `#${encodeURIComponent(id)}`) try { history.replaceState(null, '', `${location.pathname}${location.search}#${encodeURIComponent(id)}`); } catch { /* 그대로 */ }
+  }
+
+  // 한 장씩 보기: k번째 절만 보이게(.is-cur) + 아래 띠(번호·절 이름·이전/다음) + 맨 위 메뉴의 지금 자리. 이어서 보기에서도 지금 절 번호는 기억(보기를 바꿀 때 그 절로)
+  function showPage(k, hash = true) {
+    if (!pages.length) return;
+    cur = Math.max(0, Math.min(pages.length - 1, k));
+    pages.forEach((p, i) => p.classList.toggle('is-cur', i === cur));
+    const pg = root.querySelector('.pager');
+    if (pg) {
+      pg.querySelector('.pg-n').textContent = pad2(cur + 1);
+      pg.querySelector('.pg-t').textContent = pages[cur].dataset.pgTitle || '';
+      pg.querySelector('[data-pg="-1"]').disabled = cur === 0;
+      pg.querySelector('[data-pg="1"]').disabled = cur === pages.length - 1;
+    }
+    let navOn = null;                                                  // 맨 위 메뉴: 지금 절이거나 그 앞에서 가장 가까운 메뉴 절
+    root.querySelectorAll('.top nav a').forEach((a) => {
+      a.removeAttribute('aria-current');
+      const i = pages.findIndex((p) => `#${p.id}` === a.getAttribute('href'));
+      if (i >= 0 && i <= cur && (!navOn || i > navOn.i)) navOn = { a, i };
+    });
+    if (navOn && view === 'paged') navOn.a.setAttribute('aria-current', 'true');
+    if (view === 'paged') {
+      if (hash) setHash(pages[cur].id);
+      scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }
+  function setView(v) {
+    if (v === view) return;
+    if (v === 'paged') {                                               // 이어서 보던 자리의 절로
+      const y = scrollY + (parseFloat(getComputedStyle(html).getPropertyValue('--top-h')) || 60) + 2;
+      let k = 0;
+      pages.forEach((p, i) => { if (p.getBoundingClientRect().top + scrollY <= y) k = i; });
+      cur = k;
+    }
+    view = v;
+    html.dataset.view = v;
+    try { localStorage.setItem(VIEW, v); } catch { /* 저장소 막힘 */ }
+    const b = root.querySelector('[data-view-toggle]');
+    if (b) { b.textContent = t(v === 'paged' ? 'page.to-scroll' : 'page.to-paged'); b.title = t(v === 'paged' ? 'page.to-scroll-tip' : 'page.to-paged-tip'); }
+    showPage(cur);
+    if (v === 'scroll') pages[cur]?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   // 예전 포트폴리오 슬라이드의 주소(#s=<장면 id> · #<번호> · #s-<번호> · 옛 랜딩 #skills 등) → 이 페이지의 절 id. 지금 주소가 절 id 그대로여도 돌려줌(그리고 나서 그 절로 스크롤)
@@ -160,9 +216,20 @@
     root.innerHTML = `<header class="top no-print"><div class="wrap top-in">
         <a class="top-name" href="#cover">${esc(nameT)}</a>
         <nav aria-label="절 이동"><ul>${nav.map(([id, label]) => `<li><a href="#${esc(id)}">${esc(label)}</a></li>`).join('')}</ul></nav>
+        <button type="button" class="btn view" data-view-toggle title="${T(view === 'paged' ? 'page.to-scroll-tip' : 'page.to-paged-tip')}">${T(view === 'paged' ? 'page.to-scroll' : 'page.to-paged')}</button>
         <button type="button" class="btn primary pdf" data-pdf>${T('ui.pdf')}</button></div></header>
-      <main id="main">${out.join('')}</main>`;
+      <main id="main">${out.join('')}</main>
+      <nav class="pager no-print" aria-label="절 넘기기"><button type="button" data-pg="-1" title="${T('page.prev')}" aria-label="${T('page.prev')}">‹</button>
+        <p class="pg-c" aria-live="polite"><span class="pg-n">01</span><span class="pg-of">/ ${pad2(out.length)}</span><span class="pg-t"></span></p>
+        <button type="button" data-pg="1" title="${T('page.next')}" aria-label="${T('page.next')}">›</button></nav>`;
     root.querySelectorAll('img').forEach((i) => { if (!i.hasAttribute('loading')) i.loading = 'lazy'; i.decoding = 'async'; });
+    // 한 장씩 보기의 장 = main의 절 모두(목차 포함). 아래 띠에 보일 절 이름
+    pages = [...root.querySelectorAll('#main > section[id], #main > footer[id]')];
+    pages.forEach((p) => {
+      const h = p.querySelector('.sec-head h2')?.textContent || '';
+      p.dataset.pgTitle = p.id === 'cover' ? t('page.cover') : p.id === 'contact' ? t('page.nav-contact')
+        : p.classList.contains('core') ? `${h} · ${t('page.features')}` : h;
+    });
     info.sections = [...root.querySelectorAll('main > section[id]:not(#toc), main > footer[id]')].map((s) => s.id);
     info.projects = projects.length;
   }
@@ -242,6 +309,25 @@
     root.addEventListener('keydown', (e) => {
       if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('li[data-shot]')) { e.preventDefault(); show(e.target); }
     });
+    // 한 장씩 보기: 아래 띠 ‹ › · 키보드 ← → · 휴대폰 옆으로 밀기. 보기 버튼으로 이어서 보기와 바꿈
+    root.querySelector('[data-view-toggle]')?.addEventListener('click', () => setView(view === 'paged' ? 'scroll' : 'paged'));
+    root.querySelectorAll('[data-pg]').forEach((b) => b.addEventListener('click', () => showPage(cur + Number(b.dataset.pg))));
+    addEventListener('keydown', (e) => {
+      if (view !== 'paged' || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      if (e.target.closest?.('input, textarea, select, [contenteditable]')) return;
+      const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      showPage(cur + d);
+    });
+    let tx = null, ty = 0;
+    addEventListener('touchstart', (e) => { if (e.touches.length === 1) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; } else tx = null; }, { passive: true });
+    addEventListener('touchend', (e) => {
+      if (view !== 'paged' || tx === null) return;
+      const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+      tx = null;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 2) showPage(cur + (dx < 0 ? 1 : -1));
+    }, { passive: true });
     root.querySelector('[data-pdf]')?.addEventListener('click', async (e) => {
       const b = e.currentTarget, label = b.textContent;
       b.disabled = true; b.textContent = t('ui.preparing');
@@ -263,10 +349,10 @@
   // 준비: 데스크톱 기기면 그림을 미리 다 받아 Ctrl+P도 빠짐없이 인쇄(휴대폰·데이터 절약 모드는 화면에 올 때 받음)
   async function settle() {
     const desk = matchMedia('(pointer: fine)').matches && !(navigator.connection && navigator.connection.saveData);
-    if (desk) eager();
+    if (desk || new URLSearchParams(location.search).get('pf-audit') === '1') eager();   // 한 장씩 보기에서 가려진 절의 그림도 점검에 들도록
     await Promise.race([Promise.all([...document.querySelectorAll('img:not([loading="lazy"])')].map(loaded)), new Promise((r) => setTimeout(r, 20000))]);
     if (document.fonts) await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 3000))]);
-    if (!userMoved) {                                                  // 글꼴이 바뀌며 절 높이가 달라져 도착 위치가 밀린 만큼 다시 맞춤
+    if (!userMoved && view === 'scroll') {                             // 글꼴이 바뀌며 절 높이가 달라져 도착 위치가 밀린 만큼 다시 맞춤(한 장씩 보기는 늘 그 절 맨 위)
       const el = arrived && document.getElementById(arrived);
       if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
       else if (restoreY) scrollTo({ top: restoreY, behavior: 'instant' });
@@ -280,6 +366,7 @@
     const imgs = [...document.images];
     return {
       page: 'portfolio', ready: html.dataset.pfReady, sections: info.sections, projects: info.projects,
+      view, pages: pages.length, current: pages[cur]?.id || '',
       images: { total: imgs.length, broken: imgs.filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.getAttribute('src')),
                 pending: imgs.filter((i) => !i.complete).map((i) => i.getAttribute('src')) },
       deckLinks: [...document.querySelectorAll('.flist a.pill')].map((a) => a.getAttribute('href')),

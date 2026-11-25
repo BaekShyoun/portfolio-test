@@ -269,6 +269,36 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
   .btn, .chip, .shot, .flist li, .pill, .g-t a, .top nav a { transition: none; }
 }
 
+/* 한 장씩 보기(화면 기본, html[data-view="paged"]): 지금 절(.is-cur) 하나만 화면 높이를 채워 세로 가운데. 아래에 떠 있는 쪽 넘기기 띠.
+   이어서 보기(data-view="scroll")는 위의 한 페이지 그대로. 인쇄(제출 PDF)는 보기 방식과 상관없이 모든 절(@media screen 안에만 둠) */
+.top .view { padding: 8px 14px; font-size: 13px; white-space: nowrap; }
+.top nav a[aria-current] { color: var(--accent-ink); }
+.pager { display: none; }
+@media screen {
+  html[data-view="paged"] { scroll-behavior: auto; --pager-h: 84px; }
+  html[data-view="paged"] #main { padding-bottom: var(--pager-h); }
+  html[data-view="paged"] #main > :not(.is-cur) { display: none; }
+  html[data-view="paged"] #main > .is-cur { display: flex; flex-direction: column; justify-content: center; border-top: 0;
+    min-height: calc(100vh - var(--top-h) - var(--pager-h)); min-height: calc(100dvh - var(--top-h) - var(--pager-h)); animation: pf-page-in .28s ease both; }
+  html[data-view="paged"] #main > .is-cur > .wrap { width: 100%; }
+  html[data-view="paged"] .pager { display: flex; align-items: center; gap: 4px; position: fixed; z-index: 20; left: 50%; bottom: 16px; transform: translateX(-50%);
+    max-width: calc(100vw - 32px); padding: 6px; border-radius: var(--pill); border: 1px solid var(--line-2);
+    background: color-mix(in srgb, var(--surface) 86%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 14px 36px -14px rgba(0, 0, 0, .55); }
+  .pager button { flex: none; width: 40px; height: 40px; border: 0; border-radius: 50%; background: transparent; color: var(--ink);
+    font: inherit; font-size: 24px; line-height: 1; cursor: pointer; transition: background .15s, color .15s; }
+  .pager button:hover:not(:disabled) { background: var(--accent-soft); color: var(--accent-ink); }
+  .pager button:disabled { opacity: .3; cursor: default; }
+  .pg-c { display: flex; align-items: baseline; gap: 6px; min-width: 0; padding: 0 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .pg-n { font-family: var(--display); font-weight: 800; color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
+  .pg-of { font-family: var(--display); font-variant-numeric: lining-nums tabular-nums; }
+  .pg-t { margin-left: 6px; max-width: 44vw; overflow: hidden; text-overflow: ellipsis; font-weight: 700; color: var(--body); }
+  .pg-t:empty { display: none; }
+}
+@keyframes pf-page-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { html[data-view="paged"] #main > .is-cur { animation: none; } .pager button { transition: none; } }
+@media (max-width: 759px) { .top-in { gap: 10px; } .top .view, .top .pdf { padding: 7px 12px; font-size: 12.5px; } }
+
 /* ── A4 인쇄(제출 PDF): 흰 종이에 밝은 색으로 ── */
 @media print {
   @page { size: A4; margin: 14mm 14mm 16mm; }
