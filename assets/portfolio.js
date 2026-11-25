@@ -76,7 +76,8 @@
   }
 
   // 한 장씩 보기: k번째 절만 보이게(.is-cur) + 아래 띠(번호·절 이름·이전/다음) + 맨 위 메뉴의 지금 자리. 이어서 보기에서도 지금 절 번호는 기억(보기를 바꿀 때 그 절로)
-  function showPage(k, hash = true) {
+  //   fromEnd: 앞 절로 돌아갈 때(휠을 위로) 그 절의 맨 아래에서 시작
+  function showPage(k, hash = true, fromEnd = false) {
     if (!pages.length) return;
     cur = Math.max(0, Math.min(pages.length - 1, k));
     pages.forEach((p, i) => p.classList.toggle('is-cur', i === cur));
@@ -86,6 +87,11 @@
       pg.querySelector('.pg-t').textContent = pages[cur].dataset.pgTitle || '';
       pg.querySelector('[data-pg="-1"]').disabled = cur === 0;
       pg.querySelector('[data-pg="1"]').disabled = cur === pages.length - 1;
+      pg.querySelectorAll('.pg-seg').forEach((s, i) => {
+        s.classList.toggle('done', i < cur); s.classList.toggle('cur', i === cur);
+        if (i === cur) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current');
+      });
+      pg.style.setProperty('--pg-fill', `${((cur + 1) / pages.length) * 100}%`);
     }
     let navOn = null;                                                  // 맨 위 메뉴: 지금 절이거나 그 앞에서 가장 가까운 메뉴 절
     root.querySelectorAll('.top nav a').forEach((a) => {
@@ -96,7 +102,7 @@
     if (navOn && view === 'paged') navOn.a.setAttribute('aria-current', 'true');
     if (view === 'paged') {
       if (hash) setHash(pages[cur].id);
-      scrollTo({ top: 0, behavior: 'instant' });
+      scrollTo({ top: fromEnd ? html.scrollHeight : 0, behavior: 'instant' });
     }
   }
   function setView(v) {
@@ -219,9 +225,10 @@
         <button type="button" class="btn view" data-view-toggle title="${T(view === 'paged' ? 'page.to-scroll-tip' : 'page.to-paged-tip')}">${T(view === 'paged' ? 'page.to-scroll' : 'page.to-paged')}</button>
         <button type="button" class="btn primary pdf" data-pdf>${T('ui.pdf')}</button></div></header>
       <main id="main">${out.join('')}</main>
-      <nav class="pager no-print" aria-label="절 넘기기"><button type="button" data-pg="-1" title="${T('page.prev')}" aria-label="${T('page.prev')}">‹</button>
+      <nav class="pager no-print" aria-label="절 넘기기"><div class="pg-row"><button type="button" data-pg="-1" title="${T('page.prev')}" aria-label="${T('page.prev')}">‹</button>
         <p class="pg-c" aria-live="polite"><span class="pg-n">01</span><span class="pg-of">/ ${pad2(out.length)}</span><span class="pg-t"></span></p>
-        <button type="button" data-pg="1" title="${T('page.next')}" aria-label="${T('page.next')}">›</button></nav>`;
+        <button type="button" data-pg="1" title="${T('page.next')}" aria-label="${T('page.next')}">›</button></div>
+        <ol class="pg-bar" aria-label="진행 막대 — 눌러서 그 절로">${out.map(() => '<li><button type="button" class="pg-seg"></button></li>').join('')}</ol></nav>`;
     root.querySelectorAll('img').forEach((i) => { if (!i.hasAttribute('loading')) i.loading = 'lazy'; i.decoding = 'async'; });
     // 한 장씩 보기의 장 = main의 절 모두(목차 포함). 아래 띠에 보일 절 이름
     pages = [...root.querySelectorAll('#main > section[id], #main > footer[id]')];
@@ -229,6 +236,10 @@
       const h = p.querySelector('.sec-head h2')?.textContent || '';
       p.dataset.pgTitle = p.id === 'cover' ? t('page.cover') : p.id === 'contact' ? t('page.nav-contact')
         : p.classList.contains('core') ? `${h} · ${t('page.features')}` : h;
+    });
+    root.querySelectorAll('.pg-seg').forEach((s, i) => {                // 진행 막대 칸마다 그 절 이름(마우스를 올리면 보임)
+      const label = `${pad2(i + 1)} ${pages[i]?.dataset.pgTitle || ''}`.trim();
+      s.title = label; s.setAttribute('aria-label', label);
     });
     info.sections = [...root.querySelectorAll('main > section[id]:not(#toc), main > footer[id]')].map((s) => s.id);
     info.projects = projects.length;
@@ -320,8 +331,41 @@
       e.preventDefault();
       showPage(cur + d);
     });
+    // 진행 막대: 누르거나 누른 채 옆으로 끌면 그 자리의 절로
+    const bar = root.querySelector('.pg-bar');
+    if (bar) {
+      const at = (x) => { const r = bar.getBoundingClientRect(); return Math.max(0, Math.min(pages.length - 1, Math.floor(((x - r.left) / r.width) * pages.length))); };
+      let drag = false;
+      bar.addEventListener('pointerdown', (e) => { if (e.button) return; drag = true; bar.setPointerCapture?.(e.pointerId); const k = at(e.clientX); if (k !== cur) showPage(k); });
+      bar.addEventListener('pointermove', (e) => { if (!drag) return; const k = at(e.clientX); if (k !== cur) showPage(k); });
+      const end = () => { drag = false; };
+      bar.addEventListener('pointerup', end); bar.addEventListener('pointercancel', end);
+      bar.querySelectorAll('.pg-seg').forEach((s, i) => s.addEventListener('click', () => { if (i !== cur) showPage(i); }));   // 키보드(Tab → Enter)
+    }
+    // 휠: 절이 화면보다 길면 먼저 절 안에서 스크롤하고, 끝(맨 아래·맨 위)에서 한 번 더 굴리면 다음·이전 절로.
+    //   터치패드의 관성 스크롤이 끝에 닿자마자 넘어가지 않게, 끝에서 새로 시작한 굴림만 셈. 넘긴 뒤 굴림이 멈출 때까지 잠금
+    let acc = 0, lastW = 0, lockW = false, lockT = 0, startEdge = false;
+    addEventListener('wheel', (e) => {
+      if (view !== 'paged' || e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      const now = performance.now(), gap = now - lastW;
+      lastW = now;
+      if (lockW) { if (gap > 220 && now - lockT > 500) lockW = false; else { e.preventDefault(); return; } }   // 넘긴 직후의 남은 굴림이 새 절을 끌어내리지 않게
+      const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * innerHeight : e.deltaY;
+      const max = html.scrollHeight - innerHeight;
+      const edge = dy > 0 ? scrollY >= max - 2 : scrollY <= 2;
+      if (gap > 220) { acc = 0; startEdge = edge; }
+      if (!edge || !startEdge) { acc = 0; return; }
+      acc += dy;
+      if (Math.abs(acc) < 60) return;
+      const d = acc > 0 ? 1 : -1;
+      acc = 0;
+      if (cur + d < 0 || cur + d >= pages.length) return;
+      lockW = true; lockT = now;
+      e.preventDefault();
+      showPage(cur + d, true, d < 0);
+    }, { passive: false });
     let tx = null, ty = 0;
-    addEventListener('touchstart', (e) => { if (e.touches.length === 1) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; } else tx = null; }, { passive: true });
+    addEventListener('touchstart', (e) => { if (e.touches.length === 1 && !e.target.closest?.('.pager')) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; } else tx = null; }, { passive: true });
     addEventListener('touchend', (e) => {
       if (view !== 'paged' || tx === null) return;
       const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
