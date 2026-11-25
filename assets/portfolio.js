@@ -121,15 +121,46 @@
     s.style.removeProperty('--pg-zoom');
     const w = s.querySelector(':scope > .wrap');
     if (!on || !w) return;
-    const list = s.classList.contains('core') ? s.querySelector('.flist') : null;
+    // 기능 소개(.core)는 판 높이가 화면에 고정 → 넘치는 대신 큰 화면 칸이 줄어듦. 큰 화면이 판의 SHOT_MIN보다 작으면 판 전체를 줄임
+    const shots = s.classList.contains('core') ? s.querySelector('.shots') : null;
     let z = k;
     for (let n = 0; n < 5; n++) {                                     // 줄이면 줄바꿈이 달라져 높이가 정확히 비례하지 않음 → 몇 번 다시 잼
       s.style.setProperty('--pg-zoom', z.toFixed(3));
-      const over = list ? (list.scrollHeight - list.clientHeight) * z : html.scrollHeight - innerHeight;
-      if (over <= 1 || z <= Z_MIN) break;
+      if (z <= Z_MIN) break;
       const h = w.getBoundingClientRect().height;
-      z = Math.max(Z_MIN, z * (h - over - 4) / h);
+      if (shots) {
+        const sh = shots.getBoundingClientRect().height;
+        if (sh >= SHOT_MIN * h - 1) break;
+        z = Math.max(Z_MIN, z * Math.min(0.98, ((1 - SHOT_MIN) * h) / Math.max(1, h - sh)));
+      } else {
+        const over = html.scrollHeight - innerHeight;
+        if (over <= 1) break;
+        z = Math.max(Z_MIN, z * (h - over - 4) / h);
+      }
     }
+    if (shots) sizeShots(s, z);
+  }
+  // 기능 소개의 큰 화면 칸을 그림 비율에 딱 맞춤(칸 안에 빈 띠가 생기지 않게): 남은 높이·폭 안에서 그림이 들어가는 가장 큰 크기 → --shot-w/--shot-h
+  //   그림 설명 줄 높이는 칸 폭에 따라 달라지므로 두 번 잼. 크기는 판 안 좌표(배율 전)로 씀
+  const SHOT_MIN = 0.45, SHOT_PAD = 22;                               // 칸 안 여백 10px×2 + 테두리 1px×2
+  function sizeShots(s, z) {
+    const box = s.querySelector('.shots');
+    if (!box) return;
+    const r = box.getBoundingClientRect(), W = r.width / z, H = r.height / z;
+    box.querySelectorAll('.shot').forEach((f) => {
+      const img = f.querySelector('img');
+      const ar = img && img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight
+        : (+img?.getAttribute('width') / +img?.getAttribute('height')) || 16 / 9;
+      let w = W, h = H;
+      for (let n = 0; n < 2; n++) {
+        f.style.setProperty('--shot-w', `${w}px`); f.style.setProperty('--shot-h', `${h}px`);
+        const cap = (f.querySelector('figcaption')?.getBoundingClientRect().height || 0) / z;
+        const ih = Math.max(40, Math.min(H - cap - SHOT_PAD, (W - SHOT_PAD) / ar));
+        w = Math.min(W, ih * ar + SHOT_PAD); h = Math.min(H, ih + SHOT_PAD + cap);
+      }
+      f.style.setProperty('--shot-w', `${w.toFixed(1)}px`); f.style.setProperty('--shot-h', `${h.toFixed(1)}px`);
+      if (img && !img.complete && !img.dataset.pfSized) { img.dataset.pfSized = '1'; img.addEventListener('load', () => { if (pages[cur] === s) fitPage(); }, { once: true }); }
+    });
   }
   let fitT = 0;
   addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitPage, 120); });
@@ -319,10 +350,12 @@
     return sec(`p-${p.id}-core`, `${no} · ${t('page.features')}`, p.title, PF.teamLabel(p.team), body, 'tint core');
   }
 
+  // 프로젝트 링크 두 묶음: 윗줄 내 페이지(슬라이드·상세 문서) · 아랫줄 바깥 링크(GitHub·시연 영상·추가 링크)
   function projLinks(p) {
-    return [link({ href: PF.projectUrl(p.id), label: T('name.deck'), kind: 'page' }), link({ href: PF.docUrl(p.id), label: T('name.doc-short'), kind: 'page' }),
-      isUrl(p.links?.github) && link({ href: p.links.github, label: 'GitHub' }), isUrl(p.links?.video) && link({ href: p.links.video, label: T('name.video') }),
-      ...(p.links?.extra || []).filter((l) => isUrl(l.url)).map((l) => link({ href: l.url, label: esc(l.label) }))].filter(Boolean).join('');
+    const own = [link({ href: PF.projectUrl(p.id), label: T('name.deck'), kind: 'page' }), link({ href: PF.docUrl(p.id), label: T('name.doc-short'), kind: 'page' })];
+    const ext = [isUrl(p.links?.github) && link({ href: p.links.github, label: 'GitHub' }), isUrl(p.links?.video) && link({ href: p.links.video, label: T('name.video') }),
+      ...(p.links?.extra || []).filter((l) => isUrl(l.url)).map((l) => link({ href: l.url, label: esc(l.label) }))].filter(Boolean);
+    return `<span class="lg">${own.join('')}</span>${ext.length ? `<span class="lg">${ext.join('')}</span>` : ''}`;
   }
 
   // 화면과 설명 짝 강조(마우스·키보드 포커스) + [PDF로 저장]
