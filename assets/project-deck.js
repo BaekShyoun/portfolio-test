@@ -278,6 +278,18 @@
     if (!wasIn) s.remove();
     return s;
   }
+  // 화면 나란히(.scr-row): 그림 높이가 서로 다르면(가로로 더 긴 그림) 그림 칸 높이를 가장 높은 것에 맞추고 그림은 그 안 세로 가운데로
+  //   → 그림 가운데 줄과 아래 FEATURE·제목·설명 줄이 카드끼리 나란히 맞음
+  function alignScreens(s) {
+    const row = s.querySelector('.scr-row');
+    if (!row) return s;
+    const M = PF.measureRoot(); const wasIn = s.isConnected; if (!wasIn) M.appendChild(s);
+    const vs = [...row.querySelectorAll(':scope > .fe-card > .vis')];
+    const hs = vs.map((v) => v.offsetHeight), max = Math.max(0, ...hs);
+    if (vs.length > 1 && max && hs.some((h) => max - h > 2)) vs.forEach((v) => { v.style.height = `${max}px`; });
+    if (!wasIn) s.remove();
+    return s;
+  }
   //   codeChunk(v) = 그 코드의 이번 줄 범위 · tsplit = { v, rows: [a, b) } 행을 나누는 표 하나(다른 표는 그대로 둠)
   function fitSlide(sl, vis, sid, part, codeChunk, meta, tsplit = null, depth = 0) {
     const vs = vis.map((v) => vboxHtml(v, v.ref.kind === 'code' ? codeChunk(v) : v.ref.kind === 'table' && tsplit && tsplit.v === v ? tsplit.rows : null));
@@ -291,7 +303,7 @@
       if (sl.edited) s.dataset.pfEdited = '1';                       // 장면 고치기로 고친 장면(미리보기 개요에 ✎)
       PF.body(s).innerHTML = `<div class="pf-fill">${bodyHtml(sl, vs, v)}</div>`;
       if (meta.auto) s.querySelector('.pf-foot > span').insertAdjacentHTML('beforeend', '<span class="pf-autoband" data-pf-ui="note">예전 데이터로 자동 구성 — /portfolio-build를 다시 실행하면 슬라이드가 됩니다</span>');
-      return snugSide(PF.fitVisuals(s));
+      return alignScreens(snugSide(PF.fitVisuals(s)));
     };
     // 들어가는 변형 중 시각 자료가 가장 크게 보이는 것(같으면 앞의 것). 가로로 긴 다이어그램은 위아래 배치가, 세로로 긴 것은 옆 배치가 이김
     let best = null;
