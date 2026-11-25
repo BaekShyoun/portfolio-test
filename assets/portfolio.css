@@ -164,8 +164,9 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
 .tags li { padding: 4px 12px; border-radius: var(--pill); border: 1px solid var(--line-2); color: var(--ink); font-size: 12.5px; font-weight: 600; }
 /* 프로젝트 소개 버튼 두 줄: 왼쪽 이름표(글자만) + 버튼. 이름표 칸 폭이 같아 두 줄 버튼이 같은 세로선에서 시작 */
-.pi-r .lrows { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 8px 16px; margin-top: 28px; }
-.pi-r .lrows .lk { font-size: 12px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.pi .lrows { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 8px 16px; margin-top: 28px; }
+.pi .lrows .lk { font-size: 12px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.pi .lr-paged { display: none; }                                  /* 왼쪽 대표 이미지 아래 버튼 줄은 한 장씩 보기(넓은 화면)에서만 — 아래 @media screen */
 
 /* ④-2 기능 소개: 화면 왼쪽 · 설명과 [슬라이드 열기] 오른쪽 */
 .fe { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
@@ -311,10 +312,30 @@ code { font-family: var(--mono); font-size: .88em; background: var(--accent-soft
    목록이 그래도 길면(작은 창) 목록 칸 안에서만 스크롤. 이어서 보기·좁은 화면·인쇄는 위의 배치 그대로 */
 @media screen and (min-width: 760px) {
   html[data-view="paged"] #main > .is-cur { padding: clamp(28px, 6vh, 72px) 0; }
-  html[data-view="paged"] #main > .is-cur.core { height: calc(100dvh - var(--top-h) - var(--pager-h)); min-height: 480px; padding: clamp(16px, 3vh, 40px) 0; }
+  html[data-view="paged"] #main > .is-cur.sec { padding: clamp(16px, 3vh, 40px) 0; }
+  html[data-view="paged"] #main > .is-cur.core { height: calc(100dvh - var(--top-h) - var(--pager-h)); min-height: 480px; }
   html[data-view="paged"] .is-cur.core > .wrap { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-  html[data-view="paged"] .is-cur.core .sec-head { flex: none; margin-bottom: clamp(14px, 2.6vh, 28px); }
-  html[data-view="paged"] .is-cur.core .sec-head h2 { margin-top: 6px; font-size: clamp(24px, 3vw, 34px); }
+  html[data-view="paged"] .is-cur .sec-head { flex: none; margin-bottom: clamp(14px, 2.6vh, 28px); }
+  html[data-view="paged"] .is-cur .sec-head h2 { margin-top: 6px; font-size: clamp(24px, 3vw, 34px); }
+  /* 그래도 넘치는 절은 JS(fitPage)가 --pg-zoom(0.8까지)으로 절 내용을 조금 줄임. 인쇄에는 닿지 않게 화면에서만 */
+  html[data-view="paged"] #main > .is-cur > .wrap { zoom: var(--pg-zoom, 1); }
+  /* 목차: 줄 간격·카드 그림 높이를 줄임 */
+  html[data-view="paged"] .is-cur .toc-rl { padding: clamp(6px, 1vh, 12px) 10px; }
+  html[data-view="paged"] .is-cur .toc-row::before { top: calc(clamp(6px, 1vh, 12px) + 8px); }
+  html[data-view="paged"] .is-cur .toc-m { aspect-ratio: 2.2 / 1; }
+  html[data-view="paged"] .is-cur .toc-cards { margin-bottom: 8px !important; }
+  /* 프로젝트 소개: 판 여백·간격을 줄이고, 대표 이미지 높이는 화면 높이에 맞춤 */
+  html[data-view="paged"] .is-cur.proj .tagline { margin: -6px 0 clamp(12px, 2vh, 24px); }
+  html[data-view="paged"] .is-cur .pi { padding: clamp(14px, 2.4vh, 28px); gap: 32px; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
+  html[data-view="paged"] .is-cur .pi.nocover { grid-template-columns: 1fr; }
+  html[data-view="paged"] .is-cur .meta { gap: 8px 24px; }
+  html[data-view="paged"] .is-cur .intent { margin-top: clamp(12px, 2vh, 24px); }
+  html[data-view="paged"] .is-cur .tags { margin-top: clamp(10px, 1.6vh, 20px); }
+  html[data-view="paged"] .is-cur .pi:not(.nocover) .lr-main { display: none; }
+  html[data-view="paged"] .is-cur .pi .lr-paged { display: grid; margin-top: clamp(12px, 2vh, 20px); }
+  html[data-view="paged"] .is-cur .cover { height: clamp(180px, 34vh, 400px); }
+  html[data-view="paged"] .is-cur .skill { padding: clamp(12px, 2vh, 24px) 0; }
+  html[data-view="paged"] .is-cur .glance > li { padding: clamp(12px, 2vh, 24px) 0; }
   html[data-view="paged"] .is-cur.core .fe { flex: 1; min-height: 0; grid-template-rows: minmax(0, 1fr); }
   /* 넓은 화면 기능 소개 판: 왼쪽 위 큰 화면 · 왼쪽 아래 [슬라이드 전체][상세 문서] · 오른쪽 기능 목록(위아래 전체 높이) */
   html[data-view="paged"] .is-cur.core .fe.stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 14px 20px; align-items: stretch; }

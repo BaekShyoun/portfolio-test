@@ -101,10 +101,27 @@
     });
     if (navOn && view === 'paged') navOn.a.setAttribute('aria-current', 'true');
     if (view === 'paged') {
+      fitPage();
       if (hash) setHash(pages[cur].id);
       scrollTo({ top: fromEnd ? html.scrollHeight : 0, behavior: 'instant' });
     }
   }
+  // 한 장씩 보기에서 지금 절이 화면보다 조금 길면 절 내용을 줄여(--pg-zoom, 0.8까지) 한 화면에 맞춤. 그래도 길면 그만큼만 스크롤.
+  //   기능 소개(.core)는 CSS가 화면 높이에 맞춘 판이라 빼고, 좁은 화면(760px 미만)은 줄이지 않음(글자가 너무 작아짐). 인쇄에는 닿지 않음(CSS가 화면에서만 씀)
+  function fitPage() {
+    const s = pages[cur];
+    pages.forEach((p) => { if (p !== s) p.style.removeProperty('--pg-zoom'); });
+    if (!s) return;
+    s.style.removeProperty('--pg-zoom');
+    if (view !== 'paged' || innerWidth < 760 || s.classList.contains('core')) return;
+    const w = s.querySelector(':scope > .wrap');
+    const over = html.scrollHeight - innerHeight;
+    if (!w || over <= 1) return;
+    const h = w.getBoundingClientRect().height;
+    s.style.setProperty('--pg-zoom', Math.max(0.8, (h - over - 4) / h).toFixed(3));
+  }
+  let fitT = 0;
+  addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(fitPage, 120); });
   function setView(v) {
     if (v === view) return;
     if (v === 'paged') {                                               // 이어서 보던 자리의 절로
@@ -258,13 +275,15 @@
       isUrl(p.links?.github) && ['GitHub', shortUrl(p.links.github), p.links.github, 'external'], isUrl(p.links?.video) && [t('name.video'), shortUrl(p.links.video), p.links.video, 'external'],
       ...extra.map((l) => [l.label, shortUrl(l.url), l.url, 'external'])].filter(Boolean);
     const cover = p.cover ? `<figure class="cover"><img src="${esc(PF.srcPath(p.id, p.cover))}" alt="${esc(p.title)} 대표 화면"></figure>` : '';
+    // 버튼 줄은 두 곳: 오른쪽 정보 아래(이어서 보기) · 왼쪽 대표 이미지 아래(한 장씩 보기 — 두 단 높이를 맞춰 한 화면에). CSS가 보기 방식에 따라 하나만 보임
+    const lrows = (cls) => `<div class="lrows no-print ${cls}"><span class="lk">${T('page.links-own')}</span><div class="btns">${pageBtns.join('')}</div>${extBtns.length
+      ? `<span class="lk">${T('page.links-ext')}</span><div class="btns">${extBtns.join('')}</div>` : ''}</div>`;
     const body = `${p.tagline ? `<p class="tagline">${inline(p.tagline)}</p>` : ''}
-      <div class="pi${cover ? '' : ' nocover'}">${cover}<div class="pi-r">
+      <div class="pi${cover ? '' : ' nocover'}">${cover ? `<div class="pi-l">${cover}${lrows('lr-paged')}</div>` : ''}<div class="pi-r">
         ${meta.length ? `<dl class="meta">${meta.join('')}</dl>` : ''}
         ${p.intent?.text ? `<div class="intent"><p class="k">${T('name.intent')}</p><p>${inline(p.intent.text)}</p></div>` : ''}
         ${(p.tags || []).length ? `<ul class="tags">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
-        <div class="lrows no-print"><span class="lk">${T('page.links-own')}</span><div class="btns">${pageBtns.join('')}</div>${extBtns.length
-          ? `<span class="lk">${T('page.links-ext')}</span><div class="btns">${extBtns.join('')}</div>` : ''}</div>${printUrls(urls)}</div></div>`;
+        ${lrows('lr-main')}${printUrls(urls)}</div></div>`;
     return sec(`p-${p.id}`, no, p.title, PF.teamLabel(p.team), body, 'proj');
   }
 
@@ -403,6 +422,7 @@
     if (desk || new URLSearchParams(location.search).get('pf-audit') === '1') eager();   // 한 장씩 보기에서 가려진 절의 그림도 점검에 들도록
     await Promise.race([Promise.all([...document.querySelectorAll('img:not([loading="lazy"])')].map(loaded)), new Promise((r) => setTimeout(r, 20000))]);
     if (document.fonts) await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 3000))]);
+    fitPage();                                                         // 글꼴·그림이 늦게 와 절 높이가 바뀐 만큼 다시 맞춤
     if (!userMoved && view === 'scroll') {                             // 글꼴이 바뀌며 절 높이가 달라져 도착 위치가 밀린 만큼 다시 맞춤(한 장씩 보기는 늘 그 절 맨 위)
       const el = arrived && document.getElementById(arrived);
       if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
