@@ -154,3 +154,11 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
 #d-turn-api .vbox { width: auto !important; }
 #d-turn-api .vbox .fit-in { zoom: 1 !important; width: auto !important; }
 #d-turn-api table.md-table th, #d-turn-api table.md-table td { padding-top: 5px !important; padding-bottom: 5px !important; }   /* 두 표(9줄)가 한 장에 들어가게 — 표가 다음 장으로 나뉘지 않도록 */
+
+/* 토끼와 거북이 슬라이드 「5.2 튜토리얼 규칙을 스테이지 유형으로 관리」(#d-stage-type): 왼쪽 코드 그림은 왼쪽에 붙여 그림 폭만큼만,
+   오른쪽은 「문제」 ↓ 「판단과 선택」 카드를 그림 높이(설명 글 제외)에 맞춰 위아래로 늘림 */
+#d-stage-type .dk-side { grid-template-columns: max-content minmax(0, 1fr) !important; gap: 40px !important; }
+#d-stage-type .dk-side > .vis { justify-content: flex-start !important; }
+#d-stage-type .cards { align-self: stretch !important; display: flex !important; flex-direction: column; gap: 44px !important; margin-bottom: 27px; }
+#d-stage-type .ncard { flex: 1 1 0; position: relative; align-content: center; }
+#d-stage-type .ncard:first-child::after { content: "↓"; position: absolute; left: 50%; bottom: -36px; transform: translateX(-50%); font-size: 26px; font-weight: 700; line-height: 1; color: var(--accent-ink); }

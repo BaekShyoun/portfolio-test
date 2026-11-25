@@ -471,8 +471,16 @@
         "lead": {"text": "현재 `RaceManager`는 스테이지 유형에 따라 수면·공격·준비 단계의 사용 여부를 결정합니다.", "verbatim": false},
         "sectionPath": ["5. 고민과 선택", "5.2 튜토리얼 규칙을 스테이지 유형으로 관리"],
         "points": [
-          {"label": "문제", "text": "튜토리얼별로 수면과 공격 가능 여부를 나누는 과정에서, AI는 개별 기능을 켜고 끄는 설정을 제안했습니다.", "verbatim": true},
-          {"label": "", "text": "그러나 각 튜토리얼은 사용할 규칙의 조합이 이미 정해져 있었습니다.", "verbatim": true}
+          {
+            "label": "문제",
+            "text": "튜토리얼별로 수면과 공격 가능 여부를 나누는 과정에서, AI는 개별 기능을 켜고 끄는 설정을 제안했습니다. 그러나 각 튜토리얼은 사용할 규칙의 조합이 이미 정해져 있었습니다.",
+            "verbatim": true
+          },
+          {
+            "label": "판단과 선택",
+            "text": "처음 AI가 기능별 스위치를 제안했을 때 switch문을 이용하여 enum으로 씬 종류를 나누는 것이 더 낫다고 판단하였습니다.",
+            "verbatim": true
+          }
         ],
         "visuals": [
           {
@@ -482,7 +490,8 @@
             "h": 1448,
             "caption": {"text": "StageType과 CheckStage() — 종류 하나로 정해지는 세 규칙", "verbatim": true}
           }
-        ]
+        ],
+        "edited": true
       },
       {
         "key": "stage-compare",
@@ -903,6 +912,6 @@
         ]
       }
     ],
-    "applied": "4119908926b873b4"
+    "applied": "3564433fe805f1b3"
   }
 }
