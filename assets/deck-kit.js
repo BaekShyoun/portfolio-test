@@ -471,7 +471,9 @@
     if (!hud) return;
     const N = scenes.length, s = scenes[cur];
     hud.querySelector('.pf-hud-count').textContent = `${pad2(cur + 1)} / ${pad2(N)}`;
-    hud.querySelector('.pf-hud-sec').textContent = s?.dataset.sec || '';
+    const secEl = hud.querySelector('.pf-hud-sec');
+    secEl.textContent = s?.dataset.sec || '';
+    secEl.title = secEl.textContent;                          // 칸 폭이 고정이라 …로 줄어든 이름은 마우스를 올리면 전체가 보임
     hud.querySelector('.pf-hud-prog > span').style.width = `${N ? ((cur + 1) / N) * 100 : 0}%`;
     hud.querySelector('[data-a=prev]').setAttribute('aria-disabled', String(cur <= 0));
     hud.querySelector('[data-a=next]').setAttribute('aria-disabled', String(cur >= N - 1));

@@ -48,7 +48,7 @@
   .pf-hud button[aria-disabled="true"] { opacity: .4; cursor: default; border-color: var(--line-2, #2E2E38); color: var(--ink, #E8E8EE); }
   .pf-hud button[aria-pressed="true"], .pf-hud button[aria-expanded="true"] { background: var(--accent-soft, #101A31); border-color: var(--accent-ink, #6D9AF1); color: var(--accent-ink, #6D9AF1); }
   .pf-hud .pf-hud-count { flex: none; min-width: 66px; padding: 0; font-weight: 800; font-size: 14px; color: var(--ink, #F4F4F6); font-variant-numeric: tabular-nums; text-align: left; }
-  .pf-hud .pf-hud-sec { flex: 0 1 auto; min-width: 0; max-width: 30vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted, #9A9AA6); }
+  .pf-hud .pf-hud-sec { flex: none; width: 11em; overflow: hidden;   /* 폭 고정 — 장 이름이 길어도 진행 막대 길이가 바뀌지 않게, 넘치면 … */ text-overflow: ellipsis; white-space: nowrap; color: var(--muted, #9A9AA6); }
   .pf-hud .pf-hud-prog { flex: 1 1 80px; min-width: 40px; height: 5px; border-radius: 3px; background: var(--line, #24242C); overflow: hidden; }
   .pf-hud.pf-hud-seek { cursor: pointer; }   /* 진행 막대 위: 누르거나 끌어 장면 이동 */
   .pf-hud.pf-hud-seek .pf-hud-prog { height: 7px; }
