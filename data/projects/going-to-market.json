@@ -303,24 +303,17 @@
       {
         "key": "core-loop",
         "chapter": "planning",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "흐름",
         "title": {"text": "2.1 컨셉 기획서 — 처음 내가 짠 것", "verbatim": true},
         "lead": {"text": "처음에는 구체적인 시스템 설계 없이 간단한 컨셉 기획서 한 장이 제가 짠 기획의 전부였습니다.", "verbatim": true},
         "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
-        "points": [
-          {
-            "label": "핵심 재미",
-            "text": "모두가 자신의 키워드가 정상인지 모르는 상황에서 다른 사람의 선택을 해석하고, 동시에 자신의 선택도 의심하게 되는 정보 비대칭",
-            "verbatim": true
-          },
-          {
-            "label": "우려되는 점",
-            "text": "① 반복 플레이를 위해 아이템 구성이 충분히 다양해야 함 ② 진행이 채팅과 투표에 크게 의존해 단조로울 수 있음",
-            "verbatim": true
-          }
+        "points": [],
+        "visuals": [
+          {"kind": "mermaid", "n": 1, "fp": "flowchart TD", "caption": {"text": "컨셉 기획서의 코어 루프", "verbatim": true}},
+          {"kind": "table", "n": 1, "fp": "항목|컨셉 기획서"}
         ],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+        "edited": true
       },
       {
         "key": "concerns",
@@ -1049,6 +1042,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "9c493bcf42a548ec"
+    "applied": "abbfea21a282fc94"
   }
 }

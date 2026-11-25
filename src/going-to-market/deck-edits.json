@@ -187,7 +187,11 @@
       "lead": {"text": "회의는 카테고리 단위의 사이클로 반복하며, 사이클마다 발언 → 지목 → 변론 → 투표 → 라이어 키워드 맞추기를 진행.", "verbatim": true},
       "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
       "points": [
-        {"label": "지목", "text": "라이어로 의심되는 플레이어를 지목하거나 지목 스킵. 유효한 지목 결과가 없으면 다음 사이클로(마지막 사이클이면 다시 진행)", "verbatim": true},
+        {
+          "label": "지목",
+          "text": "라이어로 의심되는 플레이어를 지목하거나 지목 스킵. 유효한 지목 결과가 없으면 다음 사이클로(마지막 사이클이면 다시 진행)",
+          "verbatim": true
+        },
         {"label": "투표", "text": "변론 대상에 대해 `라이어다`·`모르겠다`·`라이어가 아니다` 중 하나를 선택", "verbatim": true},
         {"label": "라이어 키워드 맞추기", "text": "라이어가 일반 플레이어의 키워드를 추측해 입력", "verbatim": true}
       ],
@@ -222,6 +226,25 @@
           "1.1 무엇을 만들었나|image|images/Vote.jpg|1",
           "1.1 무엇을 만들었나|image|images/WasLiar.jpg|1"
         ]
+      }
+    },
+    {
+      "key": "core-loop",
+      "chapter": "planning",
+      "layout": "pair",
+      "tab": "흐름",
+      "title": {"text": "2.1 컨셉 기획서 — 처음 내가 짠 것", "verbatim": true},
+      "lead": {"text": "처음에는 구체적인 시스템 설계 없이 간단한 컨셉 기획서 한 장이 제가 짠 기획의 전부였습니다.", "verbatim": true},
+      "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
+      "points": [],
+      "visuals": [
+        {"kind": "mermaid", "n": 1, "fp": "flowchart TD", "caption": {"text": "컨셉 기획서의 코어 루프", "verbatim": true}},
+        {"kind": "table", "n": 1, "fp": "항목|컨셉 기획서"}
+      ],
+      "from": {
+        "key": "core-loop",
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
+        "sig": ["2.1 컨셉 기획서 — 처음 내가 짠 것|mermaid|1|flowchart TD"]
       }
     }
   ],
