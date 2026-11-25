@@ -187,9 +187,15 @@
 
   // ── 장면 틀(deck.slides[].layout) ──
   const txt = (t) => (t && typeof t === 'object' ? t.text : t) || '';
+  // 카드 글: 한 줄이면 문단 하나. 여러 줄(장면 고치기에서 \n으로 나눔)이면 줄마다 문단, "• "·"* "·"- "로 시작하는 줄은 점 목록(점은 글자 •로 — PPTX에도 그대로)
+  const cardText = (s) => {
+    const lines = s.split('\n').map((l) => l.trim()).filter(Boolean);
+    if (lines.length < 2) return `<p>${inline(s)}</p>`;
+    return lines.map((l) => { const m = /^[•*-]\s+(.*)$/.exec(l); return m ? `<p class="bl"><span class="bd" aria-hidden="true">•</span><span>${inline(m[1])}</span></p>` : `<p>${inline(l)}</p>`; }).join('');
+  };
   const ncards = (points, { row = false, num = true, two = false } = {}) => (points.length
     ? `<div class="cards${row ? ' row' : ''}${two ? ' two' : ''}" style="--n:${Math.min(points.length, 4)}">${points.map((pt, i) =>
-      `<div class="ncard${num ? '' : ' nonum'}">${num ? `<span class="num" aria-hidden="true">${i + 1}</span>` : ''}<div>${pt.label ? `<span class="lb">${esc(PF.label(pt.label))}</span>` : ''}<p>${inline(txt(pt))}</p></div></div>`).join('')}</div>` : '');
+      `<div class="ncard${num ? '' : ' nonum'}">${num ? `<span class="num" aria-hidden="true">${i + 1}</span>` : ''}<div>${pt.label ? `<span class="lb">${esc(PF.label(pt.label))}</span>` : ''}${cardText(txt(pt))}</div></div>`).join('')}</div>` : '');
   const FLOW = { '문제': '', '원인': '', '해결': 'accent', '결과': 'ok', '배운 점': '' };   // data 값 → 칩 색(보이는 글자만 PF.label로 바뀜)
   const flowHtml = (points, dir) => `<div class="flow ${dir}" style="--n:${Math.min(points.length, 4)}">${points.map((pt) =>
     `<div class="fstep${pt.label === '결과' ? ' res' : ''}">${pt.label ? `<span class="labelchip${FLOW[pt.label] ? ' ' + FLOW[pt.label] : ''}">${esc(PF.label(pt.label))}</span>` : ''}<p>${inline(txt(pt))}</p></div>`).join('')}</div>`;

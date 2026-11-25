@@ -279,6 +279,9 @@ table.md-table:has(td img) th, table.md-table:has(td img) td { text-align: cente
 .ncard .lb { display: block; font-size: 13px; font-weight: 800; letter-spacing: .02em; color: var(--accent-ink); margin-bottom: 3px; }
 .ncard p { font-size: 16px; line-height: 1.58; color: var(--ink); }
 .dk-text .ncard p { font-size: 17px; }
+.ncard p + p { margin-top: 4px; }   /* 여러 줄 카드 글(project-deck.js cardText) */
+.ncard p.bl { display: grid; grid-template-columns: 14px minmax(0, 1fr); }   /* 점 목록: 점 뒤 둘째 줄도 글 첫 글자에 맞춤 */
+.ncard p.bl > .bd { color: var(--accent-ink); font-weight: 800; }
 .dk.tight .ncard { padding: 10px 14px; }
 .dk.tight .ncard p { font-size: 15px; line-height: 1.52; }
 .flow { display: grid; gap: 10px; align-items: stretch; }
