@@ -142,7 +142,7 @@
   }
   // 기능 소개의 큰 화면 칸을 그림 비율에 딱 맞춤(칸 안에 빈 띠가 생기지 않게): 남은 높이·폭 안에서 그림이 들어가는 가장 큰 크기 → --shot-w/--shot-h
   //   그림 설명 줄 높이는 칸 폭에 따라 달라지므로 두 번 잼. 크기는 판 안 좌표(배율 전)로 씀
-  const SHOT_MIN = 0.45, SHOT_PAD = 22;                               // 칸 안 여백 10px×2 + 테두리 1px×2
+  const SHOT_MIN = 0.45, SHOT_PAD = 22, SHOT_MIN_W = 560;                             // 칸 안 여백 10px×2 + 테두리 1px×2
   function sizeShots(s, z) {
     const box = s.querySelector('.shots');
     if (!box) return;
@@ -151,12 +151,14 @@
       const img = f.querySelector('img');
       const ar = img && img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight
         : (+img?.getAttribute('width') / +img?.getAttribute('height')) || 16 / 9;
+      // 칸 폭은 SHOT_MIN_W 이상: 세로로 긴 그림이면 칸이 너무 좁아져 설명 줄이 여러 줄로 늘고 → 그림이 더 작아지는 되먹임을 막음(그때만 칸 양옆에 여백)
+      const minW = Math.min(W, SHOT_MIN_W);
       let w = W, h = H;
-      for (let n = 0; n < 2; n++) {
+      for (let n = 0; n < 3; n++) {
         f.style.setProperty('--shot-w', `${w}px`); f.style.setProperty('--shot-h', `${h}px`);
         const cap = (f.querySelector('figcaption')?.getBoundingClientRect().height || 0) / z;
         const ih = Math.max(40, Math.min(H - cap - SHOT_PAD, (W - SHOT_PAD) / ar));
-        w = Math.min(W, ih * ar + SHOT_PAD); h = Math.min(H, ih + SHOT_PAD + cap);
+        w = Math.max(minW, Math.min(W, ih * ar + SHOT_PAD)); h = Math.min(H, ih + SHOT_PAD + cap);
       }
       f.style.setProperty('--shot-w', `${w.toFixed(1)}px`); f.style.setProperty('--shot-h', `${h.toFixed(1)}px`);
       if (img && !img.complete && !img.dataset.pfSized) { img.dataset.pfSized = '1'; img.addEventListener('load', () => { if (pages[cur] === s) fitPage(); }, { once: true }); }
@@ -338,8 +340,11 @@
     const first = shots.length ? shots[0].i : -1;                        // 넓은 화면: 큰 화면 한 장(처음 것) + 기능을 누르면 그 화면으로 바뀜
     const tiles = shots.map(({ h, i }) => {
       const d = h.image.w && h.image.h ? ` width="${h.image.w}" height="${h.image.h}"` : '';
+      // 그림 설명 줄 오른쪽 [슬라이드에서 보기]: 한 장씩 보기의 기능 소개에서만 보임(그때는 카드의 [슬라이드 열기]를 숨김 — CSS)
+      const go = link({ href: PF.projectUrl(p.id, PF.deckSceneFor(p, h.section)), label: T('page.see-in-deck-shot'), kind: 'page', cls: 'pill shot-go no-print',
+        attrs: `aria-label="${esc(PF.normTitle(h.title))} — ${T('page.see-in-deck-shot')} (새 탭)" title="${esc(PF.normTitle(h.title))}"` });
       return `<figure class="shot${i === first ? ' cur' : ''}" data-fi="${i}"><div class="shot-m"><img src="${esc(PF.srcPath(p.id, h.image.src))}" alt="${esc(capText(h.image.caption) || h.title)}"${d}></div>
-        <figcaption><span class="n">${pad2(i + 1)}</span><span>${inline(capText(h.image.caption) || h.title)}</span></figcaption></figure>`;
+        <figcaption><span class="n">${pad2(i + 1)}</span><span class="cap">${inline(capText(h.image.caption) || h.title)}</span>${go}</figcaption></figure>`;
     }).join('');
     const rows = hl.map((h, i) => `<li data-fi="${i}"${h.image?.src ? ` data-shot tabindex="0" aria-label="${esc(PF.normTitle(h.title))} — 화면 보기"${i === first ? ' class="cur"' : ''}` : ''}><div class="fr-t"><p class="fk">${T('en.feature')} ${pad2(i + 1)}</p><h3>${inline(h.title)}</h3>${h.what ? `<p>${inline(h.what)}</p>` : ''}</div>
       <div class="fr-a">${link({ href: PF.projectUrl(p.id, PF.deckSceneFor(p, h.section)), label: T('page.see-in-deck'), kind: 'page', cls: 'pill',
@@ -379,6 +384,12 @@
     root.addEventListener('click', (e) => {
       const li = e.target.closest('li[data-shot]');
       if (li && !e.target.closest('a, button')) show(li);
+    });
+    // 한 장씩 보기의 기능 소개: 카드에 마우스를 올리면 위 화면·설명·[슬라이드에서 보기]가 미리 그 기능으로(누르지 않아도)
+    root.addEventListener('mouseover', (e) => {
+      if (view !== 'paged') return;
+      const li = e.target.closest('.is-cur.core li[data-shot]');
+      if (li && !li.classList.contains('cur')) show(li);
     });
     root.addEventListener('keydown', (e) => {
       if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('li[data-shot]')) { e.preventDefault(); show(e.target); }
