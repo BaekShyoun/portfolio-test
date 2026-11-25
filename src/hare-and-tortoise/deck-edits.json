@@ -10,7 +10,11 @@
       "lead": {"text": "이 반전을 그림뿐 아니라 소리로도 느껴지게 하려고, 장면마다 흑화 전과 흑화 후의 분위기를 따로 정하고 그에 맞는 소리를 넣었습니다.", "verbatim": true},
       "sectionPath": ["2. 기획을 플레이 규칙으로 구체화하기", "2.3 흑화 — 반전 연출"],
       "points": [
-        {"label": "BGM을 만든 과정", "text": "처음 생성된 흑화 후 BGM은 반전의 무게감이 없어, 전장과 같은 웅장함을 유지하면서 질주감이 나도록 다시 요청했고, 그 후 의도에 맞는 결과를 얻었습니다.", "verbatim": false},
+        {
+          "label": "BGM을 만든 과정",
+          "text": "처음 생성된 흑화 후 BGM은 반전의 무게감이 없어, 전장과 같은 웅장함을 유지하면서 질주감이 나도록 다시 요청했고, 그 후 의도에 맞는 결과를 얻었습니다.",
+          "verbatim": false
+        },
         {"label": "", "text": "음악은 AI가 생성했으나, 장면별로 요구되는 분위기를 정하고 결과물의 적합성을 판단해 선택하는 작업은 본인이 수행했습니다.", "verbatim": true}
       ],
       "visuals": [{"kind": "table", "n": 1, "fp": "요소|흑화 전|흑화 후|바뀌는 기준"}],
@@ -19,6 +23,28 @@
         "sectionPath": ["2. 기획을 플레이 규칙으로 구체화하기", "2.3 흑화 — 반전 연출"],
         "sig": ["2.3 흑화 — 반전 연출|table|1|요소|흑화 전|흑화 후|바뀌는 기준"]
       }
+    },
+    {
+      "key": "flow",
+      "chapter": "structure",
+      "layout": "pair",
+      "tab": "흐름",
+      "title": {"text": "3.1 전체 흐름", "verbatim": true},
+      "lead": {"text": "튜토리얼 전체가 스토리와 경주가 번갈아 이어지는 구조입니다.", "verbatim": true},
+      "sectionPath": ["3. 시스템 구조", "3.1 전체 흐름"],
+      "points": [
+        {
+          "label": "",
+          "text": "스토리가 끝나면 `SceneController`가 다음 경주 씬으로 전환하고, 경주가 끝나면 `RaceManager`가 다음 스토리로 연결합니다.",
+          "verbatim": true
+        },
+        {"label": "", "text": "폭발은 수류탄·지뢰가 자신의 위치를 토끼에게 전달하는 방식으로 처리합니다.", "verbatim": true}
+      ],
+      "visuals": [
+        {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
+        {"kind": "image", "src": "images/StageScene.png", "w": 1186, "h": 667, "caption": {"text": "흐름의 시작인 스테이지 선택 화면 — 앞 경주를 깨야 다음 경주가 열림", "verbatim": true}}
+      ],
+      "from": {"key": "flow", "sectionPath": ["3. 시스템 구조", "3.1 전체 흐름"], "sig": ["3.1 전체 흐름|mermaid|1|flowchart TD"]}
     }
   ],
   "hide": []

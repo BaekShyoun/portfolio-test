@@ -286,7 +286,7 @@
       {
         "key": "flow",
         "chapter": "structure",
-        "layout": "visual",
+        "layout": "pair",
         "tab": "흐름",
         "title": {"text": "3.1 전체 흐름", "verbatim": true},
         "lead": {"text": "튜토리얼 전체가 스토리와 경주가 번갈아 이어지는 구조입니다.", "verbatim": true},
@@ -299,7 +299,17 @@
           },
           {"label": "", "text": "폭발은 수류탄·지뢰가 자신의 위치를 토끼에게 전달하는 방식으로 처리합니다.", "verbatim": true}
         ],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+        "visuals": [
+          {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
+          {
+            "kind": "image",
+            "src": "images/StageScene.png",
+            "w": 1186,
+            "h": 667,
+            "caption": {"text": "흐름의 시작인 스테이지 선택 화면 — 앞 경주를 깨야 다음 경주가 열림", "verbatim": true}
+          }
+        ],
+        "edited": true
       },
       {
         "key": "classes",
@@ -878,6 +888,6 @@
         ]
       }
     ],
-    "applied": "1b2bfd7eeeccd523"
+    "applied": "3975698c0bd08821"
   }
 }
