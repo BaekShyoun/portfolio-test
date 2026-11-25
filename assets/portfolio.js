@@ -100,11 +100,13 @@
         isUrl(prof.github) && btn(prof.github, 'GitHub', 'external'), ...profLinks.map((l) => btn(l.url, esc(l.label), 'external'))].filter(Boolean).join('')}</div>
       ${printUrls([prof.email && [t('page.print-email'), prof.email, `mailto:${prof.email}`, 'mail'], isUrl(prof.github) && ['GitHub', shortUrl(prof.github), prof.github, 'external'],
         ...profLinks.map((l) => [l.label, shortUrl(l.url), l.url, 'external']), [t('page.print-web'), PF.visibleUrl('')]].filter(Boolean))}
-      ${/* 표지 아래 목차: 프로젝트 대표 이미지 + 번호·이름, 누르면 그 프로젝트로(PDF에서도 눌러 이동). 새 절이 아니라 표지 안 — 예전 #번호 주소의 절 차례가 바뀌지 않게 */ ''}
-      ${projects.length ? `<nav class="toc" aria-label="프로젝트 바로 가기"><ol>${projects.map((p, j) => `<li><a href="#p-${esc(p.id)}">
-        ${p.cover ? `<span class="toc-m"><img src="${esc(PF.srcPath(p.id, p.cover))}" alt=""></span>` : ''}
-        <span class="toc-t"><span class="toc-n">${pad2(j + 1)}</span>${esc(p.title)}</span></a></li>`).join('')}</ol></nav>` : ''}
     </div></section>`);
+
+    // ①-1 목차: 표지 다음 따로 한 절(인쇄하면 한 쪽). 프로젝트 대표 이미지 + 번호·이름, 누르면 그 프로젝트로(PDF에서도 눌러 이동)
+    //   info.sections(예전 #번호 주소의 절 차례)에는 넣지 않음 — 아래 render 끝의 :not(#toc)
+    if (projects.length) out.push(sec('toc', t('en.toc'), t('page.toc'), '', `<nav class="toc" aria-label="프로젝트 바로 가기"><ol>${projects.map((p, j) => `<li><a href="#p-${esc(p.id)}">
+        ${p.cover ? `<span class="toc-m"><img src="${esc(PF.srcPath(p.id, p.cover))}" alt=""></span>` : ''}
+        <span class="toc-t"><span class="toc-n">${pad2(j + 1)}</span>${esc(p.title)}</span></a></li>`).join('')}</ol></nav>`, 'toc-sec'));
 
     // ② 자기소개: profile.intro를 줄바꿈까지 그대로(고쳐 쓰지 않음)
     if (prof.intro) out.push(sec('intro', t('en.about'), t('page.intro'), '',`<div class="about">${prof.intro.split(/\n+/).filter((l) => l.trim()).map((l) => `<p>${inline(l)}</p>`).join('')}</div>`));
@@ -148,7 +150,7 @@
         <button type="button" class="btn primary pdf" data-pdf>${T('ui.pdf')}</button></div></header>
       <main id="main">${out.join('')}</main>`;
     root.querySelectorAll('img').forEach((i) => { if (!i.hasAttribute('loading')) i.loading = 'lazy'; i.decoding = 'async'; });
-    info.sections = [...root.querySelectorAll('main > section[id], main > footer[id]')].map((s) => s.id);
+    info.sections = [...root.querySelectorAll('main > section[id]:not(#toc), main > footer[id]')].map((s) => s.id);
     info.projects = projects.length;
   }
 
