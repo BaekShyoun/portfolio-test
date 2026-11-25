@@ -192,7 +192,7 @@
       {
         "key": "what",
         "chapter": "overview",
-        "layout": "overview",
+        "layout": "visual",
         "tab": "개요",
         "title": {"text": "1.1 무엇을 만들었나", "verbatim": true},
         "lead": {"text": "시장에 가면은 마트에서 아이템을 선택하고 회의에서 토론하는 단계가 연결되는 4인 멀티플레이 게임입니다.", "verbatim": true},
@@ -202,7 +202,17 @@
           {"label": "일반 플레이어와 라이어의 차이", "text": "자신이 라이어인지 아무도 알 수 없음", "verbatim": true},
           {"label": "라운드 반복 규칙", "text": "기본 설정은 3라운드 × 라운드당 3사이클", "verbatim": true}
         ],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+        "visuals": [
+          {
+            "kind": "image",
+            "src": "images/GameFlow.gif",
+            "w": 960,
+            "h": 540,
+            "caption": {"text": "게임 흐름 — 로비 → 장르·키워드 배정 → 마트 → 발언 → 지목 → 투표 → 결과 공개", "verbatim": true}
+          },
+          {"kind": "mermaid", "n": 1, "fp": "flowchart TD"}
+        ],
+        "edited": true
       },
       {
         "key": "round-start",
@@ -1052,6 +1062,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "370ea64fe67540ed"
+    "applied": "8600dbe936bae849"
   }
 }
