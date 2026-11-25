@@ -159,6 +159,18 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
    오른쪽은 「문제」 ↓ 「판단과 선택」 카드를 그림 높이(설명 글 제외)에 맞춰 위아래로 늘림 */
 #d-stage-type .dk-side { grid-template-columns: max-content minmax(0, 1fr) !important; gap: 40px !important; }
 #d-stage-type .dk-side > .vis { justify-content: flex-start !important; }
-#d-stage-type .cards { align-self: stretch !important; display: flex !important; flex-direction: column; justify-content: space-around; gap: 44px !important; margin-bottom: 27px; position: relative; }
-#d-stage-type .ncard { flex: none; }   /* 카드 높이는 글 길이만큼, 위 칸·아래 칸 가운데에 하나씩 */
+#d-stage-type .cards { align-self: stretch !important; display: flex !important; flex-direction: column; justify-content: center; gap: 76px !important; margin-bottom: 27px; position: relative; }
+#d-stage-type .ncard { flex: none; }   /* 카드 높이는 글 길이만큼, 두 카드를 가운데로 모으고 사이 76px에 화살표 */
 #d-stage-type .cards::after { content: "↓"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 26px; font-weight: 700; line-height: 1; color: var(--accent-ink); }
+
+/* 토끼와 거북이 슬라이드 「5.2」 비교 표 장면(#d-stage-compare): 표를 위로 붙이고 칸 여백을 키움. 선택한 B 줄은 강조색 바탕·왼쪽 띠, A 줄은 흐리게.
+   아래 「결과」 카드는 표보다 좁게 가운데, 표와 카드 사이에 ↓ */
+#d-stage-compare .pf-fill { margin-top: 12px !important; }   /* 가운데 대신 도입 바로 아래로 */
+#d-stage-compare .dk-stack { justify-content: flex-start !important; gap: 6px !important; }
+#d-stage-compare table.md-table th { padding: 10px 14px !important; }
+#d-stage-compare table.md-table td { padding: 24px 14px !important; vertical-align: middle; }
+#d-stage-compare table.md-table tbody tr:nth-child(1) td { color: var(--muted); }
+#d-stage-compare table.md-table tbody tr:nth-child(2) td { background: var(--accent-soft) !important; }
+#d-stage-compare table.md-table tbody tr:nth-child(2) td:first-child { box-shadow: inset 4px 0 0 var(--accent-ink); }
+#d-stage-compare .cards { margin: 0 160px; gap: 6px; }
+#d-stage-compare .cards::before { content: "↓"; display: block; text-align: center; font-size: 24px; font-weight: 700; line-height: 1; color: var(--accent-ink); }

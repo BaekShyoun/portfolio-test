@@ -499,10 +499,11 @@
         "layout": "full",
         "tab": "선택",
         "title": {"text": "5.2 튜토리얼 규칙을 스테이지 유형으로 관리", "verbatim": true},
-        "lead": {"text": "B를 선택했습니다.", "verbatim": true},
+        "lead": {"text": "AI의 처음 제안(A)과 선택한 방법(B)을 비교했습니다.", "verbatim": false},
         "sectionPath": ["5. 고민과 선택", "5.2 튜토리얼 규칙을 스테이지 유형으로 관리"],
-        "points": [{"label": "", "text": "그 결과 각 구간에서 사용 가능한 기능을 `CheckStage()` 한 곳에서 확인할 수 있게 되었습니다.", "verbatim": true}],
-        "visuals": [{"kind": "table", "n": 1, "fp": "방법|씬에서 하는 일|좋은 점|아쉬운 점"}]
+        "points": [{"label": "결과", "text": "각 구간에서 사용 가능한 기능을 `CheckStage()` 한 곳에서 확인할 수 있게 되었습니다.", "verbatim": false}],
+        "visuals": [{"kind": "table", "n": 1, "fp": "방법|씬에서 하는 일|좋은 점|아쉬운 점"}],
+        "edited": true
       },
       {
         "key": "waypoints",
@@ -912,6 +913,6 @@
         ]
       }
     ],
-    "applied": "3564433fe805f1b3"
+    "applied": "498162a6dc69a06d"
   }
 }
