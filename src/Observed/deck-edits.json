@@ -2,42 +2,6 @@
   "schemaVersion": 1,
   "pin": [
     {
-      "key": "plan-difficulty",
-      "chapter": "plan",
-      "layout": "full",
-      "tab": "선택",
-      "title": {"text": "2.5 기획과 구현의 비교", "verbatim": true},
-      "lead": {"text": "기획서의 수치가 적절한지는 실제로 플레이해 보아야만 알 수 있는 부분이 있다는 점을 배웠습니다.", "verbatim": true},
-      "sectionPath": ["2. 기획", "2.5 기획과 구현의 비교"],
-      "points": [],
-      "visuals": [
-        {
-          "kind": "table",
-          "n": 1,
-          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
-          "caption": {"text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게", "verbatim": true}
-        },
-        {
-          "kind": "table",
-          "n": 2,
-          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
-          "caption": {"text": "② 현실감 — 2.4의 상한 고기·썩는 아이템과 같은 원칙", "verbatim": true}
-        },
-        {
-          "kind": "table",
-          "n": 3,
-          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
-          "caption": {"text": "③ 선택지 — 싼 것에는 대가가 따르게", "verbatim": true}
-        }
-      ],
-      "from": {
-        "key": "plan-difficulty",
-        "sectionPath": ["2. 기획", "2.5 기획과 구현의 비교"],
-        "sig": ["2.5 기획과 구현의 비교|table|1|항목|상세 기획|실제 구현|바꾼 이유"]
-      },
-      "group": "merge-plan-difficulty"
-    },
-    {
       "key": "choice-turn",
       "chapter": "impl",
       "layout": "full",
@@ -298,7 +262,7 @@
     },
     {
       "key": "blackout",
-      "chapter": "plan",
+      "chapter": "penalty",
       "layout": "code",
       "tab": "선택",
       "title": {"text": "블랙아웃 — 관리 실패에 대한 강제 패널티", "verbatim": true},
@@ -326,7 +290,7 @@
     },
     {
       "key": "rotten-meat",
-      "chapter": "plan",
+      "chapter": "penalty",
       "layout": "code",
       "tab": "선택",
       "title": {"text": "상한 고기 — 불확실한 패널티", "verbatim": true},
@@ -353,7 +317,7 @@
     },
     {
       "key": "rotting-items",
-      "chapter": "plan",
+      "chapter": "penalty",
       "layout": "visual",
       "tab": "선택",
       "title": {"text": "썩는 아이템 — 쌓아 두기만 하는 플레이 방지", "verbatim": true},
@@ -380,7 +344,7 @@
     },
     {
       "key": "sleep-ticket",
-      "chapter": "plan",
+      "chapter": "penalty",
       "layout": "visual",
       "tab": "선택",
       "title": {"text": "수면권 — 포인트를 어디에 쓸지 선택권 주기", "verbatim": true},
@@ -401,6 +365,42 @@
         }
       ],
       "from": {"key": "sleep-ticket", "sectionPath": ["2. 기획", "수면권 — 포인트를 어디에 쓸지 선택권 주기"], "sig": []}
+    },
+    {
+      "key": "plan-difficulty",
+      "chapter": "penalty",
+      "layout": "full",
+      "tab": "선택",
+      "title": {"text": "2.5 기획과 구현의 비교", "verbatim": true},
+      "lead": {"text": "기획서의 수치가 적절한지는 실제로 플레이해 보아야만 알 수 있는 부분이 있다는 점을 배웠습니다.", "verbatim": true},
+      "sectionPath": ["2. 기획", "2.5 기획과 구현의 비교"],
+      "points": [],
+      "visuals": [
+        {
+          "kind": "table",
+          "n": 1,
+          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
+          "caption": {"text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게", "verbatim": true}
+        },
+        {
+          "kind": "table",
+          "n": 2,
+          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
+          "caption": {"text": "② 현실감 — 2.4의 상한 고기·썩는 아이템과 같은 원칙", "verbatim": true}
+        },
+        {
+          "kind": "table",
+          "n": 3,
+          "fp": "항목|상세 기획|실제 구현|바꾼 이유",
+          "caption": {"text": "③ 선택지 — 싼 것에는 대가가 따르게", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "plan-difficulty",
+        "sectionPath": ["2. 기획", "2.5 기획과 구현의 비교"],
+        "sig": ["2.5 기획과 구현의 비교|table|1|항목|상세 기획|실제 구현|바꾼 이유"]
+      },
+      "group": "merge-plan-difficulty"
     },
     {
       "key": "trouble-ui",
@@ -519,5 +519,8 @@
       }
     }
   ],
-  "chapters": [{"key": "trouble", "title": "트러블슈팅", "sectionPath": ["4. 결과 및 배운 점"], "after": "ai"}]
+  "chapters": [
+    {"key": "penalty", "title": "패널티 설계", "sectionPath": ["2. 기획", "2.4 패널티 설계"], "after": "plan"},
+    {"key": "trouble", "title": "트러블슈팅", "sectionPath": ["4. 결과 및 배운 점"], "after": "ai"}
+  ]
 }
