@@ -10,7 +10,7 @@
       "lead": {"text": "보드의 단계, 기능 영역(에픽) 나누기, 작업 이름 앞의 머리말([서버]·[UGUI]·[맵] 등) 규칙은 팀장인 제가 정했습니다.", "verbatim": true},
       "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.1 작업 관리 규칙"],
       "points": [
-        {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 내가 직접 확인하고 컨펌해야 완료", "verbatim": true},
+        {"label": "검토", "text": "팀원이 작업을 검토 단계로 넘기면, 팀장(나)이 직접 확인하고 컨펌해야 완료", "verbatim": false},
         {"label": "소통", "text": "작은 단위의 작업도 즉각적인 소통이 필요했기에 디스코드 채팅·음성에 상시 대기하며, 의논할 일이 생기면 바로 이야기함", "verbatim": true}
       ],
       "visuals": [
@@ -88,14 +88,14 @@
       "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
       "points": [
         {
-          "label": "",
+          "label": "기능",
           "text": "InitDictionaries()는 Inspector에 등록한 배열을 enum 키의 Dictionary로 변환하고, 재생 요청 시에는 TryGetValue()로 클립을 조회합니다.",
           "verbatim": true
         },
         {
-          "label": "",
-          "text": "따라서 호출하는 코드에는 ItemPickUp, VoteButtonClick과 같이 상황 이름만 남으며, 어떤 클립을 연결할지는 사운드 매니저 한 곳에서만 변경하면 됩니다.",
-          "verbatim": true
+          "label": "호출 방식",
+          "text": "호출하는 코드는 ItemPickUp, VoteButtonClick처럼 상황 이름만 넘기면 되고, 어떤 클립을 연결할지는 사운드 매니저 한 곳에서만 바꾸면 됩니다.",
+          "verbatim": false
         }
       ],
       "visuals": [
@@ -246,7 +246,11 @@
       "lead": {"text": "처음에는 구체적인 시스템 설계 없이 간단한 컨셉 기획서 한 장이 제가 짠 기획의 전부였습니다.", "verbatim": true},
       "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
       "points": [
-        {"label": "한 줄 소개", "text": "서로 다른 키워드를 받은 사실조차 모른 채 마트에서 연관 물품을 선택하고, 결과물을 비교해 라이어를 찾아내는 4인 추리 게임", "verbatim": true},
+        {
+          "label": "한 줄 소개",
+          "text": "서로 다른 키워드를 받은 사실조차 모른 채 마트에서 연관 물품을 선택하고, 결과물을 비교해 라이어를 찾아내는 4인 추리 게임",
+          "verbatim": true
+        },
         {
           "label": "핵심 재미",
           "text": "모두가 자신의 키워드가 정상인지 모르는 상황에서 다른 사람의 선택을 해석하고, 동시에 자신의 선택도 의심하게 되는 정보 비대칭",
@@ -261,6 +265,272 @@
         "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.1 컨셉 기획서 — 처음 내가 짠 것"],
         "sig": ["2.1 컨셉 기획서 — 처음 내가 짠 것|mermaid|1|flowchart TD"]
       }
+    },
+    {
+      "key": "concerns-push",
+      "chapter": "planning",
+      "layout": "visual",
+      "tab": "결과",
+      "title": {"text": "2.2 팀 토론으로 규칙 구체화하기", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.2 팀 토론으로 규칙 구체화하기"],
+      "points": [
+        {"label": "밀치기", "text": "밀치기를 물건 고르기보다 더 즐기는 주객전도를 노렸습니다.", "verbatim": true},
+        {
+          "label": "결과",
+          "text": "함께 수강한 동료들의 플레이 테스트 피드백에서 밀치기가 특히 좋은 평가를 받았고, 실제 플레이에서도 서로 열심히 밀치며 방해를 즐기는 모습을 확인했습니다.",
+          "verbatim": false
+        }
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/Mart-Push.gif",
+          "w": 640,
+          "h": 360,
+          "caption": {"text": "마트 — 서로 밀치며 방해하는 플레이어들", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "concerns-push",
+        "sectionPath": ["2. 기획 — 내 컨셉이 팀의 게임이 되기까지", "2.2 팀 토론으로 규칙 구체화하기"],
+        "sig": ["2.2 팀 토론으로 규칙 구체화하기|image|images/Mart-Push.gif|1"]
+      }
+    },
+    {
+      "key": "scope-growth",
+      "chapter": "schedule",
+      "layout": "visual",
+      "tab": "결과",
+      "title": {"text": "3.3 계획보다 늘어난 일", "verbatim": true},
+      "lead": {"text": "새로 생긴 작업 114개 중 가장 큰 몫은 UI/UX 작업 33개였으며, 이 영역은 처음 계획에 하나도 없었습니다.", "verbatim": true},
+      "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.3 계획보다 늘어난 일"],
+      "points": [
+        {
+          "label": "새로 생긴 작업이 UI/UX인 이유",
+          "text": "팀원이 필요한 UI를 기능만 동작하게 먼저 넣으면 디자인은 제가 맡기로 정해, 팀원이 UI를 넣었다고 알려 올 때마다 그 UI를 다듬는 제 작업이 새로 생겼습니다.",
+          "verbatim": false
+        }
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/schedule_plan_vs_new.png",
+          "w": 2174,
+          "h": 1156,
+          "caption": {"text": "처음 계획한 일 32개와 진행하며 새로 생긴 일 114개, 기능 영역별로 늘어난 작업", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "scope-growth",
+        "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.3 계획보다 늘어난 일"],
+        "sig": ["3.3 계획보다 늘어난 일|image|images/schedule_plan_vs_new.png|1"]
+      }
+    },
+    {
+      "key": "tsv-data",
+      "chapter": "features",
+      "layout": "visual",
+      "tab": "흐름",
+      "title": {"text": "4.4 TSV 데이터 작성과 아이템 연결", "verbatim": true},
+      "lead": {"text": "아이템과 키워드 정보는 Assets/StreamingAssets/Table 아래 TSV 파일로 관리합니다.", "verbatim": true},
+      "sectionPath": ["4. 담당 기능 구현", "4.4 TSV 데이터 작성과 아이템 연결"],
+      "points": [
+        {"label": "원칙 1", "text": "표에 기록한 경로가 Resources 내부의 실제 프리팹 경로와 일치해야 합니다.", "verbatim": false},
+        {"label": "원칙 2", "text": "같은 카테고리의 행은 반드시 연속으로 기록했습니다.", "verbatim": false}
+      ],
+      "visuals": [
+        {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
+        {
+          "kind": "image",
+          "src": "images/TSV2.jpg",
+          "w": 730,
+          "h": 882,
+          "caption": {"text": "category_items.tsv — 카테고리별 아이템과 PrefabKey (일부)", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "tsv-data",
+        "sectionPath": ["4. 담당 기능 구현", "4.4 TSV 데이터 작성과 아이템 연결"],
+        "sig": ["4.4 TSV 데이터 작성과 아이템 연결|image|images/TSV2.jpg|1", "4.4 TSV 데이터 작성과 아이템 연결|mermaid|1|flowchart TD"]
+      }
+    },
+    {
+      "key": "map-ui",
+      "chapter": "features",
+      "layout": "screens",
+      "tab": "결과",
+      "title": {"text": "4.5 UI·맵 디자인과 매대 배치", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["4. 담당 기능 구현", "4.5 UI·맵 디자인과 매대 배치"],
+      "points": [
+        {"label": "맵 디자인", "text": "매대를 동선의 중앙에 두고, 카테고리 구역마다 매대를 세 줄로 배치해 같은 카테고리의 아이템이 한 공간에 모이게 함", "verbatim": true},
+        {"label": "아이템 크기 조정", "text": "캐릭터 크기를 기준으로, 실제로 이 정도 크기여야 설득력 있다고 느껴지도록 카테고리별 스케일 조정", "verbatim": false},
+        {"label": "UI 디자인", "text": "가독성과 보기 편한지를 가장 중요하게 보고, UX 중심으로 배치·수정", "verbatim": true}
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/MartView.jpg",
+          "w": 2468,
+          "h": 1075,
+          "caption": {"text": "마트 전경(씬 뷰) — 동선 중앙에 세 줄로 배치한 매대", "verbatim": true}
+        },
+        {
+          "kind": "image",
+          "src": "images/MartItems.jpg",
+          "w": 1187,
+          "h": 666,
+          "caption": {"text": "마트 매대와 아이템 — 캐릭터 크기를 기준으로 맞춘 아이템 스케일", "verbatim": true}
+        },
+        {
+          "kind": "image",
+          "src": "images/Lobby.jpg",
+          "w": 1673,
+          "h": 940,
+          "caption": {"text": "로비 — 회의실과 같은 공간을 사용, 게임 준비·튜토리얼 버튼", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "map-ui",
+        "sectionPath": ["4. 담당 기능 구현", "4.5 UI·맵 디자인과 매대 배치"],
+        "sig": [
+          "4.5 UI·맵 디자인과 매대 배치|image|images/Lobby.jpg|1",
+          "4.5 UI·맵 디자인과 매대 배치|image|images/MartItems.jpg|1",
+          "4.5 UI·맵 디자인과 매대 배치|image|images/MartView.jpg|1"
+        ]
+      }
+    },
+    {
+      "key": "shelf-items",
+      "chapter": "collab",
+      "layout": "problem",
+      "tab": "문제 해결",
+      "title": {"text": "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["5. 협업 이슈", "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계"],
+      "points": [
+        {
+          "label": "문제",
+          "text": "작업을 진행하며 매대 하나에 아이템 여러 개를 올리는 방식으로 틀 자체를 바꿔 두었습니다(→ 4.5). 그러나 마트를 맡게 될 팀원 C는 명품 목걸이 전시 매대처럼 매대 하나에 아이템 하나를 생각하고 있었습니다. 서로 당연하다고 여겨 논의 자체가 없었습니다",
+          "verbatim": true
+        },
+        {"label": "원인", "text": "담당이 바뀌는 시점에 설계를 맞추는 대화 없이, 당연하다고 생각한 방식으로 작업을 진행했습니다", "verbatim": true},
+        {
+          "label": "결과",
+          "text": "이후 제가 디자인 쪽으로 완전히 빠지면서, 팀원 C가 팀원 A가 짠 코드와 제가 틀을 바꾼 코드 두 가지를 보며 합치고 서버와 주고받을 수 있게 고쳐야 했습니다. 이 과정에서 팀원 모두가 머리를 맞대고 고생했습니다",
+          "verbatim": true
+        },
+        {
+          "label": "배운 점",
+          "text": "당연해 보이는 설계일수록 말로 확인해야 하며, 본인이 인계하는 작업은 다음 사람이 이어받을 수 있게 방향을 맞춰 두고 넘겨야 한다는 것을 배웠습니다.",
+          "verbatim": true
+        }
+      ],
+      "visuals": [],
+      "from": {
+        "key": "shelf-items",
+        "sectionPath": ["5. 협업 이슈", "5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계"],
+        "sig": ["5.1 매대 하나에 아이템 몇 개? — 서로 당연하다고 여긴 설계|table|1|구분|내용"]
+      }
+    },
+    {
+      "key": "ui-split",
+      "chapter": "collab",
+      "layout": "problem",
+      "tab": "문제 해결",
+      "title": {"text": "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["5. 협업 이슈", "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현"],
+      "points": [
+        {"label": "상황", "text": "필요한 UI는 팀원이 기능만 동작하게 먼저 넣고, 디자인은 제가 다듬기로 했습니다(→ 3.3)", "verbatim": true},
+        {"label": "문제", "text": "마트 담당(팀원 C)과 회의실 담당(팀원 B)이 각자 UI를 만들면서 UI를 구현하는 방식이 서로 달라졌습니다", "verbatim": true},
+        {
+          "label": "대응",
+          "text": "두 곳에 공통으로 쓰이는 UI는 마트 담당·회의실 담당·UI 담당인 저까지 해서 세 명이 의논해 통일할 수 있는 것은 통일했습니다",
+          "verbatim": true
+        },
+        {"label": "남은 문제", "text": "완전히 통일하지는 못해, 지금도 두 갈래가 약간 다른 방식으로 동작합니다", "verbatim": true}
+      ],
+      "visuals": [],
+      "from": {
+        "key": "ui-split",
+        "sectionPath": ["5. 협업 이슈", "5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현"],
+        "sig": ["5.2 \"기능 먼저, 디자인은 나중에\" — 두 갈래로 갈린 UI 구현|table|1|구분|내용"]
+      }
+    },
+    {
+      "key": "item-scale",
+      "chapter": "collab",
+      "layout": "problem",
+      "tab": "문제 해결",
+      "title": {"text": "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["5. 협업 이슈", "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일"],
+      "points": [
+        {"label": "문제", "text": "아이템을 회전시키거나 다른 동작을 적용할 때 의도와 다르게 움직여, 해당 기능을 맡은 팀원이 이를 처리하느라 고생했습니다", "verbatim": true},
+        {
+          "label": "원인",
+          "text": "아이템 크기를 맞추면서 프리팹의 Transform 스케일을 (1, 1, 1)이 아닌 값으로 직접 바꿨습니다. 스케일은 가급적 (1, 1, 1)로 두어야 한다는 것을 3D를 제대로 공부하고 시작한 것이 아니었던 만큼 인지하지 못했습니다.",
+          "verbatim": true
+        },
+        {"label": "해결", "text": "담당 팀원이 해당 기능 쪽에서 수정했습니다", "verbatim": true},
+        {
+          "label": "결과·배운 점",
+          "text": "팀원이 수정한 뒤 아이템의 회전·배치가 제대로 동작했습니다. 보기 좋은 크기만 맞추면 될 줄 알았지만, 스케일 값이 다른 사람의 코드(회전·배치)에 영향을 준다는 것을 알게 되었습니다. 다음에는 모델 자체 크기나 자식 오브젝트로 크기를 맞추고 루트 스케일은 (1, 1, 1)로 유지해야겠다고 생각했습니다.",
+          "verbatim": true
+        }
+      ],
+      "visuals": [],
+      "from": {
+        "key": "item-scale",
+        "sectionPath": ["5. 협업 이슈", "5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일"],
+        "sig": ["5.3 내 작업이 팀원 코드에 준 영향 — 아이템 스케일|table|1|구분|내용"]
+      }
+    },
+    {
+      "key": "ai-review",
+      "chapter": "ai",
+      "layout": "full",
+      "tab": "",
+      "title": {"text": "6. AI 결과물을 확인하고 고친 과정", "verbatim": true},
+      "lead": {"text": "두 경우 모두 결과를 직접 확인하고, 의도와 다른 부분은 다시 요청하거나 직접 고쳤습니다.", "verbatim": true},
+      "sectionPath": ["6. AI 결과물을 확인하고 고친 과정"],
+      "points": [],
+      "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}],
+      "from": {
+        "key": "ai-review",
+        "sectionPath": ["6. AI 결과물을 확인하고 고친 과정"],
+        "sig": ["6. AI 결과물을 확인하고 고친 과정|table|1|대상|요청 방식|확인 방법|의도와 달랐던 점|대응"]
+      }
+    },
+    {
+      "key": "ai-sketch",
+      "after": "ai-review",
+      "chapter": "ai",
+      "layout": "screens",
+      "tab": "결과",
+      "title": {"text": "6. AI 결과물을 확인하고 고친 과정", "verbatim": true},
+      "lead": {"text": "이미지는 글로 설명을 반복하는 것보다, 직접 그린 스케치로 원하는 결과를 보여 주는 편이 효과적이었습니다.", "verbatim": true},
+      "sectionPath": ["6. AI 결과물을 확인하고 고친 과정"],
+      "points": [],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/TitleSketch.jpg",
+          "w": 2000,
+          "h": 1098,
+          "caption": {"text": "타이틀 화면 구도 스케치 — 직접 그린 캐릭터 배치·동작과 AI에 전달한 요청", "verbatim": true}
+        },
+        {
+          "kind": "image",
+          "src": "images/TitleScenes.jpg",
+          "w": 1195,
+          "h": 669,
+          "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
+          "caption": {"text": "타이틀 화면 — 게임 입장", "verbatim": true}
+        }
+      ]
     }
   ],
   "hide": [
