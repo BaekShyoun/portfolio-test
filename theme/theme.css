@@ -145,3 +145,6 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
 
 /* 토끼와 거북이 슬라이드 「3.1 전체 흐름」(#d-flow): 오른쪽 위 스테이지 선택 화면(과 설명)을 아래 카드 폭의 가운데에 둠 */
 #d-flow .pair-r > .vis { align-items: center !important; }
+
+/* 토끼와 거북이 슬라이드 「2.3 흑화 — 반전 연출」 BGM 장면(#d-bgm): 오른쪽 카드("음악은 AI가 생성했으나…")의 글을 카드 세로 가운데로 */
+#d-bgm .ncard:nth-child(2) { align-items: center !important; }
