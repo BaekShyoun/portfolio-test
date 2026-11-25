@@ -6,57 +6,34 @@
       "chapter": "penalty",
       "layout": "full",
       "tab": "선택",
-      "title": {
-        "text": "4.5 기획과 구현의 비교",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "기획서의 수치가 적절한지는 실제로 플레이해 보아야만 알 수 있는 부분이 있다는 점을 배웠습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "4. 패널티 설계와 구현 방식의 선택",
-        "4.5 기획과 구현의 비교"
-      ],
+      "title": {"text": "4.5 기획과 구현의 비교", "verbatim": true},
+      "lead": {"text": "기획서의 수치가 적절한지는 실제로 플레이해 보아야만 알 수 있는 부분이 있다는 점을 배웠습니다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
       "points": [],
       "visuals": [
         {
           "kind": "table",
           "n": 1,
           "fp": "항목|상세 기획|실제 구현|바꾼 이유",
-          "caption": {
-            "text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게",
-            "verbatim": true
-          }
+          "caption": {"text": "① 난이도 — 너무 어렵지도, 너무 쉽지도 않게", "verbatim": true}
         },
         {
           "kind": "table",
           "n": 2,
           "fp": "항목|상세 기획|실제 구현|바꾼 이유",
-          "caption": {
-            "text": "② 현실감 — 4.2·4.3과 같은 원칙",
-            "verbatim": true
-          }
+          "caption": {"text": "② 현실감 — 4.2·4.3과 같은 원칙", "verbatim": true}
         },
         {
           "kind": "table",
           "n": 3,
           "fp": "항목|상세 기획|실제 구현|바꾼 이유",
-          "caption": {
-            "text": "③ 선택지 — 싼 것에는 대가가 따르게",
-            "verbatim": true
-          }
+          "caption": {"text": "③ 선택지 — 싼 것에는 대가가 따르게", "verbatim": true}
         }
       ],
       "from": {
         "key": "plan-difficulty",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.5 기획과 구현의 비교"
-        ],
-        "sig": [
-          "4.5 기획과 구현의 비교|table|1|항목|상세 기획|실제 구현|바꾼 이유"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+        "sig": ["4.5 기획과 구현의 비교|table|1|항목|상세 기획|실제 구현|바꾼 이유"]
       },
       "group": "merge-plan-difficulty"
     },
@@ -65,18 +42,9 @@
       "chapter": "penalty",
       "layout": "full",
       "tab": "선택",
-      "title": {
-        "text": "턴 진행을 어디서 처리할까",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "처음부터 A로 설계했습니다(이유 → 3.2).",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "4. 패널티 설계와 구현 방식의 선택",
-        "4.6 구현 방법의 선택"
-      ],
+      "title": {"text": "턴 진행을 어디서 처리할까", "verbatim": true},
+      "lead": {"text": "처음부터 A로 설계했습니다(이유 → 3.2).", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
       "points": [],
       "visuals": [
         {
@@ -84,30 +52,15 @@
           "caption": {"text": "TurnController.FlowTime() — 턴이 넘어갈 때 한 번에 갱신", "verbatim": false},
           "n": 1,
           "fp": "public void FlowTime(int skipTime)",
-          "lines": [
-            1,
-            15
-          ],
-          "sectionPath": [
-            "3. 턴 진행",
-            "3.2 턴 경과를 한 메서드로 처리하기"
-          ]
+          "lines": [1, 15],
+          "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]
         },
-        {
-          "kind": "table",
-          "n": 1,
-          "fp": "방법|장점|단점"
-        }
+        {"kind": "table", "n": 1, "fp": "방법|장점|단점"}
       ],
       "from": {
         "key": "choice-turn",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.6 구현 방법의 선택"
-        ],
-        "sig": [
-          "4.6 구현 방법의 선택|table|1|방법|장점|단점"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.6 구현 방법의 선택"],
+        "sig": ["4.6 구현 방법의 선택|table|1|방법|장점|단점"]
       }
     },
     {
@@ -115,18 +68,9 @@
       "chapter": "intro",
       "layout": "screens",
       "tab": "개요",
-      "title": {
-        "text": "1.2 왜 만들었나",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "자원을 관리하며 오래 살아남는 것, 그리고 그 과정에서 긴장감을 주는 게임을 목표로 했습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "1. 개요",
-        "1.2 왜 만들었나"
-      ],
+      "title": {"text": "1.2 왜 만들었나", "verbatim": true},
+      "lead": {"text": "자원을 관리하며 오래 살아남는 것, 그리고 그 과정에서 긴장감을 주는 게임을 목표로 했습니다.", "verbatim": true},
+      "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
       "points": [
         {
           "label": "",
@@ -150,32 +94,20 @@
           "src": "images/MiniGameA.jpg",
           "w": 2174,
           "h": 1200,
-          "caption": {
-            "text": "미니게임 A — 경마",
-            "verbatim": true
-          }
+          "caption": {"text": "미니게임 A — 경마", "verbatim": true}
         },
         {
           "kind": "image",
           "src": "images/MiniGameB.jpg",
           "w": 2340,
           "h": 1118,
-          "caption": {
-            "text": "미니게임 B — 순서 맞추기",
-            "verbatim": true
-          }
+          "caption": {"text": "미니게임 B — 순서 맞추기", "verbatim": true}
         }
       ],
       "from": {
         "key": "why",
-        "sectionPath": [
-          "1. 개요",
-          "1.2 왜 만들었나"
-        ],
-        "sig": [
-          "1.2 왜 만들었나|image|images/MiniGameA.jpg|1",
-          "1.2 왜 만들었나|image|images/MiniGameB.jpg|1"
-        ]
+        "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
+        "sig": ["1.2 왜 만들었나|image|images/MiniGameA.jpg|1", "1.2 왜 만들었나|image|images/MiniGameB.jpg|1"]
       }
     },
     {
@@ -184,18 +116,9 @@
       "chapter": "intro",
       "layout": "full",
       "tab": "개요",
-      "title": {
-        "text": "1.3 처음 컨셉에서 출발한 것",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "개발을 시작하기 전에 한 장짜리 컨셉 기획서를 먼저 썼습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "1. 개요",
-        "1.3 처음 컨셉에서 출발한 것"
-      ],
+      "title": {"text": "1.3 처음 컨셉에서 출발한 것", "verbatim": true},
+      "lead": {"text": "개발을 시작하기 전에 한 장짜리 컨셉 기획서를 먼저 썼습니다.", "verbatim": true},
+      "sectionPath": ["1. 개요", "1.3 처음 컨셉에서 출발한 것"],
       "points": [
         {
           "label": "",
@@ -203,70 +126,38 @@
           "verbatim": false
         }
       ],
-      "visuals": [
-        {
-          "kind": "table",
-          "n": 1,
-          "fp": "항목|처음 컨셉"
-        }
-      ]
+      "visuals": [{"kind": "table", "n": 1, "fp": "항목|처음 컨셉"}]
     },
     {
       "key": "concept",
       "chapter": "intro",
       "layout": "pair",
       "tab": "개요",
-      "title": {
-        "text": "1.3 처음 컨셉에서 출발한 것",
-        "verbatim": true
-      },
+      "title": {"text": "1.3 처음 컨셉에서 출발한 것", "verbatim": true},
       "lead": null,
-      "sectionPath": [
-        "1. 개요",
-        "1.3 처음 컨셉에서 출발한 것"
-      ],
-      "points": [
-        {
-          "label": "",
-          "text": "스케치에서 정한 배치는 최종 화면(1.1 메인 게임)까지 대부분 유지되었습니다.",
-          "verbatim": true
-        }
-      ],
+      "sectionPath": ["1. 개요", "1.3 처음 컨셉에서 출발한 것"],
+      "points": [{"label": "", "text": "스케치에서 정한 배치는 최종 화면(1.1 메인 게임)까지 대부분 유지되었습니다.", "verbatim": true}],
       "visuals": [
         {
           "kind": "image",
           "src": "images/Observed_UI_Design.png",
           "w": 1167,
           "h": 920,
-          "caption": {
-            "text": "처음 화면 배치 스케치 — 왼쪽 위 맹수 우리와 상태 확인 단말기, 오른쪽 침대, 아래쪽 오락기와 교환 자판기, 오른쪽 아래 상태창",
-            "verbatim": true
-          }
+          "caption": {"text": "처음 화면 배치 스케치 — 왼쪽 위 맹수 우리와 상태 확인 단말기, 오른쪽 침대, 아래쪽 오락기와 교환 자판기, 오른쪽 아래 상태창", "verbatim": true}
         },
         {
           "kind": "image",
           "src": "images/MainGame.jpg",
           "w": 2278,
           "h": 1303,
-          "caption": {
-            "text": "메인 게임 — 맹수 우리·관찰 단말기·침대·게임기·교환 자판기가 있는 방",
-            "verbatim": true
-          },
-          "sectionPath": [
-            "1. 개요",
-            "1.1 무엇을 만들었나"
-          ]
+          "caption": {"text": "메인 게임 — 맹수 우리·관찰 단말기·침대·게임기·교환 자판기가 있는 방", "verbatim": true},
+          "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"]
         }
       ],
       "from": {
         "key": "concept",
-        "sectionPath": [
-          "1. 개요",
-          "1.3 처음 컨셉에서 출발한 것"
-        ],
-        "sig": [
-          "1.3 처음 컨셉에서 출발한 것|image|images/Observed_UI_Design.png|1"
-        ]
+        "sectionPath": ["1. 개요", "1.3 처음 컨셉에서 출발한 것"],
+        "sig": ["1.3 처음 컨셉에서 출발한 것|image|images/Observed_UI_Design.png|1"]
       }
     },
     {
@@ -274,15 +165,9 @@
       "chapter": "structure",
       "layout": "pair",
       "tab": "구조",
-      "title": {
-        "text": "2.1 클래스 관계",
-        "verbatim": true
-      },
+      "title": {"text": "2.1 클래스 관계", "verbatim": true},
       "lead": null,
-      "sectionPath": [
-        "2. 시스템 구조",
-        "2.1 클래스 관계"
-      ],
+      "sectionPath": ["2. 시스템 구조", "2.1 클래스 관계"],
       "points": [
         {
           "label": "",
@@ -291,61 +176,32 @@
         }
       ],
       "visuals": [
-        {
-          "kind": "mermaid",
-          "n": 1,
-          "fp": "classDiagram"
-        },
+        {"kind": "mermaid", "n": 1, "fp": "classDiagram"},
         {
           "kind": "code",
           "caption": {"text": "ObjectInteraction — 침대·게임기 등 상호작용 오브젝트의 부모 클래스", "verbatim": false},
           "n": 1,
           "fp": "public abstract class ObjectInteraction : MonoBehaviour",
-          "lines": [
-            1,
-            17
-          ]
+          "lines": [1, 17]
         }
       ],
-      "from": {
-        "key": "class-diagram",
-        "sectionPath": [
-          "2. 시스템 구조",
-          "2.1 클래스 관계"
-        ],
-        "sig": [
-          "2.1 클래스 관계|mermaid|1|classDiagram"
-        ]
-      }
+      "from": {"key": "class-diagram", "sectionPath": ["2. 시스템 구조", "2.1 클래스 관계"], "sig": ["2.1 클래스 관계|mermaid|1|classDiagram"]}
     },
     {
       "key": "flowtime",
       "chapter": "turn-flow",
       "layout": "pair",
       "tab": "구현",
-      "title": {
-        "text": "3.2 턴 경과를 한 메서드로 처리하기",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "턴이 넘어갈 때마다 `FlowTime`이 시간·질병·교환 아이템·부패·맹수·게이지를 한 번에 갱신합니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "3. 턴 진행",
-        "3.2 턴 경과를 한 메서드로 처리하기"
-      ],
+      "title": {"text": "3.2 턴 경과를 한 메서드로 처리하기", "verbatim": true},
+      "lead": {"text": "턴이 넘어갈 때마다 `FlowTime`이 시간·질병·교환 아이템·부패·맹수·게이지를 한 번에 갱신합니다.", "verbatim": true},
+      "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
       "points": [
         {
           "label": "구현",
           "text": "미니게임(`FlowTime(1)`), 수면(`FlowTime(2)`), 블랙아웃(`FlowTime(2)`)은 모두 넘길 턴 수만 인자로 전달하여 같은 메서드를 호출합니다.",
           "verbatim": true
         },
-        {
-          "label": "이유",
-          "text": "따라서 턴마다 수행해야 하는 처리(부패, 맹수, 교환기 재고 등)가 추가되더라도 이 메서드 한 곳만 수정하면 됩니다.",
-          "verbatim": true
-        }
+        {"label": "이유", "text": "따라서 턴마다 수행해야 하는 처리(부패, 맹수, 교환기 재고 등)가 추가되더라도 이 메서드 한 곳만 수정하면 됩니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -359,21 +215,13 @@
           "src": "images/Sleep.gif",
           "w": 640,
           "h": 352,
-          "caption": {
-            "text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로",
-            "verbatim": true
-          }
+          "caption": {"text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로", "verbatim": true}
         }
       ],
       "from": {
         "key": "flowtime",
-        "sectionPath": [
-          "3. 턴 진행",
-          "3.2 턴 경과를 한 메서드로 처리하기"
-        ],
-        "sig": [
-          "3.2 턴 경과를 한 메서드로 처리하기|code|1|public void FlowTime(int skipTime)"
-        ]
+        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|code|1|public void FlowTime(int skipTime)"]
       },
       "group": "merge-flowtime"
     },
@@ -382,26 +230,16 @@
       "chapter": "turn-flow",
       "layout": "visual",
       "tab": "흐름",
-      "title": {
-        "text": "3.1 행동마다 넘어가는 턴과 게이지 변화",
-        "verbatim": true
-      },
+      "title": {"text": "3.1 행동마다 넘어가는 턴과 게이지 변화", "verbatim": true},
       "lead": null,
-      "sectionPath": [
-        "3. 턴 진행",
-        "3.1 행동마다 넘어가는 턴과 게이지 변화"
-      ],
+      "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
       "points": [
         {
           "label": "",
           "text": "턴이 넘어갈 때마다 맹수의 탈출 욕구는 턴당 +20씩 증가하며, 포만감·수분이 0이면 각각 턴당 에너지가 10씩 추가로 감소합니다.",
           "verbatim": true
         },
-        {
-          "label": "",
-          "text": "탈출 욕구가 100에 도달하면 맹수가 탈출합니다.",
-          "verbatim": true
-        },
+        {"label": "", "text": "탈출 욕구가 100에 도달하면 맹수가 탈출합니다.", "verbatim": true},
         {
           "label": "",
           "text": "턴을 넘길수록 맹수의 탈출 욕구와 게이지 부담이 함께 커지므로, 행동 하나하나가 남은 여유를 깎는다는 긴장감을 줍니다(목표한 경험 → 1.2).",
@@ -414,21 +252,13 @@
           "src": "images/Gage.jpg",
           "w": 2559,
           "h": 1364,
-          "caption": {
-            "text": "상태창 — 날짜·시간, 포만감·수분·에너지 게이지, 질병 중첩 수",
-            "verbatim": true
-          }
+          "caption": {"text": "상태창 — 날짜·시간, 포만감·수분·에너지 게이지, 질병 중첩 수", "verbatim": true}
         }
       ],
       "from": {
         "key": "turn-gage",
-        "sectionPath": [
-          "3. 턴 진행",
-          "3.1 행동마다 넘어가는 턴과 게이지 변화"
-        ],
-        "sig": [
-          "3.1 행동마다 넘어가는 턴과 게이지 변화|image|images/Gage.jpg|1"
-        ]
+        "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
+        "sig": ["3.1 행동마다 넘어가는 턴과 게이지 변화|image|images/Gage.jpg|1"]
       }
     },
     {
@@ -436,52 +266,31 @@
       "chapter": "turn-flow",
       "layout": "full",
       "tab": "구현",
-      "title": {
-        "text": "예외 상황 방어",
-        "verbatim": true
-      },
+      "title": {"text": "예외 상황 방어", "verbatim": true},
       "lead": null,
-      "sectionPath": [
-        "3. 턴 진행",
-        "3.2 턴 경과를 한 메서드로 처리하기"
-      ],
+      "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
       "points": [],
       "visuals": [
-        {
-          "kind": "table",
-          "n": 1,
-          "fp": "방어|위치|무엇을 막나"
-        },
+        {"kind": "table", "n": 1, "fp": "방어|위치|무엇을 막나"},
         {
           "kind": "code",
           "caption": {"text": "GageController.GageUpdate() — 게이지를 0 ~ 1 사이로 고정", "verbatim": false},
           "n": 2,
           "fp": "public float GageUpdate(Image bar, float fillAmount)",
-          "lines": [
-            1,
-            8
-          ]
+          "lines": [1, 8]
         },
         {
           "kind": "code",
           "caption": {"text": "GageController.GetBlackOut() — isBlackOut 플래그로 블랙아웃 중복 실행 막기", "verbatim": false},
           "n": 3,
           "fp": "public void GetBlackOut()",
-          "lines": [
-            1,
-            8
-          ]
+          "lines": [1, 8]
         }
       ],
       "from": {
         "key": "turn-guard",
-        "sectionPath": [
-          "3. 턴 진행",
-          "3.2 턴 경과를 한 메서드로 처리하기"
-        ],
-        "sig": [
-          "3.2 턴 경과를 한 메서드로 처리하기|table|1|방어|위치|무엇을 막나"
-        ]
+        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|table|1|방어|위치|무엇을 막나"]
       }
     },
     {
@@ -489,34 +298,13 @@
       "chapter": "penalty",
       "layout": "code",
       "tab": "선택",
-      "title": {
-        "text": "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "반면 블랙아웃은 게이지 부족으로 쓰러져 강제로 턴이 넘어가는 상황이며, 플레이어가 게이지를 스스로 제어할 수 없도록 설계했습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "4. 패널티 설계와 구현 방식의 선택",
-        "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"
-      ],
+      "title": {"text": "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티", "verbatim": true},
+      "lead": {"text": "반면 블랙아웃은 게이지 부족으로 쓰러져 강제로 턴이 넘어가는 상황이며, 플레이어가 게이지를 스스로 제어할 수 없도록 설계했습니다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
       "points": [
-        {
-          "label": "이유",
-          "text": "이는 플레이어 자신의 관리 실패에 따른 패널티입니다.",
-          "verbatim": true
-        },
-        {
-          "label": "결과 1",
-          "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소합니다.",
-          "verbatim": true
-        },
-        {
-          "label": "결과 2",
-          "text": "쓰러져 있는 2턴 동안에 맹수의 탈출 욕구 역시 쌓이므로, 맹수의 위협도 함께 다가옵니다.",
-          "verbatim": true
-        }
+        {"label": "이유", "text": "이는 플레이어 자신의 관리 실패에 따른 패널티입니다.", "verbatim": true},
+        {"label": "결과 1", "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소합니다.", "verbatim": true},
+        {"label": "결과 2", "text": "쓰러져 있는 2턴 동안에 맹수의 탈출 욕구 역시 쌓이므로, 맹수의 위협도 함께 다가옵니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -528,13 +316,8 @@
       ],
       "from": {
         "key": "blackout",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"
-        ],
-        "sig": [
-          "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티|code|1|public IEnumerator GetBlackOutCoroutine()"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
+        "sig": ["4.1 블랙아웃 — 관리 실패에 대한 강제 패널티|code|1|public IEnumerator GetBlackOutCoroutine()"]
       }
     },
     {
@@ -542,29 +325,12 @@
       "chapter": "penalty",
       "layout": "code",
       "tab": "선택",
-      "title": {
-        "text": "4.2 상한 고기 — 불확실한 패널티",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "현실에서 상한 고기를 먹는다고 해서 반드시 탈이 나는 것은 아닙니다. 이 점을 반영하여 불확실한 패널티를 부여하고자 했습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "4. 패널티 설계와 구현 방식의 선택",
-        "4.2 상한 고기 — 불확실한 패널티"
-      ],
+      "title": {"text": "4.2 상한 고기 — 불확실한 패널티", "verbatim": true},
+      "lead": {"text": "현실에서 상한 고기를 먹는다고 해서 반드시 탈이 나는 것은 아닙니다. 이 점을 반영하여 불확실한 패널티를 부여하고자 했습니다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.2 상한 고기 — 불확실한 패널티"],
       "points": [
-        {
-          "label": "기능",
-          "text": "상한 고기·썩은 물을 섭취하면 30% 확률로 질병에 걸립니다.",
-          "verbatim": true
-        },
-        {
-          "label": "경험",
-          "text": "플레이어는 위험을 감수하고 섭취할지, 버릴지를 고민하게 됩니다.",
-          "verbatim": true
-        }
+        {"label": "기능", "text": "상한 고기·썩은 물을 섭취하면 30% 확률로 질병에 걸립니다.", "verbatim": true},
+        {"label": "경험", "text": "플레이어는 위험을 감수하고 섭취할지, 버릴지를 고민하게 됩니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -573,18 +339,11 @@
           "n": 1,
           "fp": "public void GotDiseaseByRotten(int percentage)"
         },
-        {
-          "kind": "table",
-          "n": 1,
-          "fp": "질병 규칙|값"
-        }
+        {"kind": "table", "n": 1, "fp": "질병 규칙|값"}
       ],
       "from": {
         "key": "rotten-meat",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.2 상한 고기 — 불확실한 패널티"
-        ],
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.2 상한 고기 — 불확실한 패널티"],
         "sig": [
           "4.2 상한 고기 — 불확실한 패널티|code|1|public void GotDiseaseByRotten(int percentage)",
           "4.2 상한 고기 — 불확실한 패널티|table|1|질병 규칙|값"
@@ -596,29 +355,12 @@
       "chapter": "penalty",
       "layout": "visual",
       "tab": "선택",
-      "title": {
-        "text": "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "시간이 지나면 아이템이 썩도록 하여 쌓아 두기만 하는 플레이를 막고자 했습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "4. 패널티 설계와 구현 방식의 선택",
-        "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지"
-      ],
+      "title": {"text": "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지", "verbatim": true},
+      "lead": {"text": "시간이 지나면 아이템이 썩도록 하여 쌓아 두기만 하는 플레이를 막고자 했습니다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지"],
       "points": [
-        {
-          "label": "기능",
-          "text": "신선한 고기·수상한 고기는 4턴, 신선한 물은 6턴이 지나면 썩습니다.",
-          "verbatim": true
-        },
-        {
-          "label": "경험",
-          "text": "이에 따라 게임에 현실감을 더하고, 플레이어는 아이템을 더욱 신중히 구매하고 관리하게 됩니다.",
-          "verbatim": true
-        }
+        {"label": "기능", "text": "신선한 고기·수상한 고기는 4턴, 신선한 물은 6턴이 지나면 썩습니다.", "verbatim": true},
+        {"label": "경험", "text": "이에 따라 게임에 현실감을 더하고, 플레이어는 아이템을 더욱 신중히 구매하고 관리하게 됩니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -626,21 +368,13 @@
           "src": "images/Inventories.jpg",
           "w": 2559,
           "h": 1409,
-          "caption": {
-            "text": "인벤토리(부패한 고기·썩은 물 칸)와 교환 자판기",
-            "verbatim": true
-          }
+          "caption": {"text": "인벤토리(부패한 고기·썩은 물 칸)와 교환 자판기", "verbatim": true}
         }
       ],
       "from": {
         "key": "rotting-items",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지"
-        ],
-        "sig": [
-          "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지|image|images/Inventories.jpg|1"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지"],
+        "sig": ["4.3 썩는 아이템 — 쌓아 두기만 하는 플레이 방지|image|images/Inventories.jpg|1"]
       }
     },
     {
@@ -648,29 +382,12 @@
       "chapter": "penalty",
       "layout": "visual",
       "tab": "선택",
-      "title": {
-        "text": "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기",
-        "verbatim": true
-      },
-      "lead": {
-        "text": "수면권은 교환(200pt)으로만 얻을 수 있으므로, 플레이어에게 포인트 자원을 수면권에도 쓸지 말지 선택권을 부여하고자 했습니다.",
-        "verbatim": true
-      },
-      "sectionPath": [
-        "4. 패널티 설계와 구현 방식의 선택",
-        "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기"
-      ],
+      "title": {"text": "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기", "verbatim": true},
+      "lead": {"text": "수면권은 교환(200pt)으로만 얻을 수 있으므로, 플레이어에게 포인트 자원을 수면권에도 쓸지 말지 선택권을 부여하고자 했습니다.", "verbatim": true},
+      "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기"],
       "points": [
-        {
-          "label": "기능",
-          "text": "수면권을 사용하면 더 질 좋은 수면(에너지 +40, 일반 수면은 +20)을 취할 수 있습니다.",
-          "verbatim": true
-        },
-        {
-          "label": "경험",
-          "text": "포인트를 어디에 쓸지가 생존 전략이 됩니다.",
-          "verbatim": true
-        }
+        {"label": "기능", "text": "수면권을 사용하면 더 질 좋은 수면(에너지 +40, 일반 수면은 +20)을 취할 수 있습니다.", "verbatim": true},
+        {"label": "경험", "text": "포인트를 어디에 쓸지가 생존 전략이 됩니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -678,60 +395,29 @@
           "src": "images/Sleep.gif",
           "w": 640,
           "h": 352,
-          "caption": {
-            "text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로",
-            "verbatim": true
-          },
-          "sectionPath": [
-            "3. 턴 진행",
-            "3.2 턴 경과를 한 메서드로 처리하기"
-          ]
+          "caption": {"text": "수면 — 화면이 어두워졌다 밝아지며 다음 날 아침으로", "verbatim": true},
+          "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"]
         }
       ],
-      "from": {
-        "key": "sleep-ticket",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기"
-        ],
-        "sig": []
-      }
+      "from": {"key": "sleep-ticket", "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.4 수면권 — 포인트를 어디에 쓸지 선택권 주기"], "sig": []}
     },
     {
       "key": "trouble-ui",
       "chapter": "trouble",
       "layout": "problem",
       "tab": "문제 해결",
-      "title": {
-        "text": "5.2 트러블슈팅 ① 같은 화면, 다른 역할 — 상호작용 충돌",
-        "verbatim": true
-      },
+      "title": {"text": "5.2 트러블슈팅 ① 같은 화면, 다른 역할 — 상호작용 충돌", "verbatim": true},
       "lead": null,
-      "sectionPath": [
-        "5. 결과 및 배운 점",
-        "5.2 트러블슈팅 ① 같은 화면, 다른 역할 — 상호작용 충돌"
-      ],
+      "sectionPath": ["5. 결과 및 배운 점", "5.2 트러블슈팅 ① 같은 화면, 다른 역할 — 상호작용 충돌"],
       "points": [
-        {
-          "label": "문제",
-          "text": "같은 이미지(UI 화면)를 사용하지만 UI 디자인과 스크립트가 다른 경우, 상호작용 충돌이 빈번하게 발생했습니다.",
-          "verbatim": true
-        },
+        {"label": "문제", "text": "같은 이미지(UI 화면)를 사용하지만 UI 디자인과 스크립트가 다른 경우, 상호작용 충돌이 빈번하게 발생했습니다.", "verbatim": true},
         {
           "label": "원인",
           "text": "상황에 따라 같은 UI의 문구가 다르게 표시되어야 하고(예: `먹기` ↔ `먹이기`), 어떤 버튼은 창을 닫고 어떤 버튼은 창을 열어야 했으나, 현재 화면이 어떤 역할로 열렸는지 구분하는 장치가 없었습니다.",
           "verbatim": true
         },
-        {
-          "label": "해결",
-          "text": "`bool` 값으로 현재 화면이 어떤 역할로 열렸는지 구분하여 제어했습니다.",
-          "verbatim": true
-        },
-        {
-          "label": "결과",
-          "text": "하나의 인벤토리 창을 플레이어용(먹기·버리기)과 맹수용(먹이기)으로 함께 사용할 수 있게 되었습니다.",
-          "verbatim": true
-        }
+        {"label": "해결", "text": "`bool` 값으로 현재 화면이 어떤 역할로 열렸는지 구분하여 제어했습니다.", "verbatim": true},
+        {"label": "결과", "text": "하나의 인벤토리 창을 플레이어용(먹기·버리기)과 맹수용(먹이기)으로 함께 사용할 수 있게 되었습니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -739,10 +425,7 @@
           "src": "images/Beast.jpg",
           "w": 2559,
           "h": 1359,
-          "caption": {
-            "text": "맹수 우리 앞에서 뜨는 먹이 주기 팝업",
-            "verbatim": true
-          }
+          "caption": {"text": "맹수 우리 앞에서 뜨는 먹이 주기 팝업", "verbatim": true}
         }
       ]
     },
@@ -752,15 +435,9 @@
       "chapter": "trouble",
       "layout": "problem",
       "tab": "문제 해결",
-      "title": {
-        "text": "5.3 트러블슈팅 ② 코루틴에 대한 이해 부족",
-        "verbatim": true
-      },
+      "title": {"text": "5.3 트러블슈팅 ② 코루틴에 대한 이해 부족", "verbatim": true},
       "lead": null,
-      "sectionPath": [
-        "5. 결과 및 배운 점",
-        "5.3 트러블슈팅 ② 코루틴에 대한 이해 부족"
-      ],
+      "sectionPath": ["5. 결과 및 배운 점", "5.3 트러블슈팅 ② 코루틴에 대한 이해 부족"],
       "points": [
         {
           "label": "문제",
@@ -772,16 +449,8 @@
           "text": "코루틴 메서드가 여러 클래스에 분산되어 있어, 어떤 코루틴이 언제 시작되고 종료되는지 실행 순서를 한눈에 파악하지 못한 것이 원인이었습니다.",
           "verbatim": true
         },
-        {
-          "label": "해결",
-          "text": "메서드마다 `Debug.Log`를 출력하고, 그 출력 순서로 실제 실행 순서를 파악했습니다.",
-          "verbatim": true
-        },
-        {
-          "label": "결과",
-          "text": "실행 순서를 직접 확인하며 흐름을 바로잡을 수 있었습니다.",
-          "verbatim": true
-        }
+        {"label": "해결", "text": "메서드마다 `Debug.Log`를 출력하고, 그 출력 순서로 실제 실행 순서를 파악했습니다.", "verbatim": true},
+        {"label": "결과", "text": "실행 순서를 직접 확인하며 흐름을 바로잡을 수 있었습니다.", "verbatim": true}
       ],
       "visuals": [
         {
@@ -791,6 +460,22 @@
           "fp": "public void MakeOrder()"
         }
       ]
+    },
+    {
+      "key": "turn-api",
+      "chapter": "turn-flow",
+      "layout": "full",
+      "tab": "구현",
+      "title": {"text": "3.1 행동마다 넘어가는 턴과 게이지 변화", "verbatim": true},
+      "lead": {"text": "하루는 3시간 단위 8턴(00시 ~ 21시)입니다. 모든 게이지는 0 ~ 1(화면에서는 0 ~ 100)입니다.", "verbatim": true},
+      "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
+      "points": [],
+      "visuals": [{"kind": "table", "n": 1, "fp": "행동|넘어가는 턴|결과"}, {"kind": "table", "n": 2, "fp": "조건|턴마다 바뀌는 것"}],
+      "from": {
+        "key": "turn-api",
+        "sectionPath": ["3. 턴 진행", "3.1 행동마다 넘어가는 턴과 게이지 변화"],
+        "sig": ["3.1 행동마다 넘어가는 턴과 게이지 변화|table|1|행동|넘어가는 턴|결과"]
+      }
     }
   ],
   "hide": [
@@ -798,13 +483,8 @@
       "key": "plan-realism",
       "from": {
         "key": "plan-realism",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.5 기획과 구현의 비교"
-        ],
-        "sig": [
-          "4.5 기획과 구현의 비교|table|2|항목|상세 기획|실제 구현|바꾼 이유"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+        "sig": ["4.5 기획과 구현의 비교|table|2|항목|상세 기획|실제 구현|바꾼 이유"]
       },
       "group": "merge-plan-difficulty"
     },
@@ -812,13 +492,8 @@
       "key": "plan-choice",
       "from": {
         "key": "plan-choice",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.5 기획과 구현의 비교"
-        ],
-        "sig": [
-          "4.5 기획과 구현의 비교|table|3|항목|상세 기획|실제 구현|바꾼 이유"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.5 기획과 구현의 비교"],
+        "sig": ["4.5 기획과 구현의 비교|table|3|항목|상세 기획|실제 구현|바꾼 이유"]
       },
       "group": "merge-plan-difficulty"
     },
@@ -826,13 +501,8 @@
       "key": "flowtime-sleep",
       "from": {
         "key": "flowtime-sleep",
-        "sectionPath": [
-          "3. 턴 진행",
-          "3.2 턴 경과를 한 메서드로 처리하기"
-        ],
-        "sig": [
-          "3.2 턴 경과를 한 메서드로 처리하기|image|images/Sleep.gif|1"
-        ]
+        "sectionPath": ["3. 턴 진행", "3.2 턴 경과를 한 메서드로 처리하기"],
+        "sig": ["3.2 턴 경과를 한 메서드로 처리하기|image|images/Sleep.gif|1"]
       },
       "group": "merge-flowtime"
     },
@@ -840,24 +510,10 @@
       "key": "blackout-screen",
       "from": {
         "key": "blackout-screen",
-        "sectionPath": [
-          "4. 패널티 설계와 구현 방식의 선택",
-          "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"
-        ],
-        "sig": [
-          "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티|image|images/02-blackout.png|1"
-        ]
+        "sectionPath": ["4. 패널티 설계와 구현 방식의 선택", "4.1 블랙아웃 — 관리 실패에 대한 강제 패널티"],
+        "sig": ["4.1 블랙아웃 — 관리 실패에 대한 강제 패널티|image|images/02-blackout.png|1"]
       }
     }
   ],
-  "chapters": [
-    {
-      "key": "trouble",
-      "title": "트러블슈팅",
-      "sectionPath": [
-        "5. 결과 및 배운 점"
-      ],
-      "after": "penalty"
-    }
-  ]
+  "chapters": [{"key": "trouble", "title": "트러블슈팅", "sectionPath": ["5. 결과 및 배운 점"], "after": "penalty"}]
 }
