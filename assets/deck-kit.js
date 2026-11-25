@@ -438,6 +438,31 @@
       else if (a === 'view') setView(view === 'deck' ? 'scroll' : 'deck');
       else if (a === 'anyway') PF.printAnyway();
     });
+    // 진행 막대: 누르거나 끌면 그 위치의 장면으로. 막대가 가늘어 위아래 10px까지 누른 것으로 봄. 마우스를 올리면 갈 장면 이름
+    const prog = hud.querySelector('.pf-hud-prog');
+    let seekRect = null;                                      // 끄는 동안은 누른 순간의 막대 위치로 셈(장면 이름 길이에 따라 막대가 옆으로 움직이므로)
+    const progIdx = (x) => { const r = seekRect || prog.getBoundingClientRect(); return Math.max(0, Math.min(scenes.length - 1, Math.floor(((x - r.left) / r.width) * scenes.length))); };
+    const onProg = (e) => { const r = prog.getBoundingClientRect(); return r.width > 0 && e.clientY >= r.top - 10 && e.clientY <= r.bottom + 10 && e.clientX >= r.left - 4 && e.clientX <= r.right + 4; };
+    let seeking = false;
+    hud.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0 || !scenes.length || e.target.closest('button, a, .pf-hud-help') || !onProg(e)) return;
+      e.preventDefault(); seeking = true; seekRect = prog.getBoundingClientRect(); hud.setPointerCapture(e.pointerId);
+      const i = progIdx(e.clientX); if (i !== cur) go(i, { focus: false, announce: false });
+    });
+    hud.addEventListener('pointermove', (e) => {
+      if (seeking) { const i = progIdx(e.clientX); if (i !== cur) go(i, { focus: false, announce: false }); return; }
+      const on = scenes.length > 0 && onProg(e);
+      hud.classList.toggle('pf-hud-seek', on);
+      if (on) { const i = progIdx(e.clientX), s = scenes[i]; hud.title = `${pad2(i + 1)} · ${titleOf(s) || s.dataset.sec || ''}`; } else hud.removeAttribute('title');
+    });
+    const seekEnd = (e) => {
+      if (!seeking) return; seeking = false;
+      if (e.type === 'pointerup') { const i = progIdx(e.clientX); if (i !== cur) go(i, { focus: false, announce: false }); }   // 손을 뗀 위치까지
+      seekRect = null; say(cur);
+    };
+    hud.addEventListener('pointerup', seekEnd);
+    hud.addEventListener('pointercancel', seekEnd);
+    hud.addEventListener('pointerleave', () => { if (!seeking) { hud.classList.remove('pf-hud-seek'); hud.removeAttribute('title'); } });
     deck.before(skip, hud);                                   // DOM 순서: 건너뛰기 → HUD → 슬라이드
   }
   let msg = '';
