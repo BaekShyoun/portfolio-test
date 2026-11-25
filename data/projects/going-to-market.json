@@ -215,35 +215,6 @@
         "edited": true
       },
       {
-        "key": "round-start",
-        "chapter": "overview",
-        "layout": "screens",
-        "tab": "흐름",
-        "title": {"text": "1.1 무엇을 만들었나", "verbatim": true},
-        "lead": {
-          "text": "한 라운드는 장르·키워드 배정 → 마트에서 물건 고르기 → 회의실로 돌아와 발언 → 의심 가는 사람 지목 → 변론 → 투표와 결과 공개 순서로 진행됩니다.",
-          "verbatim": true
-        },
-        "sectionPath": ["1. 개요", "1.1 무엇을 만들었나"],
-        "points": [],
-        "visuals": [
-          {
-            "kind": "image",
-            "src": "images/Genre-Keyword.jpg",
-            "w": 1185,
-            "h": 667,
-            "caption": {"text": "라운드 시작 — 회의실에서 장르·키워드 확인", "verbatim": true}
-          },
-          {
-            "kind": "image",
-            "src": "images/Mart-Push.jpg",
-            "w": 1189,
-            "h": 665,
-            "caption": {"text": "마트 — 아이템 집기·밀치기, 개인 퀘스트와 장르·키워드 표시", "verbatim": true}
-          }
-        ]
-      },
-      {
         "key": "meeting-cycle",
         "chapter": "overview",
         "layout": "screens",
@@ -1062,6 +1033,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "8600dbe936bae849"
+    "applied": "0040bdfae4d1502a"
   }
 }
