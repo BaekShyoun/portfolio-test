@@ -102,11 +102,24 @@
         ...profLinks.map((l) => [l.label, shortUrl(l.url), l.url, 'external']), [t('page.print-web'), PF.visibleUrl('')]].filter(Boolean))}
     </div></section>`);
 
-    // ①-1 목차: 표지 다음 따로 한 절(인쇄하면 한 쪽). 프로젝트 대표 이미지 + 번호·이름, 누르면 그 프로젝트로(PDF에서도 눌러 이동)
+    // ①-1 목차: 표지 다음 따로 한 절(인쇄하면 한 쪽). 페이지의 절을 차례대로 번호 줄로(자기소개 · 기술 스택 · 프로젝트 · 프로젝트 요약 · 연락처 — 없는 절은 뺌),
+    //   프로젝트 줄 아래에는 대표 이미지 카드. 줄·카드를 누르면 그 절로(PDF에서도 눌러 이동)
     //   info.sections(예전 #번호 주소의 절 차례)에는 넣지 않음 — 아래 render 끝의 :not(#toc)
-    if (projects.length) out.push(sec('toc', t('en.toc'), t('page.toc'), '', `<nav class="toc" aria-label="프로젝트 바로 가기"><ol>${projects.map((p, j) => `<li><a href="#p-${esc(p.id)}">
+    if (projects.length) {
+      const rows = [prof.intro && ['intro', t('page.intro'), t('en.about')], (pf.skills || []).length && ['stack', t('page.stack'), t('en.skills')],
+        ['projects', t('page.nav-projects'), t('en.project')], ['glance', t('page.glance'), t('en.glance')], ['contact', t('page.nav-contact'), t('en.contact')]].filter(Boolean);
+      const cards = (no) => `<ol class="toc-cards">${projects.map((p, j) => `<li><a href="#p-${esc(p.id)}">
         ${p.cover ? `<span class="toc-m"><img src="${esc(PF.srcPath(p.id, p.cover))}" alt=""></span>` : ''}
-        <span class="toc-t"><span class="toc-n">${pad2(j + 1)}</span>${esc(p.title)}</span></a></li>`).join('')}</ol></nav>`, 'toc-sec'));
+        <span class="toc-t"><span class="toc-n">${no}-${j + 1}</span>${esc(p.title)}</span></a></li>`).join('')}</ol>`;
+      const list = rows.map(([id, ko, en], i) => {
+        const no = pad2(i + 1);
+        const head = `<span class="toc-rn">${no}</span><span class="toc-rk">${esc(ko)}</span><span class="toc-re" lang="en">${esc(en)}</span>`;
+        return id === 'projects'
+          ? `<li class="toc-row has-cards"><a class="toc-rl" href="#p-${esc(projects[0].id)}">${head}</a>${cards(no)}</li>`
+          : `<li class="toc-row"><a class="toc-rl" href="#${id}">${head}</a></li>`;
+      }).join('');
+      out.push(sec('toc', t('en.toc'), t('page.toc'), '', `<nav class="toc" aria-label="목차"><ol class="toc-list">${list}</ol></nav>`, 'toc-sec'));
+    }
 
     // ② 자기소개: profile.intro를 줄바꿈까지 그대로(고쳐 쓰지 않음)
     if (prof.intro) out.push(sec('intro', t('en.about'), t('page.intro'), '',`<div class="about">${prof.intro.split(/\n+/).filter((l) => l.trim()).map((l) => `<p>${inline(l)}</p>`).join('')}</div>`));
