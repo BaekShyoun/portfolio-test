@@ -345,6 +345,13 @@
     // 휠: 절이 화면보다 길면 먼저 절 안에서 스크롤하고, 끝(맨 아래·맨 위)에서 한 번 더 굴리면 다음·이전 절로.
     //   터치패드의 관성 스크롤이 끝에 닿자마자 넘어가지 않게, 끝에서 새로 시작한 굴림만 셈. 넘긴 뒤 굴림이 멈출 때까지 잠금
     let acc = 0, lastW = 0, lockW = false, lockT = 0, startEdge = false;
+    const innerScroll = (t, dy) => {
+      for (let n = t; n && n.nodeType === 1 && n !== root; n = n.parentElement) {
+        if (n.scrollHeight > n.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(n).overflowY)
+          && (dy > 0 ? n.scrollTop + n.clientHeight < n.scrollHeight - 1 : n.scrollTop > 0)) return true;
+      }
+      return false;
+    };
     addEventListener('wheel', (e) => {
       if (view !== 'paged' || e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
       const now = performance.now(), gap = now - lastW;
@@ -352,7 +359,7 @@
       if (lockW) { if (gap > 220 && now - lockT > 500) lockW = false; else { e.preventDefault(); return; } }   // 넘긴 직후의 남은 굴림이 새 절을 끌어내리지 않게
       const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * innerHeight : e.deltaY;
       const max = html.scrollHeight - innerHeight;
-      const edge = dy > 0 ? scrollY >= max - 2 : scrollY <= 2;
+      const edge = !innerScroll(e.target, dy) && (dy > 0 ? scrollY >= max - 2 : scrollY <= 2);   // 기능 목록처럼 안에서 스크롤되는 칸이 남았으면 그 칸 먼저
       if (gap > 220) { acc = 0; startEdge = edge; }
       if (!edge || !startEdge) { acc = 0; return; }
       acc += dy;
