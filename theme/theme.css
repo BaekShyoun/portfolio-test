@@ -147,6 +147,7 @@ html:has(#d-knockback) #d-what .ncard > .num::after { content: "→"; font-size:
 /* Observed 슬라이드 「3.1 행동마다 넘어가는 턴과 게이지 변화」(#d-turn-api): 두 표의 제목을 표 아래 대신 위 왼쪽에 */
 #d-turn-api .vbox { gap: 6px !important; }
 #d-turn-api .vbox[data-kind="table"] > .cap { order: -1; text-align: left !important; font-size: 14px; font-weight: 700; color: var(--ink); }
-#d-turn-api .vis { flex-direction: column !important; align-items: stretch !important; justify-content: center !important; gap: 22px !important; }   /* 두 표를 위아래로(제목이 생기면 렌더러가 좌우로 놓음) */
+#d-turn-api .vis { flex-direction: column !important; align-items: stretch !important; justify-content: center !important; gap: 14px !important; }   /* 두 표를 위아래로(제목이 생기면 렌더러가 좌우로 놓음) */
 #d-turn-api .vbox { width: auto !important; }
 #d-turn-api .vbox .fit-in { zoom: 1 !important; width: auto !important; }
+#d-turn-api table.md-table th, #d-turn-api table.md-table td { padding-top: 5px !important; padding-bottom: 5px !important; }   /* 두 표(9줄)가 한 장에 들어가게 — 표가 다음 장으로 나뉘지 않도록 */
