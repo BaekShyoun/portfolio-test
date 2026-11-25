@@ -300,6 +300,11 @@ table.md-table:has(td img) th, table.md-table:has(td img) td { text-align: cente
 .flow.grid .fhead { display: flex; align-items: center; gap: 10px; }
 .flow.grid .num { width: 26px; height: 26px; border-radius: 50%; background: var(--glow); color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none; }
 .flow.grid .fstep p { font-size: 17px; }
+/* 단계 이름은 칩 상자 없이 글자로, 카드 안 글은 가운데 */
+.flow.grid .fstep { align-items: center; justify-content: center; text-align: center; }
+.flow.grid .fhead { justify-content: center; }
+.flow.grid .fstep .labelchip, .flow.grid .fstep .labelchip.accent, .flow.grid .fstep .labelchip.ok { background: none; border: 0; padding: 0; font-size: 15px; font-weight: 800; color: var(--accent-ink); }
+.flow.grid .fstep .labelchip.ok { color: var(--ok); }
 .scr-row { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 22px; }
 .pf-sizing .scr-row { align-items: stretch; }
 .pf-vband { margin: 0; padding: 12px 14px; border-left: 4px solid #F04438; background: #2A1212; color: #FDA29B; font-size: 13px; line-height: 1.45; border-radius: 8px; min-width: 260px; }
