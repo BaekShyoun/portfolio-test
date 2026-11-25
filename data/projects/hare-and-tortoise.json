@@ -341,7 +341,12 @@
           }
         ],
         "visuals": [
-          {"kind": "code", "n": 1, "fp": "Vector3 direction = transform.position - explosionPosition;"},
+          {
+            "kind": "code",
+            "n": 1,
+            "fp": "Vector3 direction = transform.position - explosionPosition;",
+            "caption": {"text": "HareController.ApplyKnockback() — 폭발 중심에서 바깥쪽으로 날리는 방향 계산", "verbatim": false}
+          },
           {
             "kind": "image",
             "src": "images/ragdoll_fly.gif",
@@ -349,7 +354,8 @@
             "h": 360,
             "caption": {"text": "수류탄 폭발에 휘말려 래그돌로 날아가는 토끼", "verbatim": true}
           }
-        ]
+        ],
+        "edited": true
       },
       {
         "key": "ai-roles",
@@ -423,7 +429,15 @@
             "verbatim": true
           }
         ],
-        "visuals": [{"kind": "code", "n": 1, "fp": "Vector3 recoveryPosition = ragdollHips.position;"}]
+        "visuals": [
+          {
+            "kind": "code",
+            "n": 1,
+            "fp": "Vector3 recoveryPosition = ragdollHips.position;",
+            "caption": {"text": "HareController.RecoverFromRagdoll() — 착지한 래그돌의 골반 위치를 복구 위치로", "verbatim": false}
+          }
+        ],
+        "edited": true
       },
       {
         "key": "hare-states",
@@ -884,6 +898,6 @@
         ]
       }
     ],
-    "applied": "a4226ff8070201bc"
+    "applied": "0049daaa0937c4cc"
   }
 }

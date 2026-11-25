@@ -81,6 +81,7 @@
       "visuals": [
         {
           "kind": "code",
+          "caption": {"text": "TurnController.FlowTime() — 턴이 넘어갈 때 한 번에 갱신", "verbatim": false},
           "n": 1,
           "fp": "public void FlowTime(int skipTime)",
           "lines": [
@@ -297,6 +298,7 @@
         },
         {
           "kind": "code",
+          "caption": {"text": "ObjectInteraction — 침대·게임기 등 상호작용 오브젝트의 부모 클래스", "verbatim": false},
           "n": 1,
           "fp": "public abstract class ObjectInteraction : MonoBehaviour",
           "lines": [
@@ -348,6 +350,7 @@
       "visuals": [
         {
           "kind": "code",
+          "caption": {"text": "TurnController.FlowTime() — 시간·질병·교환 아이템·부패·맹수·게이지를 한 번에 갱신", "verbatim": false},
           "n": 1,
           "fp": "public void FlowTime(int skipTime)"
         },
@@ -451,6 +454,7 @@
         },
         {
           "kind": "code",
+          "caption": {"text": "GageController.GageUpdate() — 게이지를 0 ~ 1 사이로 고정", "verbatim": false},
           "n": 2,
           "fp": "public float GageUpdate(Image bar, float fillAmount)",
           "lines": [
@@ -460,6 +464,7 @@
         },
         {
           "kind": "code",
+          "caption": {"text": "GageController.GetBlackOut() — isBlackOut 플래그로 블랙아웃 중복 실행 막기", "verbatim": false},
           "n": 3,
           "fp": "public void GetBlackOut()",
           "lines": [
@@ -516,6 +521,7 @@
       "visuals": [
         {
           "kind": "code",
+          "caption": {"text": "GageController.GetBlackOutCoroutine() — 쓰러지며 강제로 2턴이 넘어가는 블랙아웃", "verbatim": false},
           "n": 1,
           "fp": "public IEnumerator GetBlackOutCoroutine()"
         }
@@ -563,6 +569,7 @@
       "visuals": [
         {
           "kind": "code",
+          "caption": {"text": "DiseaseController.GotDiseaseByRotten() — 상한 고기·썩은 물을 먹으면 확률로 질병", "verbatim": false},
           "n": 1,
           "fp": "public void GotDiseaseByRotten(int percentage)"
         },
@@ -779,6 +786,7 @@
       "visuals": [
         {
           "kind": "code",
+          "caption": {"text": "OrderTurn.MakeOrder() — 미니게임 B의 주문 코루틴 시작", "verbatim": false},
           "n": 1,
           "fp": "public void MakeOrder()"
         }

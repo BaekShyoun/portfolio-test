@@ -35,6 +35,94 @@
         "sectionPath": ["3. 일정과 진행 방식 — 팀장으로서", "3.2 일정 흐름"],
         "sig": ["3.2 일정 흐름|table|1|기간|작업|계획 (목표일)|실제"]
       }
+    },
+    {
+      "key": "why",
+      "chapter": "overview",
+      "layout": "overview",
+      "tab": "개요",
+      "title": {"text": "1.2 왜 만들었나", "verbatim": true},
+      "lead": {
+        "text": "이 게임은 서로 다른 키워드를 받았다는 사실조차 모른 채 마트에서 물건을 선택하게 하여, 라이어를 포함한 모든 플레이어가 불확실성을 갖도록 기획했습니다.",
+        "verbatim": true
+      },
+      "sectionPath": ["1. 개요", "1.2 왜 만들었나"],
+      "points": [
+        {"label": "", "text": "다른 플레이어의 선택을 해석하는 과정에서 자신의 판단도 의심하게 됩니다.", "verbatim": true},
+        {"label": "", "text": "고글은 스키장과 수영장 어느 쪽에도 어울리므로, 물건만으로는 D가 라이어인지 단정할 수 없습니다.", "verbatim": true},
+        {"label": "", "text": "이 변명과 해석의 과정이 기존 라이어 게임과 구별되는 이 게임의 핵심 재미입니다.", "verbatim": true}
+      ],
+      "visuals": [{"kind": "code", "n": 1, "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장", "caption": {"text": "컨셉 기획 단계에서 정리한 키워드 예시", "verbatim": false}}],
+      "from": {"key": "why", "sectionPath": ["1. 개요", "1.2 왜 만들었나"], "sig": ["1.2 왜 만들었나|code|1|일반 키워드: 스키장 / 라이어 키워드: 수영장"]}
+    },
+    {
+      "key": "sound-map",
+      "chapter": "features",
+      "layout": "code",
+      "tab": "구현",
+      "title": {"text": "4.2 enum 기반 공용 사운드 관리", "verbatim": true},
+      "lead": {"text": "호출하는 쪽은 오디오 클립을 직접 참조하지 않고, 상황에 맞는 enum 값만 전달하면 됩니다.", "verbatim": true},
+      "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
+      "points": [
+        {
+          "label": "",
+          "text": "InitDictionaries()는 Inspector에 등록한 배열을 enum 키의 Dictionary로 변환하고, 재생 요청 시에는 TryGetValue()로 클립을 조회합니다.",
+          "verbatim": true
+        },
+        {
+          "label": "",
+          "text": "따라서 호출하는 코드에는 ItemPickUp, VoteButtonClick과 같이 상황 이름만 남으며, 어떤 클립을 연결할지는 사운드 매니저 한 곳에서만 변경하면 됩니다.",
+          "verbatim": true
+        }
+      ],
+      "visuals": [
+        {"kind": "code", "n": 1, "fp": "// 호출 예시 — 팀원 코드에서 사용하는 형태", "caption": {"text": "SoundManager 호출 예시 — 상황에 맞는 enum 값만 전달", "verbatim": false}},
+        {"kind": "code", "n": 2, "fp": "private void InitDictionaries()", "caption": {"text": "SoundManager.InitDictionaries() — 배열을 enum 키의 Dictionary로 변환", "verbatim": false}}
+      ],
+      "from": {
+        "key": "sound-map",
+        "sectionPath": ["4. 담당 기능 구현", "4.2 enum 기반 공용 사운드 관리"],
+        "sig": [
+          "4.2 enum 기반 공용 사운드 관리|code|1|// 호출 예시 — 팀원 코드에서 사용하는 형태",
+          "4.2 enum 기반 공용 사운드 관리|code|2|private void InitDictionaries()"
+        ]
+      }
+    },
+    {
+      "key": "spotlight",
+      "chapter": "features",
+      "layout": "code",
+      "tab": "구현",
+      "title": {"text": "4.3 발언자 위치에 따른 기본 조명 제어", "verbatim": true},
+      "lead": {"text": "발언자의 Transform을 받으면 주변 조명을 어둡게 하고, 해당 플레이어 위로 스포트라이트를 이동시킵니다.", "verbatim": true},
+      "sectionPath": ["4. 담당 기능 구현", "4.3 발언자 위치에 따른 기본 조명 제어"],
+      "points": [
+        {"label": "목표한 경험과의 연결", "text": "지금 누가 발언하고 있는지를 텍스트뿐 아니라 시각적·공간적으로도 알 수 있게 하려 했습니다.", "verbatim": true},
+        {
+          "label": "본인 담당",
+          "text": "초기 조명 설정(InitLights())과 기본 스포트라이트 제어(TurnOnSpotLight()·TurnOffSpotLight()).",
+          "verbatim": true
+        },
+        {"label": "팀원 확장", "text": "DOTween 밝기 변화, 테이블 포커스, 라이어 색상 연출, 복수 승자 조명.", "verbatim": true}
+      ],
+      "visuals": [
+        {"kind": "code", "n": 1, "fp": "public void TurnOnSpotLight(Transform currentSpeaker)", "caption": {"text": "LightManager.TurnOnSpotLight() — 발언자 위로 스포트라이트 이동", "verbatim": false}},
+        {
+          "kind": "image",
+          "src": "images/Speak.gif",
+          "w": 640,
+          "h": 360,
+          "caption": {"text": "발언 단계 — 발언자가 바뀌면 스포트라이트가 그 자리로 옮겨 감", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "spotlight",
+        "sectionPath": ["4. 담당 기능 구현", "4.3 발언자 위치에 따른 기본 조명 제어"],
+        "sig": [
+          "4.3 발언자 위치에 따른 기본 조명 제어|code|1|public void TurnOnSpotLight(Transform currentSpeaker)",
+          "4.3 발언자 위치에 따른 기본 조명 제어|image|images/Speak.gif|1"
+        ]
+      }
     }
   ],
   "hide": [

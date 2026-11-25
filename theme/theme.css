@@ -53,7 +53,7 @@
 #d-choice-turn .vis { flex-direction: column !important; align-items: stretch !important; justify-content: flex-start !important; gap: 16px !important; }
 #d-choice-turn .vbox { width: auto !important; }
 #d-choice-turn .vbox .fit-in { zoom: 1 !important; width: auto !important; }
-#d-choice-turn .vbox[data-kind="code"] > .cap { display: none !important; }
+#d-choice-turn .vbox[data-kind="code"] pre code { line-height: 1.4 !important; }   /* 코드 아래 설명 한 줄이 들어갈 자리(줄 간격 1.6 → 1.4) */
 
 /* Observed 슬라이드 「1.2 왜 만들었나」(#d-why): 두 그림의 세로 중앙을 맞추고, FEATURE 01·02 글을 같은 높이에서 시작 */
 #d-why .fe-card > .vis { flex: 1 1 auto !important; justify-content: center !important; }
@@ -73,10 +73,10 @@
 #d-concept .pair-r { align-self: stretch !important; justify-content: flex-start; }
 #d-concept .ncard > .num { display: none !important; }
 #d-concept .ncard { grid-template-columns: minmax(0, 1fr) !important; }
+#d-concept .dk-pair > .vis { margin-top: 80px; }   /* 왼쪽 스케치의 세로 중앙을 오른쪽 게임 화면 중앙에 맞춤(오른쪽은 위 카드만큼 내려가 있음) */
 
 /* Observed 슬라이드 「2.1 클래스 관계」(#d-class-diagram): 왼쪽 다이어그램, 오른쪽 위 ObjectInteraction 코드, 오른쪽 맨 아래 카드 */
 #d-class-diagram .pair-r { align-self: stretch !important; justify-content: space-between; }
-#d-class-diagram .vbox[data-kind="code"] > .cap { display: none !important; }
 #d-class-diagram .ncard > .num { display: none !important; }
 #d-class-diagram .ncard { grid-template-columns: minmax(0, 1fr) !important; }
 
@@ -91,11 +91,6 @@
 #d-turn-guard .vbox { width: auto !important; }
 #d-turn-guard .vbox[data-kind="table"] { grid-column: 1 / -1; }
 #d-turn-guard .vbox .fit-in { zoom: 1 !important; width: auto !important; }
-/* 코드 아래 줄 수 표시 대신, 그 코드가 보여 주려는 방어를 적음(표 "방어"·"무엇을 막나" 칸의 말) — 렌더러가 코드 캡션을 쓰지 않아 여기서 바꿈 */
-#d-turn-guard .vbox[data-kind="code"] > .cap { font-size: 0 !important; }
-#d-turn-guard .vbox[data-kind="code"] > .cap::after { font-size: 13px; color: var(--muted); }
-#d-turn-guard .vis > .vbox[data-kind="code"]:nth-child(2) > .cap::after { content: "게이지를 0 ~ 1 사이로 고정"; }
-#d-turn-guard .vis > .vbox[data-kind="code"]:nth-child(3) > .cap::after { content: "isBlackOut 플래그로 블랙아웃 중복 실행 막기"; }
 
 /* Observed 슬라이드 「4.2 상한 고기」(#d-rotten-meat): 오른쪽 표의 세로 중앙을 왼쪽 코드(캡션 제외) 중앙에 맞추고,
    아래 카드 2개(기능 → 경험)는 폭을 줄여 가운데에 두고 사이에 화살표 */

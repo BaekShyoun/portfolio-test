@@ -168,7 +168,8 @@
       const all = codeLines(v.el).length, [a, b] = chunk;
       const lang = LANG[langOf(v.el)] || '';
       const part = a > 1 || b < all ? PF.t('deck.code-lines', { a, b, all }) : '';
-      return `<figure class="vbox" data-kind="code"><div class="vmedia"><div class="fit-in"><pre>${codeHtml(v.el, a, b)}</pre></div></div>${cap([lang, part].filter(Boolean).map(esc).join(' · '))}${warn}</figure>`;
+      const what = v.ref.caption?.text ? inline(v.ref.caption.text) : '';   // 코드가 가리키는 것(장면 고치기의 caption) — 그림 설명처럼 앞에, 언어·줄 범위는 뒤에
+      return `<figure class="vbox" data-kind="code"><div class="vmedia"><div class="fit-in"><pre>${codeHtml(v.el, a, b)}</pre></div></div>${cap([what, ...[lang, part].filter(Boolean).map(esc)].filter(Boolean).join(' · '))}${warn}</figure>`;
     }
     if (k === 'table') {
       const t = v.el.cloneNode(true);

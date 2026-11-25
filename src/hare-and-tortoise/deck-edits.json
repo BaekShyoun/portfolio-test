@@ -42,9 +42,75 @@
       ],
       "visuals": [
         {"kind": "mermaid", "n": 1, "fp": "flowchart TD"},
-        {"kind": "image", "src": "images/StageScene.png", "w": 1186, "h": 667, "caption": {"text": "흐름의 시작인 스테이지 선택 화면 — 앞 경주를 깨야 다음 경주가 열림", "verbatim": true}}
+        {
+          "kind": "image",
+          "src": "images/StageScene.png",
+          "w": 1186,
+          "h": 667,
+          "caption": {"text": "흐름의 시작인 스테이지 선택 화면 — 앞 경주를 깨야 다음 경주가 열림", "verbatim": true}
+        }
       ],
       "from": {"key": "flow", "sectionPath": ["3. 시스템 구조", "3.1 전체 흐름"], "sig": ["3.1 전체 흐름|mermaid|1|flowchart TD"]}
+    },
+    {
+      "key": "knockback",
+      "chapter": "structure",
+      "layout": "code",
+      "tab": "구현",
+      "title": {"text": "3.3 폭발 위치에서 토끼를 날리는 방향", "verbatim": true},
+      "lead": {"text": "수류탄과 지뢰는 자신의 폭발 위치를 `ApplyKnockback()`에 전달하고, 토끼는 폭발 중심에서 바깥쪽으로 날아갑니다.", "verbatim": true},
+      "sectionPath": ["3. 시스템 구조", "3.3 폭발 위치에서 토끼를 날리는 방향"],
+      "points": [
+        {"label": "이유", "text": "폭발 중심과 토끼의 수평 위치가 거의 겹치면 방향을 결정할 수 없으므로, 토끼의 뒤쪽을 보조 방향으로 사용합니다.", "verbatim": true},
+        {
+          "label": "",
+          "text": "래그돌이 있는 토끼는 이 속도를 모든 뼈에 적용하고, 골반을 중심으로 한 회전 속도를 더해 사지가 각각 휘날리며 회전하면서 날아가도록 했습니다.",
+          "verbatim": true
+        }
+      ],
+      "visuals": [
+        {"kind": "code", "n": 1, "fp": "Vector3 direction = transform.position - explosionPosition;", "caption": {"text": "HareController.ApplyKnockback() — 폭발 중심에서 바깥쪽으로 날리는 방향 계산", "verbatim": false}},
+        {
+          "kind": "image",
+          "src": "images/ragdoll_fly.gif",
+          "w": 640,
+          "h": 360,
+          "caption": {"text": "수류탄 폭발에 휘말려 래그돌로 날아가는 토끼", "verbatim": true}
+        }
+      ],
+      "from": {
+        "key": "knockback",
+        "sectionPath": ["3. 시스템 구조", "3.3 폭발 위치에서 토끼를 날리는 방향"],
+        "sig": [
+          "3.3 폭발 위치에서 토끼를 날리는 방향|code|1|Vector3 direction = transform.position - explosionPosition;",
+          "3.3 폭발 위치에서 토끼를 날리는 방향|image|images/ragdoll_fly.gif|1"
+        ]
+      }
+    },
+    {
+      "key": "teleport-fix",
+      "chapter": "tradeoffs",
+      "layout": "problem",
+      "tab": "문제 해결",
+      "title": {"text": "5.1 순간이동으로 복구되는 토끼를 걸어서 복귀하도록 수정", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["5. 고민과 선택", "5.1 순간이동으로 복구되는 토끼를 걸어서 복귀하도록 수정"],
+      "points": [
+        {"label": "문제", "text": "원형 코스에서 폭발에 맞은 토끼가 피격 전 위치로 순간이동했습니다.", "verbatim": true},
+        {"label": "원인", "text": "AI가 앞서 원형 코스에서 피격 전 위치로 바로 재배치하도록 안내한 코드", "verbatim": false},
+        {
+          "label": "해결",
+          "text": "복구 위치의 기준을 피격 전 위치에서 착지한 래그돌의 골반 위치로 변경하고, 원형 코스에서는 피격 전 위치 주변을 다시 탐색하지 않도록 수정했습니다.",
+          "verbatim": false
+        },
+        {"label": "결과", "text": "토끼는 착지 지점 근처에서 일어난 뒤, 기존 복귀 상태(`SetReturnStat()`)로 피격 전 위치까지 걸어갑니다.", "verbatim": true}
+      ],
+      "visuals": [{"kind": "code", "n": 1, "fp": "Vector3 recoveryPosition = ragdollHips.position;", "caption": {"text": "HareController.RecoverFromRagdoll() — 착지한 래그돌의 골반 위치를 복구 위치로", "verbatim": false}}],
+      "from": {
+        "key": "teleport-fix",
+        "sectionPath": ["5. 고민과 선택", "5.1 순간이동으로 복구되는 토끼를 걸어서 복귀하도록 수정"],
+        "sig": ["5.1 순간이동으로 복구되는 토끼를 걸어서 복귀하도록 수정|code|1|Vector3 recoveryPosition = ragdollHips.position;"]
+      }
     }
   ],
   "hide": []

@@ -282,7 +282,15 @@
           {"label": "", "text": "고글은 스키장과 수영장 어느 쪽에도 어울리므로, 물건만으로는 D가 라이어인지 단정할 수 없습니다.", "verbatim": true},
           {"label": "", "text": "이 변명과 해석의 과정이 기존 라이어 게임과 구별되는 이 게임의 핵심 재미입니다.", "verbatim": true}
         ],
-        "visuals": [{"kind": "code", "n": 1, "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장"}]
+        "visuals": [
+          {
+            "kind": "code",
+            "n": 1,
+            "fp": "일반 키워드: 스키장 / 라이어 키워드: 수영장",
+            "caption": {"text": "컨셉 기획 단계에서 정리한 키워드 예시", "verbatim": false}
+          }
+        ],
+        "edited": true
       },
       {
         "key": "scope",
@@ -441,9 +449,20 @@
           }
         ],
         "visuals": [
-          {"kind": "code", "n": 1, "fp": "// 호출 예시 — 팀원 코드에서 사용하는 형태"},
-          {"kind": "code", "n": 2, "fp": "private void InitDictionaries()"}
-        ]
+          {
+            "kind": "code",
+            "n": 1,
+            "fp": "// 호출 예시 — 팀원 코드에서 사용하는 형태",
+            "caption": {"text": "SoundManager 호출 예시 — 상황에 맞는 enum 값만 전달", "verbatim": false}
+          },
+          {
+            "kind": "code",
+            "n": 2,
+            "fp": "private void InitDictionaries()",
+            "caption": {"text": "SoundManager.InitDictionaries() — 배열을 enum 키의 Dictionary로 변환", "verbatim": false}
+          }
+        ],
+        "edited": true
       },
       {
         "key": "sound-split",
@@ -489,7 +508,12 @@
           {"label": "팀원 확장", "text": "DOTween 밝기 변화, 테이블 포커스, 라이어 색상 연출, 복수 승자 조명.", "verbatim": true}
         ],
         "visuals": [
-          {"kind": "code", "n": 1, "fp": "public void TurnOnSpotLight(Transform currentSpeaker)"},
+          {
+            "kind": "code",
+            "n": 1,
+            "fp": "public void TurnOnSpotLight(Transform currentSpeaker)",
+            "caption": {"text": "LightManager.TurnOnSpotLight() — 발언자 위로 스포트라이트 이동", "verbatim": false}
+          },
           {
             "kind": "image",
             "src": "images/Speak.gif",
@@ -497,7 +521,8 @@
             "h": 360,
             "caption": {"text": "발언 단계 — 발언자가 바뀌면 스포트라이트가 그 자리로 옮겨 감", "verbatim": true}
           }
-        ]
+        ],
+        "edited": true
       },
       {
         "key": "tsv-data",
@@ -1027,6 +1052,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|확인 방법|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "ee07d9c547ce23e5"
+    "applied": "370ea64fe67540ed"
   }
 }

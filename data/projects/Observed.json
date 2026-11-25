@@ -336,7 +336,13 @@
         ],
         "visuals": [
           {"kind": "mermaid", "n": 1, "fp": "classDiagram"},
-          {"kind": "code", "n": 1, "fp": "public abstract class ObjectInteraction : MonoBehaviour", "lines": [1, 17]}
+          {
+            "kind": "code",
+            "caption": {"text": "ObjectInteraction — 침대·게임기 등 상호작용 오브젝트의 부모 클래스", "verbatim": false},
+            "n": 1,
+            "fp": "public abstract class ObjectInteraction : MonoBehaviour",
+            "lines": [1, 17]
+          }
         ],
         "edited": true
       },
@@ -411,7 +417,12 @@
           {"label": "이유", "text": "따라서 턴마다 수행해야 하는 처리(부패, 맹수, 교환기 재고 등)가 추가되더라도 이 메서드 한 곳만 수정하면 됩니다.", "verbatim": true}
         ],
         "visuals": [
-          {"kind": "code", "n": 1, "fp": "public void FlowTime(int skipTime)"},
+          {
+            "kind": "code",
+            "caption": {"text": "TurnController.FlowTime() — 시간·질병·교환 아이템·부패·맹수·게이지를 한 번에 갱신", "verbatim": false},
+            "n": 1,
+            "fp": "public void FlowTime(int skipTime)"
+          },
           {
             "kind": "image",
             "src": "images/Sleep.gif",
@@ -444,8 +455,20 @@
         "points": [],
         "visuals": [
           {"kind": "table", "n": 1, "fp": "방어|위치|무엇을 막나"},
-          {"kind": "code", "n": 2, "fp": "public float GageUpdate(Image bar, float fillAmount)", "lines": [1, 8]},
-          {"kind": "code", "n": 3, "fp": "public void GetBlackOut()", "lines": [1, 8]}
+          {
+            "kind": "code",
+            "caption": {"text": "GageController.GageUpdate() — 게이지를 0 ~ 1 사이로 고정", "verbatim": false},
+            "n": 2,
+            "fp": "public float GageUpdate(Image bar, float fillAmount)",
+            "lines": [1, 8]
+          },
+          {
+            "kind": "code",
+            "caption": {"text": "GageController.GetBlackOut() — isBlackOut 플래그로 블랙아웃 중복 실행 막기", "verbatim": false},
+            "n": 3,
+            "fp": "public void GetBlackOut()",
+            "lines": [1, 8]
+          }
         ],
         "edited": true
       },
@@ -462,7 +485,14 @@
           {"label": "결과 1", "text": "같은 2턴을 소모하는 수면과 달리 에너지가 회복되지 않으며, 포만감·수분은 미니게임의 2배만큼 감소합니다.", "verbatim": true},
           {"label": "결과 2", "text": "쓰러져 있는 2턴 동안에 맹수의 탈출 욕구 역시 쌓이므로, 맹수의 위협도 함께 다가옵니다.", "verbatim": true}
         ],
-        "visuals": [{"kind": "code", "n": 1, "fp": "public IEnumerator GetBlackOutCoroutine()"}],
+        "visuals": [
+          {
+            "kind": "code",
+            "caption": {"text": "GageController.GetBlackOutCoroutine() — 쓰러지며 강제로 2턴이 넘어가는 블랙아웃", "verbatim": false},
+            "n": 1,
+            "fp": "public IEnumerator GetBlackOutCoroutine()"
+          }
+        ],
         "edited": true
       },
       {
@@ -478,7 +508,12 @@
           {"label": "경험", "text": "플레이어는 위험을 감수하고 섭취할지, 버릴지를 고민하게 됩니다.", "verbatim": true}
         ],
         "visuals": [
-          {"kind": "code", "n": 1, "fp": "public void GotDiseaseByRotten(int percentage)"},
+          {
+            "kind": "code",
+            "caption": {"text": "DiseaseController.GotDiseaseByRotten() — 상한 고기·썩은 물을 먹으면 확률로 질병", "verbatim": false},
+            "n": 1,
+            "fp": "public void GotDiseaseByRotten(int percentage)"
+          },
           {"kind": "table", "n": 1, "fp": "질병 규칙|값"}
         ],
         "edited": true
@@ -573,6 +608,7 @@
         "visuals": [
           {
             "kind": "code",
+            "caption": {"text": "TurnController.FlowTime() — 턴이 넘어갈 때 한 번에 갱신", "verbatim": false},
             "n": 1,
             "fp": "public void FlowTime(int skipTime)",
             "lines": [1, 15],
@@ -664,7 +700,14 @@
           {"label": "해결", "text": "메서드마다 `Debug.Log`를 출력하고, 그 출력 순서로 실제 실행 순서를 파악했습니다.", "verbatim": true},
           {"label": "결과", "text": "실행 순서를 직접 확인하며 흐름을 바로잡을 수 있었습니다.", "verbatim": true}
         ],
-        "visuals": [{"kind": "code", "n": 1, "fp": "public void MakeOrder()"}],
+        "visuals": [
+          {
+            "kind": "code",
+            "caption": {"text": "OrderTurn.MakeOrder() — 미니게임 B의 주문 코루틴 시작", "verbatim": false},
+            "n": 1,
+            "fp": "public void MakeOrder()"
+          }
+        ],
         "edited": true
       }
     ],
@@ -1071,6 +1114,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "8ace6ccb1b4c2938"
+    "applied": "97c65e0fd7d20ec3"
   }
 }
