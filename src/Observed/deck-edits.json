@@ -480,6 +480,36 @@
         "sectionPath": ["2. 기획", "2.3 행동마다 넘어가는 턴과 게이지 변화"],
         "sig": ["2.3 행동마다 넘어가는 턴과 게이지 변화|table|1|행동|넘어가는 턴|결과"]
       }
+    },
+    {
+      "key": "ai-character",
+      "after": "ai-review",
+      "chapter": "ai",
+      "layout": "screens",
+      "tab": "",
+      "title": {"text": "캐릭터 이미지", "verbatim": true},
+      "lead": null,
+      "sectionPath": ["AI 협업", "AI 결과물을 확인하고 고친 과정"],
+      "points": [
+        {"label": "요청", "text": "직접 그린 캐릭터 그림과, 수정하기 쉬운 픽셀아트 걷기 동작 에셋을 함께 넣고 그 동작에 내 캐릭터를 입히도록 요청", "verbatim": true},
+        {"label": "대응", "text": "두 모델의 결과를 비교해 더 나은 ChatGPT 결과를 골랐고, 발 구분은 포토샵에서 다리 부분만 좌우 반전해 직접 고침", "verbatim": true}
+      ],
+      "visuals": [
+        {
+          "kind": "image",
+          "src": "images/Observed_Character_Design_Image_Prompt.png",
+          "w": 427,
+          "h": 230,
+          "caption": {"text": "캐릭터 이미지 요청에 넣은 자료 — 직접 그린 캐릭터(왼쪽)와 픽셀아트 걷기 동작 에셋(오른쪽)", "verbatim": true}
+        },
+        {
+          "kind": "image",
+          "src": "images/Observed_Character_Design.png",
+          "w": 500,
+          "h": 651,
+          "caption": {"text": "결과물 — 생성 후 다리 부분을 포토샵에서 직접 고친 걷기 시트", "verbatim": true}
+        }
+      ]
     }
   ],
   "hide": [
