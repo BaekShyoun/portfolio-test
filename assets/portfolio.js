@@ -153,8 +153,9 @@
     const meta = (p.meta || []).map((m) => `<div><dt>${esc(m.label)}</dt><dd>${inline(m.value)}</dd></div>`);
     if (p.team?.role) meta.push(`<div class="wide"><dt>${T('name.role')}</dt><dd>${inline(p.team.role)}</dd></div>`);
     const extra = (p.links?.extra || []).filter((l) => isUrl(l.url));
-    const btns = [btn(PF.projectUrl(p.id), T('name.deck'), 'page', 'btn primary'), btn(PF.docUrl(p.id), T('name.doc'), 'page'),
-      isUrl(p.links?.github) && btn(p.links.github, 'GitHub', 'external'), isUrl(p.links?.video) && btn(p.links.video, T('name.video'), 'external'),
+    // 버튼은 두 줄: 위는 내 페이지(슬라이드·상세 문서), 아래는 바깥 링크(GitHub·시연 영상·추가 링크)
+    const pageBtns = [btn(PF.projectUrl(p.id), T('name.deck'), 'page', 'btn primary'), btn(PF.docUrl(p.id), T('name.doc'), 'page')];
+    const extBtns = [isUrl(p.links?.github) && btn(p.links.github, 'GitHub', 'external'), isUrl(p.links?.video) && btn(p.links.video, T('name.video'), 'external'),
       ...extra.map((l) => btn(l.url, esc(l.label), 'external'))].filter(Boolean);
     const urls = [[t('name.deck'), PF.visibleUrl(PF.projectUrl(p.id)), PF.projectUrl(p.id), 'page'], [t('name.doc'), PF.visibleUrl(PF.docUrl(p.id)), PF.docUrl(p.id), 'page'],
       isUrl(p.links?.github) && ['GitHub', shortUrl(p.links.github), p.links.github, 'external'], isUrl(p.links?.video) && [t('name.video'), shortUrl(p.links.video), p.links.video, 'external'],
@@ -165,7 +166,7 @@
         ${meta.length ? `<dl class="meta">${meta.join('')}</dl>` : ''}
         ${p.intent?.text ? `<div class="intent"><p class="k">${T('name.intent')}</p><p>${inline(p.intent.text)}</p></div>` : ''}
         ${(p.tags || []).length ? `<ul class="tags">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
-        <div class="btns no-print">${btns.join('')}</div>${printUrls(urls)}</div></div>`;
+        <div class="btns no-print">${pageBtns.join('')}</div>${extBtns.length ? `<div class="btns ext no-print">${extBtns.join('')}</div>` : ''}${printUrls(urls)}</div></div>`;
     return sec(`p-${p.id}`, no, p.title, PF.teamLabel(p.team), body, 'proj');
   }
 
