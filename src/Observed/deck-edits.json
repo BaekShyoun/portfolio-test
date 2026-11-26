@@ -510,6 +510,22 @@
           "caption": {"text": "결과물 — 생성 후 다리 부분을 포토샵에서 직접 고친 걷기 시트", "verbatim": true}
         }
       ]
+    },
+    {
+      "key": "arch-flow",
+      "chapter": "plan",
+      "layout": "full",
+      "tab": "흐름",
+      "title": {"text": "2.1 한 판의 흐름과 핵심 루프", "verbatim": true},
+      "lead": {"text": "플레이어는 방 안에서 게임기·교환 자판기·인벤토리·맹수 중 하나를 골라 행동하고, 모든 행동은 다시 인게임으로 돌아옵니다.", "verbatim": true},
+      "sectionPath": ["2. 기획", "2.1 한 판의 흐름과 핵심 루프"],
+      "points": [],
+      "visuals": [{"kind": "image", "src": "images/SurvivalLoop.webp", "w": 1672, "h": 941}],
+      "from": {
+        "key": "arch-flow",
+        "sectionPath": ["2. 기획", "2.1 한 판의 흐름과 핵심 루프"],
+        "sig": ["2.1 한 판의 흐름과 핵심 루프|mermaid|1|flowchart TD"]
+      }
     }
   ],
   "hide": [

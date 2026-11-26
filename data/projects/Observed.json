@@ -243,7 +243,8 @@
         "lead": {"text": "플레이어는 방 안에서 게임기·교환 자판기·인벤토리·맹수 중 하나를 골라 행동하고, 모든 행동은 다시 인게임으로 돌아옵니다.", "verbatim": true},
         "sectionPath": ["2. 기획", "2.1 한 판의 흐름과 핵심 루프"],
         "points": [],
-        "visuals": [{"kind": "mermaid", "n": 1, "fp": "flowchart TD"}]
+        "visuals": [{"kind": "image", "src": "images/SurvivalLoop.webp", "w": 1672, "h": 941}],
+        "edited": true
       },
       {
         "key": "concept-table",
@@ -1124,6 +1125,6 @@
         "visuals": [{"kind": "table", "n": 1, "fp": "대상|요청 방식|의도와 달랐던 점|대응"}]
       }
     ],
-    "applied": "0654216e75485403"
+    "applied": "5754d6b6bef8be7b"
   }
 }
