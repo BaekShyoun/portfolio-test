@@ -411,6 +411,7 @@
       bar.querySelectorAll('.pg-seg').forEach((s, i) => s.addEventListener('click', () => { if (i !== cur) showPage(i); }));   // 키보드(Tab → Enter)
     }
     // 휠: 절이 화면보다 길면 먼저 절 안에서 스크롤하고, 끝(맨 아래·맨 위)에서 한 번 더 굴리면 다음·이전 절로.
+    //   기능 소개(넓은 화면)는 굴릴 때마다 기능(큰 화면)을 하나씩 넘기고, 첫·마지막 기능에서 한 번 더 굴리면 이전·다음 절로.
     //   터치패드의 관성 스크롤이 끝에 닿자마자 넘어가지 않게, 끝에서 새로 시작한 굴림만 셈. 넘긴 뒤 굴림이 멈출 때까지 잠금
     let acc = 0, lastW = 0, lockW = false, lockT = 0, startEdge = false;
     const innerScroll = (t, dy) => {
@@ -434,11 +435,28 @@
       if (Math.abs(acc) < 60) return;
       const d = acc > 0 ? 1 : -1;
       acc = 0;
+      if (stepFeature(d)) { lockW = true; lockT = now; e.preventDefault(); return; }   // 기능 소개: 절을 넘기기 전에 기능을 하나씩
       if (cur + d < 0 || cur + d >= pages.length) return;
       lockW = true; lockT = now;
       e.preventDefault();
       showPage(cur + d, true, d < 0);
+      const fl = stageFeatures();                                      // 휠로 들어온 기능 소개: 아래로 오면 첫 기능, 위로 오면 마지막 기능부터
+      if (fl.length) show(fl[d > 0 ? 0 : fl.length - 1]);
     }, { passive: false });
+    // 기능 소개(넓은 화면의 큰 화면 판)의 화면 있는 기능 목록 — 지금 절이 기능 소개가 아니면 빈 목록
+    function stageFeatures() {
+      const s = pages[cur];
+      if (!s?.classList.contains('core') || innerWidth < 760) return [];
+      return [...s.querySelectorAll('.fe.stage li[data-shot]')];
+    }
+    // 휠 한 번에 기능 하나: 다음·이전 기능이 있으면 그 화면으로 바꾸고 true, 처음·끝이면 false(→ 절 넘기기)
+    function stepFeature(d) {
+      const fl = stageFeatures();
+      const j = fl.findIndex((li) => li.classList.contains('cur')) + d;
+      if (j < 0 || j >= fl.length) return false;
+      show(fl[j]);
+      return true;
+    }
     let tx = null, ty = 0;
     addEventListener('touchstart', (e) => { if (e.touches.length === 1 && !e.target.closest?.('.pager')) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; } else tx = null; }, { passive: true });
     addEventListener('touchend', (e) => {
