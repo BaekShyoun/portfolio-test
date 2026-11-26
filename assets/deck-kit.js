@@ -64,8 +64,10 @@
   const T = (PF._t = { mount: null, ready: null, timeout: null, firstYes: null });
   let deck = null, scenes = [], cur = 0, hud = null, opts = {}, scope = 'all', K = 1, io = null, mountedOnce = false, ov = null, ovBuilt = false, hint = null, hintClosed = false;
   // 보기 선택 기억: 같은 <id>.github.io 출처를 여러 레포가 나눠 쓰므로 키에 레포 경로를 넣음(portfolio-structure §3-4 조건 6)
+  //   기억은 그 탭 안에서만(sessionStorage) — 새로 접속하면(새 탭·다시 열기) 언제나 한 장씩 보기로 시작
   const VIEW_KEY = `pf-view:${location.pathname.replace(/[^/]*$/, '')}`;
-  const storedView = (() => { try { return localStorage.getItem(VIEW_KEY); } catch { return null; } })();
+  try { localStorage.removeItem(VIEW_KEY); } catch { /* 예전에 오래 기억해 둔 선택은 지움 */ }
+  const storedView = (() => { try { return sessionStorage.getItem(VIEW_KEY); } catch { return null; } })();
   let view = Q.get('view') === 'scroll' ? 'scroll' : Q.get('view') === 'deck' ? 'deck' : storedView === 'scroll' ? 'scroll' : 'deck';
   const WHEEL = Q.get('wheel') !== '0';                       // 휠·트랙패드 넘기기 기본 켬
   root.dataset.view = view;                                   // CSS가 mount 전부터 보기를 알도록(head에서 동기 실행)
@@ -342,7 +344,7 @@
   // ── 보기 전환(같은 DOM). 선택은 이 브라우저에 기억(레포 경로별) ──
   function setView(v, { remember = true } = {}) {
     v = v === 'scroll' ? 'scroll' : 'deck';
-    if (remember) { try { localStorage.setItem(VIEW_KEY, v); } catch { /* 저장소 없음 */ } }
+    if (remember) { try { sessionStorage.setItem(VIEW_KEY, v); } catch { /* 저장소 없음 */ } }
     if (v === view) return;
     view = v; root.dataset.view = v; holdPick = false;
     try { const u = new URL(location.href); u.searchParams.delete('view'); u.hash = hashOf(cur); history.replaceState(history.state, '', u.pathname + u.search + u.hash); } catch { /* */ }
